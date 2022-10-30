@@ -19,3 +19,15 @@ C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienT
 C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.exe
 C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.pdb
 C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.QuanLy.resources
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.exe.config
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.exe
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.pdb
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.AssemblyReference.cache
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.flogin.resources
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.fStaffMain.resources
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.QuanLy.resources
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Properties.Resources.resources
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.GenerateResource.cache
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.CoreCompileInputs.cache
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.exe
+E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.pdb
