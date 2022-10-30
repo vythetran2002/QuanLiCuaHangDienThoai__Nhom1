@@ -8,3 +8,14 @@ D:\UTE - K20\DBMS\project\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoa
 D:\UTE - K20\DBMS\project\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.CoreCompileInputs.cache
 D:\UTE - K20\DBMS\project\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.exe
 D:\UTE - K20\DBMS\project\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.pdb
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.exe.config
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.exe
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.pdb
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.AssemblyReference.cache
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.SuggestedBindingRedirects.cache
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.frmProfile.resources
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Properties.Resources.resources
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.GenerateResource.cache
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.CoreCompileInputs.cache
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.exe
+C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.pdb
