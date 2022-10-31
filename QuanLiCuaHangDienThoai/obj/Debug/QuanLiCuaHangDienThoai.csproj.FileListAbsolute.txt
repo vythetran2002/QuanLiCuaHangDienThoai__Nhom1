@@ -31,3 +31,15 @@ E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\Qua
 E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.CoreCompileInputs.cache
 E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.exe
 E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.pdb
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.exe.config
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.exe
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.pdb
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.flogin.resources
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.fStaffMain.resources
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.QuanLy.resources
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.exe
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.pdb
