@@ -47,7 +47,6 @@
             // 
             // panel1
             // 
-<<<<<<< HEAD
             this.panel1.Controls.Add(this.lb_Gia);
             this.panel1.Controls.Add(this.lb_MaSP);
             this.panel1.Controls.Add(this.btn_AddHDCT);
@@ -174,14 +173,12 @@
             this.lb_MaHD.Size = new System.Drawing.Size(51, 20);
             this.lb_MaHD.TabIndex = 10;
             this.lb_MaHD.Text = "label6";
-=======
-            this.button1.Location = new System.Drawing.Point(128, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 187);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
->>>>>>> e66c28cb59950a2bda7ea08c4bb863d14f2830f2
+            //this.button1.Location = new System.Drawing.Point(128, 89);
+            //this.button1.Name = "button1";
+            //this.button1.Size = new System.Drawing.Size(236, 187);
+            //this.button1.TabIndex = 0;
+            //this.button1.Text = "button1";
+            //this.button1.UseVisualStyleBackColor = true;
             // 
             // fStaffMain
             // 

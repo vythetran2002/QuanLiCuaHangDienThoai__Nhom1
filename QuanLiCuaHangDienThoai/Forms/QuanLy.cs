@@ -21,7 +21,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         }
         private void QuanLy_Load(object sender, EventArgs e)
         {
-            //LoadData();
+            LoadData();
         }
         void LoadData()
         {
@@ -67,29 +67,44 @@ namespace QuanLiCuaHangDienThoai.Forms
             SanPhamBinding();
             DanhMucBinding();
             TaiKhoanBinding();
-            
+
         }
         void SanPhamBinding()
         {
-            textBox_MaSP.DataBindings.Add("Text", dataGridView_SP.DataSource, "MaSP", true, DataSourceUpdateMode.Never);
-            textBox_TenSP.DataBindings.Add("Text", dataGridView_SP.DataSource, "TenSP", true, DataSourceUpdateMode.Never);
-            textBox_Gia.DataBindings.Add("Value", dataGridView_SP.DataSource, "Gia", true, DataSourceUpdateMode.Never);
-            textBox_SoLuong.DataBindings.Add("Value", dataGridView_SP.DataSource, "SoLuong", true, DataSourceUpdateMode.Never);
+            try
+            {
+                textBox_MaSP.DataBindings.Add("Text", dataGridView_SP.DataSource, "MaSP", true, DataSourceUpdateMode.Never);
+                textBox_TenSP.DataBindings.Add("Text", dataGridView_SP.DataSource, "TenSP", true, DataSourceUpdateMode.Never);
+                textBox_Gia.DataBindings.Add("Text", dataGridView_SP.DataSource, "Gia", true, DataSourceUpdateMode.Never);
+                textBox_SoLuong.DataBindings.Add("Text", dataGridView_SP.DataSource, "SoLuong", true, DataSourceUpdateMode.Never);
+            }
+            catch { }
         }
 
         void DanhMucBinding()
         {
-            textBox_MaDM.DataBindings.Add("Text", dataGridView_DM.DataSource, "MaDM", true, DataSourceUpdateMode.Never);
-            textBox_TenDM.DataBindings.Add("Text", dataGridView_DM.DataSource, "TenDM", true, DataSourceUpdateMode.Never);
+            try
+            {
+                textBox_MaDM.DataBindings.Add("Text", dataGridView_DM.DataSource, "MaDM", true, DataSourceUpdateMode.Never);
+                textBox_TenDM.DataBindings.Add("Text", dataGridView_DM.DataSource, "TenDM", true, DataSourceUpdateMode.Never);
+            }
+            catch { }
         }
 
         void TaiKhoanBinding()
         {
-            textBox_Username.DataBindings.Add("Text", dataGridView_SP.DataSource, "Username", true, DataSourceUpdateMode.Never);
-            textBox_Ten.DataBindings.Add("Text", dataGridView_SP.DataSource, "Ten", true, DataSourceUpdateMode.Never);
-            textBox_Password.DataBindings.Add("Text", dataGridView_SP.DataSource, "Password", true, DataSourceUpdateMode.Never);
-            textBox_Loai.DataBindings.Add("Text", dataGridView_SP.DataSource, "Loai", true, DataSourceUpdateMode.Never);
-            //textBox_NgayTao.DataBindings.Add("Text", dataGridView_SP.DataSource, "Ten", true, DataSourceUpdateMode.Never);
+            try
+            {
+                textBox_Username.DataBindings.Add("Text", dataGridView_TK.DataSource, "Username", true, DataSourceUpdateMode.Never);
+                textBox_Ten.DataBindings.Add("Text", dataGridView_TK.DataSource, "Ten", true, DataSourceUpdateMode.Never);
+                textBox_Password.DataBindings.Add("Text", dataGridView_TK.DataSource, "Password", true, DataSourceUpdateMode.Never);
+                textBox_Loai.DataBindings.Add("Text", dataGridView_TK.DataSource, "Loai", true, DataSourceUpdateMode.Never);
+                textBox_NgayTao.DataBindings.Add("Text", dataGridView_TK.DataSource, "NgayTao", true, DataSourceUpdateMode.Never);
+            }
+            catch 
+            {
+                MessageBox.Show("Ko binding đc");
+            }
         }
 
         void Load_DateTimePicker_DoanhThu()

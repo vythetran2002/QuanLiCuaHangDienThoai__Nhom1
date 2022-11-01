@@ -19,8 +19,12 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            try
+            {
                 QuanLy f = new QuanLy();
                 f.ShowDialog();
+            }
+            catch { }
         }
     }
 }
