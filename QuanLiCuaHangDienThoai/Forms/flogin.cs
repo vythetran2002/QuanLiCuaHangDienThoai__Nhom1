@@ -21,8 +21,13 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             try
             {
-                QuanLy f = new QuanLy();
+                this.Hide();
+                fStaffMain f = new fStaffMain();
+                f.AutoSize = true;
                 f.ShowDialog();
+                this.Close();
+                /*QuanLy f = new QuanLy();
+                f.ShowDialog();*/
             }
             catch { }
         }
