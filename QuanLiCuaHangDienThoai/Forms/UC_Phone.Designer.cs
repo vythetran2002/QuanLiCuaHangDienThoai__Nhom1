@@ -28,54 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lb_Gia = new System.Windows.Forms.Label();
             this.lb_TenSP = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.Controls.Add(this.lb_Gia);
+            this.panel1.Controls.Add(this.lb_TenSP);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(184, 310);
+            this.panel1.TabIndex = 0;
             // 
             // lb_Gia
             // 
             this.lb_Gia.AutoSize = true;
-            this.lb_Gia.Location = new System.Drawing.Point(9, 275);
+            this.lb_Gia.Location = new System.Drawing.Point(8, 277);
             this.lb_Gia.Name = "lb_Gia";
             this.lb_Gia.Size = new System.Drawing.Size(51, 20);
-            this.lb_Gia.TabIndex = 6;
+            this.lb_Gia.TabIndex = 9;
             this.lb_Gia.Text = "label2";
             // 
             // lb_TenSP
             // 
             this.lb_TenSP.AutoSize = true;
-            this.lb_TenSP.Location = new System.Drawing.Point(9, 235);
+            this.lb_TenSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lb_TenSP.Location = new System.Drawing.Point(8, 237);
             this.lb_TenSP.Name = "lb_TenSP";
             this.lb_TenSP.Size = new System.Drawing.Size(51, 20);
-            this.lb_TenSP.TabIndex = 5;
+            this.lb_TenSP.TabIndex = 8;
             this.lb_TenSP.Text = "label1";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 12);
+            this.pictureBox1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(164, 203);
-            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // UC_Phone
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lb_Gia);
-            this.Controls.Add(this.lb_TenSP);
-            this.Controls.Add(this.pictureBox1);
+            this.BackColor = System.Drawing.Color.DarkBlue;
+            this.Controls.Add(this.panel1);
             this.Name = "UC_Phone";
-            this.Size = new System.Drawing.Size(190, 320);
+            this.Size = new System.Drawing.Size(190, 316);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_Gia;
         private System.Windows.Forms.Label lb_TenSP;
         private System.Windows.Forms.PictureBox pictureBox1;
