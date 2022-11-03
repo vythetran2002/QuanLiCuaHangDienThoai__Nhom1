@@ -124,4 +124,73 @@
   <data name="back2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\back2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="iphone11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\iphone11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iphone13prm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\iphone13prm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iphone14pl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\iphone14pl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iphone14pro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\iphone14pro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iphonese" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\iphonese.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NKC21pl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\nkc21pl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NKC31s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\nkc31s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NKG21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\nkg21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OPA55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\opa55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OPA96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\opa96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OPR6s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\opr6s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RM9s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\rm9s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RMC25Y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\rmc25y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RMC35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\rmc35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SSGA03s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\ssga03s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SSGA04s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\ssga04s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SSGA23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\ssga23.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VVX80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\vvx80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VVY35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\vvy35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VVY53s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\vvy53s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XM11LNEpro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\xm11lnepro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XM12Tpro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\xm12tpro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XMRN11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\xmrn11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
