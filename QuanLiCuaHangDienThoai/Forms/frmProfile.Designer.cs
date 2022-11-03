@@ -43,13 +43,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -61,16 +61,17 @@
             // 
             // btn_Exit
             // 
+            this.btn_Exit.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.btn_Exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Exit.ForeColor = System.Drawing.Color.Brown;
-            this.btn_Exit.Location = new System.Drawing.Point(417, 730);
+            this.btn_Exit.ForeColor = System.Drawing.Color.Black;
+            this.btn_Exit.Location = new System.Drawing.Point(495, 730);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(121, 54);
             this.btn_Exit.TabIndex = 15;
             this.btn_Exit.Text = "Thoát";
-            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.UseVisualStyleBackColor = false;
             // 
             // txtReEnterPass
             // 
@@ -95,7 +96,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Brown;
+            this.panel5.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel5.Controls.Add(this.txtReEnterPass);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Location = new System.Drawing.Point(33, 631);
@@ -127,7 +128,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Brown;
+            this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel4.Controls.Add(this.txtNewPass);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(33, 548);
@@ -148,15 +149,16 @@
             // 
             // btn_Update
             // 
+            this.btn_Update.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btn_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Update.ForeColor = System.Drawing.Color.Brown;
+            this.btn_Update.ForeColor = System.Drawing.Color.Black;
             this.btn_Update.Location = new System.Drawing.Point(154, 730);
             this.btn_Update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(164, 54);
             this.btn_Update.TabIndex = 14;
             this.btn_Update.Text = "Cập nhật";
-            this.btn_Update.UseVisualStyleBackColor = true;
+            this.btn_Update.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -182,7 +184,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Brown;
+            this.panel6.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel6.Controls.Add(this.label6);
             this.panel6.Location = new System.Drawing.Point(147, 25);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
@@ -204,7 +206,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Brown;
+            this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel3.Controls.Add(this.txtSDT);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(33, 470);
@@ -215,7 +217,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Brown;
+            this.panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel2.Controls.Add(this.txtUsername);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(33, 240);
@@ -224,9 +226,18 @@
             this.panel2.Size = new System.Drawing.Size(713, 63);
             this.panel2.TabIndex = 12;
             // 
+            // txtUsername
+            // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(350, 20);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(338, 26);
+            this.txtUsername.TabIndex = 3;
+            // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.Brown;
+            this.panel7.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel7.Controls.Add(this.txtEmail);
             this.panel7.Controls.Add(this.label7);
             this.panel7.Location = new System.Drawing.Point(33, 317);
@@ -266,7 +277,7 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.Brown;
+            this.panel8.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel8.Controls.Add(this.txtName);
             this.panel8.Controls.Add(this.label8);
             this.panel8.Location = new System.Drawing.Point(33, 393);
@@ -286,19 +297,11 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Tên: ";
             // 
-            // txtUsername
-            // 
-            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(350, 20);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(338, 26);
-            this.txtUsername.TabIndex = 3;
-            // 
             // frmProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.back2;
             this.ClientSize = new System.Drawing.Size(804, 808);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);

@@ -101,6 +101,9 @@
     <EmbeddedResource Include="Forms\flogin.resx">
       <DependentUpon>flogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmProfile.resx">
+      <DependentUpon>frmProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fStaffMain.resx">
       <DependentUpon>fStaffMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,7 +147,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="image\back2.png" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
