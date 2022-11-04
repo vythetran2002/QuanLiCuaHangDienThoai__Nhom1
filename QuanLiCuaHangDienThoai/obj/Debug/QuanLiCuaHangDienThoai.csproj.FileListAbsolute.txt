@@ -75,3 +75,5 @@ C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienTh
 C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.CoreCompileInputs.cache
 C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.exe
 C:\Users\bintr\Documents\GitHub\QuanLiCuaHangDienThoai_Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.pdb
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.frmProfile.resources
+C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vy)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.UC_PhoneOrder.resources

@@ -51,7 +51,7 @@ namespace QuanLiCuaHangDienThoai
     #endregion
 		
 		public QLDTDataContext() : 
-				base(global::QuanLiCuaHangDienThoai.Properties.Settings.Default.QuanLiCuaHangDienThoaiConnectionString, mappingSource)
+				base(global::QuanLiCuaHangDienThoai.Properties.Settings.Default.QuanLiCuaHangDienThoaiConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -126,6 +126,27 @@ namespace QuanLiCuaHangDienThoai
 			{
 				return this.GetTable<SANPHAM>();
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.THEMSP")]
+		public int THEMSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSP, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenSP, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> gia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string hinhanh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string soluong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maDM, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maNCC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSP, tenSP, gia, hinhanh, soluong, maDM, maNCC);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XOASP")]
+		public int XOASP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSP)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSP);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CAPNHATSP")]
+		public int CAPNHATSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSP, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenSP, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> gia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string hinhanh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string soluong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maDM, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maNCC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSP, tenSP, gia, hinhanh, soluong, maDM, maNCC);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -541,7 +562,9 @@ namespace QuanLiCuaHangDienThoai
 		
 		private System.DateTime _ngayTao;
 		
-		private EntityRef<HOADONCHITIET> _HOADONCHITIET;
+		private int _tongTien;
+		
+		private EntitySet<HOADONCHITIET> _HOADONCHITIETs;
 		
 		private EntityRef<TAIKHOAN> _TAIKHOAN;
 		
@@ -559,11 +582,13 @@ namespace QuanLiCuaHangDienThoai
     partial void OnsdtChanged();
     partial void OnngayTaoChanging(System.DateTime value);
     partial void OnngayTaoChanged();
+    partial void OntongTienChanging(int value);
+    partial void OntongTienChanged();
     #endregion
 		
 		public HOADON()
 		{
-			this._HOADONCHITIET = default(EntityRef<HOADONCHITIET>);
+			this._HOADONCHITIETs = new EntitySet<HOADONCHITIET>(new Action<HOADONCHITIET>(this.attach_HOADONCHITIETs), new Action<HOADONCHITIET>(this.detach_HOADONCHITIETs));
 			this._TAIKHOAN = default(EntityRef<TAIKHOAN>);
 			OnCreated();
 		}
@@ -672,32 +697,36 @@ namespace QuanLiCuaHangDienThoai
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_HOADONCHITIET", Storage="_HOADONCHITIET", ThisKey="maHD", OtherKey="maHD", IsUnique=true, IsForeignKey=false)]
-		public HOADONCHITIET HOADONCHITIET
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongTien", DbType="Int NOT NULL")]
+		public int tongTien
 		{
 			get
 			{
-				return this._HOADONCHITIET.Entity;
+				return this._tongTien;
 			}
 			set
 			{
-				HOADONCHITIET previousValue = this._HOADONCHITIET.Entity;
-				if (((previousValue != value) 
-							|| (this._HOADONCHITIET.HasLoadedOrAssignedValue == false)))
+				if ((this._tongTien != value))
 				{
+					this.OntongTienChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._HOADONCHITIET.Entity = null;
-						previousValue.HOADON = null;
-					}
-					this._HOADONCHITIET.Entity = value;
-					if ((value != null))
-					{
-						value.HOADON = this;
-					}
-					this.SendPropertyChanged("HOADONCHITIET");
+					this._tongTien = value;
+					this.SendPropertyChanged("tongTien");
+					this.OntongTienChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_HOADONCHITIET", Storage="_HOADONCHITIETs", ThisKey="maHD", OtherKey="maHD")]
+		public EntitySet<HOADONCHITIET> HOADONCHITIETs
+		{
+			get
+			{
+				return this._HOADONCHITIETs;
+			}
+			set
+			{
+				this._HOADONCHITIETs.Assign(value);
 			}
 		}
 		
@@ -753,6 +782,18 @@ namespace QuanLiCuaHangDienThoai
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_HOADONCHITIETs(HOADONCHITIET entity)
+		{
+			this.SendPropertyChanging();
+			entity.HOADON = this;
+		}
+		
+		private void detach_HOADONCHITIETs(HOADONCHITIET entity)
+		{
+			this.SendPropertyChanging();
+			entity.HOADON = null;
 		}
 	}
 	
@@ -823,7 +864,7 @@ namespace QuanLiCuaHangDienThoai
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSP", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSP", DbType="NVarChar(39) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string maSP
 		{
 			get
@@ -924,12 +965,12 @@ namespace QuanLiCuaHangDienThoai
 					if ((previousValue != null))
 					{
 						this._HOADON.Entity = null;
-						previousValue.HOADONCHITIET = null;
+						previousValue.HOADONCHITIETs.Remove(this);
 					}
 					this._HOADON.Entity = value;
 					if ((value != null))
 					{
-						value.HOADONCHITIET = this;
+						value.HOADONCHITIETs.Add(this);
 						this._maHD = value.maHD;
 					}
 					else
