@@ -18,13 +18,14 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             InitializeComponent();
             LoadData_SP();
+            LoadData_HD_ChuaThanhToan();
         }
 
         void LoadData_SP()
         {
             int i;
             flp_Phone.Controls.Clear();
-           
+            
             dgv_sp.DataSource = db.DSSanPham();
 
             for(i=0;i<dgv_sp.Rows.Count-1;i++)
@@ -38,6 +39,16 @@ namespace QuanLiCuaHangDienThoai.Forms
                 ph.Click += new System.EventHandler(this.Click_Phone);
 
             }   
+        }
+
+        void LoadData_HD_ChuaThanhToan()
+        {
+            QLDTDataContext q = new QLDTDataContext();
+            var query = from item in q.HOADONs
+                        where item.status == 0
+                        select item.maHD;
+
+            cbb_ChonHD.DataSource = query;
         }
         void Click_Phone(object sender, EventArgs e)
         {
@@ -55,7 +66,79 @@ namespace QuanLiCuaHangDienThoai.Forms
             lb_SL.Text = "Tồn kho: " + query.soLuong.ToString();
 
             //pictureBox1.image=;
+
+        }
+        void Load_HDCT()
+        {
+            int i;
+            flp_HDCT.Controls.Clear();
+
+            QLDTDataContext q = new QLDTDataContext();
+            var query = from item in q.HOADONCHITIETs
+                        where item.maHD.ToString() == cbb_ChonHD.Text
+                        select item;
+
+            foreach(var item in query)
+            {
+
+                UC_PhoneOrder po = new UC_PhoneOrder(item.maHD.ToString(),item.maSP);
+                po.AutoSize = true;
+                flp_HDCT.Controls.Add(po);
+            }
+
+        }
+        bool CheckSpInHd(string maHD, string maSP)
+        {
+            QLDTDataContext q = new QLDTDataContext();
+
+            var query = from item in q.HOADONCHITIETs
+                        where maHD == item.maHD.ToString() && maSP == item.maSP
+                        select item;
+
+            if (query.Count() == 0) return false;
+            else
+            {
+                MessageBox.Show("Sản phẩm đã có trong hđ");
+                return true;
+            }
+        }
+        private void btn_AddHDCT_Click(object sender, EventArgs e)
+        {
+            int i;
+            QLDTDataContext q = new QLDTDataContext();
+            if(CheckSpInHd(cbb_ChonHD.Text,lb_MaSP.Text)==false)
+            {
+                q.THEMHDCT(cbb_ChonHD.Text, lb_MaSP.Text, 0, 1, 0);
+                MessageBox.Show("add success");
+                LoadData_HD_ChuaThanhToan();
+            }
+            else
+            {
+
+            }
+
+        }
+
+        private void btn_NewHD_Click(object sender, EventArgs e)
+        {
+            QLDTDataContext q = new QLDTDataContext();
+            q.THEMHD("duynhut", "abc", " ",dateTimePicker1.Value, 0, 0);
+            MessageBox.Show("success");
+        }
+
+        private void btn_LoadHDCT_Click(object sender, EventArgs e)
+        {
+            Load_HDCT();
+        }
+
+        private void cbb_ChonHD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_HDCT();
+        }
+
+        private void btn_ThanhToan_Click(object sender, EventArgs e)
+        {
+
         }
     }
-   
 }

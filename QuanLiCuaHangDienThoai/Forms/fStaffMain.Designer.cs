@@ -110,6 +110,7 @@
             this.btn_AddHDCT.TabIndex = 7;
             this.btn_AddHDCT.Text = "Thêm SP vào HĐ";
             this.btn_AddHDCT.UseVisualStyleBackColor = true;
+            this.btn_AddHDCT.Click += new System.EventHandler(this.btn_AddHDCT_Click);
             // 
             // lb_DM
             // 
@@ -156,6 +157,7 @@
             this.btn_ThanhToan.TabIndex = 18;
             this.btn_ThanhToan.Text = "Thanh Toán";
             this.btn_ThanhToan.UseVisualStyleBackColor = true;
+            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
             // 
             // btn_NewHD
             // 
@@ -165,6 +167,7 @@
             this.btn_NewHD.TabIndex = 17;
             this.btn_NewHD.Text = "HĐ mới";
             this.btn_NewHD.UseVisualStyleBackColor = true;
+            this.btn_NewHD.Click += new System.EventHandler(this.btn_NewHD_Click);
             // 
             // dateTimePicker1
             // 
@@ -191,6 +194,7 @@
             this.btn_LoadHDCT.TabIndex = 14;
             this.btn_LoadHDCT.Text = "Load HĐCT";
             this.btn_LoadHDCT.UseVisualStyleBackColor = true;
+            this.btn_LoadHDCT.Click += new System.EventHandler(this.btn_LoadHDCT_Click);
             // 
             // lb_MaHD
             // 
@@ -218,6 +222,7 @@
             this.cbb_ChonHD.Name = "cbb_ChonHD";
             this.cbb_ChonHD.Size = new System.Drawing.Size(121, 28);
             this.cbb_ChonHD.TabIndex = 20;
+            this.cbb_ChonHD.SelectedIndexChanged += new System.EventHandler(this.cbb_ChonHD_SelectedIndexChanged);
             // 
             // fStaffMain
             // 
