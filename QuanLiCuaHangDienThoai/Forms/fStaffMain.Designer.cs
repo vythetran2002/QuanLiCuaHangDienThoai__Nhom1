@@ -45,6 +45,7 @@
             this.btn_LoadHDCT = new System.Windows.Forms.Button();
             this.lb_MaHD = new System.Windows.Forms.Label();
             this.dgv_sp = new System.Windows.Forms.DataGridView();
+            this.cbb_ChonHD = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sp)).BeginInit();
@@ -184,9 +185,9 @@
             // 
             // btn_LoadHDCT
             // 
-            this.btn_LoadHDCT.Location = new System.Drawing.Point(1204, 294);
+            this.btn_LoadHDCT.Location = new System.Drawing.Point(1460, 348);
             this.btn_LoadHDCT.Name = "btn_LoadHDCT";
-            this.btn_LoadHDCT.Size = new System.Drawing.Size(109, 48);
+            this.btn_LoadHDCT.Size = new System.Drawing.Size(109, 46);
             this.btn_LoadHDCT.TabIndex = 14;
             this.btn_LoadHDCT.Text = "Load HĐCT";
             this.btn_LoadHDCT.UseVisualStyleBackColor = true;
@@ -194,7 +195,7 @@
             // lb_MaHD
             // 
             this.lb_MaHD.AutoSize = true;
-            this.lb_MaHD.Location = new System.Drawing.Point(1075, 367);
+            this.lb_MaHD.Location = new System.Drawing.Point(1075, 361);
             this.lb_MaHD.Name = "lb_MaHD";
             this.lb_MaHD.Size = new System.Drawing.Size(59, 20);
             this.lb_MaHD.TabIndex = 10;
@@ -210,11 +211,20 @@
             this.dgv_sp.Size = new System.Drawing.Size(19, 25);
             this.dgv_sp.TabIndex = 19;
             // 
+            // cbb_ChonHD
+            // 
+            this.cbb_ChonHD.FormattingEnabled = true;
+            this.cbb_ChonHD.Location = new System.Drawing.Point(1140, 358);
+            this.cbb_ChonHD.Name = "cbb_ChonHD";
+            this.cbb_ChonHD.Size = new System.Drawing.Size(121, 28);
+            this.cbb_ChonHD.TabIndex = 20;
+            // 
             // fStaffMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 728);
+            this.Controls.Add(this.cbb_ChonHD);
             this.Controls.Add(this.lb_MaHD);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flp_Phone);
@@ -254,5 +264,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgv_sp;
         private System.Windows.Forms.Label lb_SL;
+        private System.Windows.Forms.ComboBox cbb_ChonHD;
     }
 }
