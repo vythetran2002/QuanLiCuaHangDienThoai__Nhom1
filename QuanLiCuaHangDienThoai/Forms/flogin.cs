@@ -19,6 +19,10 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            var tendangnhap = txt_LoginName.Text;
+            var matkhau = txt_PassWord.Text;
+            if (tendangnhap == "" || matkhau == "")
+                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin", "Thông báo");
             try
             {
                 this.Hide();
@@ -30,6 +34,11 @@ namespace QuanLiCuaHangDienThoai.Forms
                 f.ShowDialog();*/
             }
             catch { }
+        }
+
+        private void flogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

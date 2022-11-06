@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLiCuaHangDienThoai" Class="QLDTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HALO\SQLEXPRESS;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GB8LVRE\SQLEXPRESS;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DANHMUC" Member="DANHMUCs">
     <Type Name="DANHMUC">
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -14,7 +14,6 @@
       <Column Name="email" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="ten" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="ngaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="sdt" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="loai" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
@@ -65,18 +64,31 @@
       <Association Name="NHACUNGCAP_SANPHAM" Member="NHACUNGCAP" ThisKey="maNCC" OtherKey="maNCC" Type="NHACUNGCAP" IsForeignKey="true" />
     </Type>
   </Table>
-  <Function Name="dbo.THEMSP" Method="THEMSP">
-    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="tenSP" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="gia" Type="System.Int32" DbType="Int" />
-    <Parameter Name="hinhanh" Type="System.String" DbType="NVarChar(MAX)" />
-    <Parameter Name="soluong" Type="System.String" DbType="NVarChar(50)" />
+  <Function Name="dbo.CAPNHATDM" Method="CAPNHATDM">
     <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenDM" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.XOASP" Method="XOASP">
+  <Function Name="dbo.CAPNHATHD" Method="CAPNHATHD">
+    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenKH" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sdt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="TongTien" Parameter="tongTien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CAPNHATHDCT" Method="CAPNHATHDCT">
+    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="gia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="soLuong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CAPNHATNCC" Method="CAPNHATNCC">
+    <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenNCC" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.CAPNHATSP" Method="CAPNHATSP">
@@ -88,5 +100,154 @@
     <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CAPNHATTK" Method="CAPNHATTK">
+    <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="mk" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ten" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ngaysinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="sdt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="loai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LayDM" Method="LayDM">
+    <ElementType Name="LayDMResult">
+      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LAYHD" Method="LAYHD">
+    <ElementType Name="LAYHDResult">
+      <Column Name="maHD" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenKH" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="tongTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LAYHDCT" Method="LAYHDCT">
+    <ElementType Name="LAYHDCTResult">
+      <Column Name="maHD" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="thanhTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LAYNCC" Method="LAYNCC">
+    <ElementType Name="LAYNCCResult">
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LAYSP" Method="LAYSP">
+    <ElementType Name="LAYSPResult">
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.LAYTK" Method="LAYTK">
+    <ElementType Name="LAYTKResult">
+      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="mk" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="loai" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ThemDM" Method="ThemDM">
+    <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenDM" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.THEMHD" Method="THEMHD">
+    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenKH" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sdt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="tongTien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.THEMHDCT" Method="THEMHDCT">
+    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="gia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="soLuong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.THEMNCC" Method="THEMNCC">
+    <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenNCC" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.THEMSP" Method="THEMSP">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenSP" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="gia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="hinhanh" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="soluong" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.THEMTK" Method="THEMTK">
+    <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="mk" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ten" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ngaysinh" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="sdt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="loai" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XoaDM" Method="XoaDM">
+    <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XOAHD" Method="XOAHD">
+    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XOAHDCT" Method="XOAHDCT">
+    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XOANCC" Method="XOANCC">
+    <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XOASP" Method="XOASP">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XOATK" Method="XOATK">
+    <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ID_MADM_TEN" Method="ID_MADM_TEN" IsComposable="true">
+    <Parameter Name="tenDM" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.TenSP" Method="TenSP" IsComposable="true">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.ID_NCC_TEN" Method="ID_NCC_TEN" IsComposable="true">
+    <Parameter Name="tenNCC" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
   </Function>
 </Database>
