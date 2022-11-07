@@ -82,3 +82,19 @@ E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\Qua
 E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.UC_PhoneOrder.resources
 E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.frmProfile.resources
 E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.fBill.resources
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.exe.config
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.exe
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\QuanLiCuaHangDienThoai.pdb
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.AssemblyReference.cache
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.fBill.resources
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.flogin.resources
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.frmProfile.resources
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.fStaffMain.resources
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.QuanLy.resources
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.UC_Phone.resources
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.UC_PhoneOrder.resources
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Properties.Resources.resources
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.GenerateResource.cache
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.CoreCompileInputs.cache
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.exe
+E:\Final CSDL\New folder\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.pdb

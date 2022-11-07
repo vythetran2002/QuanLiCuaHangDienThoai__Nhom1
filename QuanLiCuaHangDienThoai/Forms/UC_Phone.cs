@@ -13,7 +13,7 @@ namespace QuanLiCuaHangDienThoai.Forms
 {
     public partial class UC_Phone : UserControl
     {
-        BL_SanPham db = new BL_SanPham();
+
         public UC_Phone()
         {
             InitializeComponent();
@@ -23,13 +23,16 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             InitializeComponent();
             QLDTDataContext q = new QLDTDataContext();
-            var query = (from item in q.SANPHAMs
+           /* var query = (from item in q.SANPHAMs
                          where item.maSP == maSP.Trim()
                          select item).SingleOrDefault();
 
             lb_TenSP.Text = query.tenSP.ToString();
-            lb_Gia.Text = query.gia.ToString();
+            lb_Gia.Text = query.gia.ToString();*/
             this.msp = maSP;
+            lb_TenSP.Text = q.TenSP(maSP);
+            lb_Gia.Text = q.Gia_SP(maSP);
+            pictureBox1.Image = Image.FromFile(@"..\..\image\" + q.HinhAnh(maSP));
             //load picture
             //pictureBox1.Image==
             panel1.Enabled = false;
@@ -41,6 +44,10 @@ namespace QuanLiCuaHangDienThoai.Forms
             get { return msp; }
             set { }
         }
-        
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

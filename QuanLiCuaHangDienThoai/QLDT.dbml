@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLiCuaHangDienThoai" Class="QLDTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.DANHMUC" Member="DANHMUCs">
-    <Type Name="DANHMUC">
-      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
-      <Association Name="DANHMUC_SANPHAM" Member="SANPHAMs" ThisKey="maDM" OtherKey="maDM" Type="SANPHAM" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GB8LVRE\SQLEXPRESS;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.TAIKHOAN" Member="TAIKHOANs">
     <Type Name="TAIKHOAN">
       <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -20,22 +13,11 @@
       <Association Name="TAIKHOAN_HOADON" Member="HOADONs" ThisKey="username" OtherKey="username" Type="HOADON" />
     </Type>
   </Table>
-  <Table Name="dbo.NHACUNGCAP" Member="NHACUNGCAPs">
-    <Type Name="NHACUNGCAP">
-      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="tenNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
-      <Association Name="NHACUNGCAP_SANPHAM" Member="SANPHAMs" ThisKey="maNCC" OtherKey="maNCC" Type="SANPHAM" />
-    </Type>
-  </Table>
-  <Table Name="dbo.HOADONCHITIET" Member="HOADONCHITIETs">
-    <Type Name="HOADONCHITIET">
-      <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="thanhTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="HOADON_HOADONCHITIET" Member="HOADON" ThisKey="maHD" OtherKey="maHD" Type="HOADON" IsForeignKey="true" />
-      <Association Name="SANPHAM_HOADONCHITIET" Member="SANPHAM" ThisKey="maSP" OtherKey="maSP" Type="SANPHAM" IsForeignKey="true" />
+  <Table Name="dbo.DANHMUC" Member="DANHMUCs">
+    <Type Name="DANHMUC">
+      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Association Name="DANHMUC_SANPHAM" Member="SANPHAMs" ThisKey="maDM" OtherKey="maDM" Type="SANPHAM" />
     </Type>
   </Table>
   <Table Name="dbo.HOADON" Member="HOADONs">
@@ -49,6 +31,22 @@
       <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="HOADON_HOADONCHITIET" Member="HOADONCHITIETs" ThisKey="maHD" OtherKey="maHD" Type="HOADONCHITIET" />
       <Association Name="TAIKHOAN_HOADON" Member="TAIKHOAN" ThisKey="username" OtherKey="username" Type="TAIKHOAN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOADONCHITIET" Member="HOADONCHITIETs">
+    <Type Name="HOADONCHITIET">
+      <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="HOADON_HOADONCHITIET" Member="HOADON" ThisKey="maHD" OtherKey="maHD" Type="HOADON" IsForeignKey="true" />
+      <Association Name="SANPHAM_HOADONCHITIET" Member="SANPHAM" ThisKey="maSP" OtherKey="maSP" Type="SANPHAM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHACUNGCAP" Member="NHACUNGCAPs">
+    <Type Name="NHACUNGCAP">
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tenNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Association Name="NHACUNGCAP_SANPHAM" Member="SANPHAMs" ThisKey="maNCC" OtherKey="maNCC" Type="SANPHAM" />
     </Type>
   </Table>
   <Table Name="dbo.SANPHAM" Member="SANPHAMs">
@@ -85,11 +83,9 @@
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.CAPNHATHDCT" Method="CAPNHATHDCT">
-    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="gia" Type="System.Int32" DbType="Int" />
     <Parameter Name="soLuong" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.CAPNHATNCC" Method="CAPNHATNCC">
@@ -118,6 +114,32 @@
     <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.CHECK_SP_HD" Method="CHECK_SP_HD">
+    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="CHECK_SP_HDResult">
+      <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.ID_HDCHUATHANHTOAN" Method="ID_HDCHUATHANHTOAN">
+    <ElementType Name="ID_HDCHUATHANHTOANResult">
+      <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.JOIN_SP_HDCT" Method="JOIN_SP_HDCT">
+    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="JOIN_SP_HDCTResult">
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.LayDM" Method="LayDM">
     <ElementType Name="LayDMResult">
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
@@ -139,9 +161,7 @@
     <ElementType Name="LAYHDCTResult">
       <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
-      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="thanhTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.LAYNCC" Method="LAYNCC">
@@ -192,9 +212,7 @@
   <Function Name="dbo.THEMHDCT" Method="THEMHDCT">
     <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="gia" Type="System.Int32" DbType="Int" />
     <Parameter Name="soLuong" Type="System.Int32" DbType="Int" />
-    <Parameter Name="ThanhTien" Parameter="thanhTien" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.THEMNCC" Method="THEMNCC">
@@ -231,10 +249,6 @@
     <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.XOAHDCT" Method="XOAHDCT">
-    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.XOANCC" Method="XOANCC">
     <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
@@ -243,20 +257,48 @@
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.ID_NCC_TEN" Method="ID_NCC_TEN" IsComposable="true">
-    <Parameter Name="tenNCC" Type="System.String" DbType="NVarChar(50)" />
+  <Function Name="dbo.Gia_SP" Method="Gia_SP" IsComposable="true">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.String" />
   </Function>
-  <Function Name="dbo.TenSP" Method="TenSP" IsComposable="true">
+  <Function Name="dbo.TongTienHD" Method="TongTienHD" IsComposable="true">
+    <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.HinhAnh" Method="HinhAnh" IsComposable="true">
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.ID_HDCHUATT" Method="ID_HDCHUATT" IsComposable="true">
     <Return Type="System.String" />
   </Function>
   <Function Name="dbo.ID_MADM_TEN" Method="ID_MADM_TEN" IsComposable="true">
     <Parameter Name="tenDM" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.String" />
   </Function>
-  <Function Name="dbo.TongTienHD" Method="TongTienHD" IsComposable="true">
-    <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
+  <Function Name="dbo.ID_NCC_TEN" Method="ID_NCC_TEN" IsComposable="true">
+    <Parameter Name="tenNCC" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.MaDM_SP" Method="MaDM_SP" IsComposable="true">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.MaNCC_SP" Method="MaNCC_SP" IsComposable="true">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.SL_SP" Method="SL_SP" IsComposable="true">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.TenSP" Method="TenSP" IsComposable="true">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.XOAHDCT" Method="XOAHDCT">
+    <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

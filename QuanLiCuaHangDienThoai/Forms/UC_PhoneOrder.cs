@@ -12,6 +12,7 @@ namespace QuanLiCuaHangDienThoai.Forms
 {
     public partial class UC_PhoneOrder : UserControl
     {
+        QLDTDataContext db = new QLDTDataContext();
         public UC_PhoneOrder()
         {
             InitializeComponent();
@@ -24,40 +25,58 @@ namespace QuanLiCuaHangDienThoai.Forms
         public UC_PhoneOrder(string maHD, string maSP)
         {
             InitializeComponent();
-            QLDTDataContext q = new QLDTDataContext();
-            var query = (from item in q.HOADONCHITIETs
-                         join item2 in q.SANPHAMs on item.maSP equals item2.maSP
-                         where item.maHD.ToString() == maHD && item.maSP == maSP
-                         select new
-                         {
-                             maSP=item.maSP,
-                             maHD=item.maHD,
-                             tenSP=item2.tenSP,
-                             gia=item2.gia,
-                             sl=item.soLuong,
-                             anh=item2.hinhAnh
-                         }).SingleOrDefault();
-
+            /*  QLDTDataContext q = new QLDTDataContext();
+              var query = (from item in q.HOADONCHITIETs
+                           join item2 in q.SANPHAMs on item.maSP equals item2.maSP
+                           where item.maHD.ToString() == maHD && item.maSP == maSP
+                           select new
+                           {
+                               maSP=item.maSP,
+                               maHD=item.maHD,
+                               tenSP=item2.tenSP,
+                               gia=item2.gia,
+                               sl=item.soLuong,
+                               anh=item2.hinhAnh  
+                           }).SingleOrDefault();*/
+            var query = db.JOIN_SP_HDCT(maHD, maSP).SingleOrDefault();
             lb_TenSP.Text = query.tenSP;
-            numericUpDown1.Value = int.Parse(query.sl.ToString());
-            lb_ThanhTien.Text=(int.Parse(query.gia.ToString())* int.Parse(query.sl.ToString())).ToString();
+            numericUpDown1.Value = int.Parse(query.soLuong.ToString());
+            lb_ThanhTien.Text=(int.Parse(query.gia.ToString())* int.Parse(query.soLuong.ToString())).ToString();
             this.mahd = query.maHD.ToString();
             this.masp = query.maSP;
             this.gia = query.gia.ToString();
-            //pictureBox1.Image=
+            pictureBox1.Image = Image.FromFile(@"..\..\image\" + db.HinhAnh(maSP));
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            QLDTDataContext q = new QLDTDataContext();
-            var query = (from item in q.HOADONCHITIETs
-                         where item.maHD.ToString() == mahd && item.maSP == masp
-                         select item).SingleOrDefault();
-            if(query!=null)
+            /* QLDTDataContext q = new QLDTDataContext();
+             var query = (from item in q.HOADONCHITIETs
+                          where item.maHD.ToString() == mahd && item.maSP == masp
+                          select item).SingleOrDefault();
+             if(query!=null)
+             {
+                 query.soLuong = Convert.ToInt32(numericUpDown1.Value);
+                 q.SubmitChanges();
+             }    */
+            
+            var query = db.CHECK_SP_HD(mahd, masp).SingleOrDefault();
+            if (query != null)
             {
-                query.soLuong = Convert.ToInt32(numericUpDown1.Value);
-                q.SubmitChanges();
-            }    
+                //query.soLuong = Convert.ToInt32(numericUpDown1.Value);
+                if (numericUpDown1.Value!=0)
+                {
+                    db.CAPNHATHDCT(Convert.ToInt32(mahd), masp, Convert.ToInt32(numericUpDown1.Value));
+                }
+                else
+                {
+                    db.XOAHDCT(mahd,masp);
+                }
+            }
+        }
+
+        private void UC_PhoneOrder_Load(object sender, EventArgs e)
+        {
 
         }
     }

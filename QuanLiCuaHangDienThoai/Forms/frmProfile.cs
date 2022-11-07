@@ -16,5 +16,10 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             InitializeComponent();
         }
+
+        private void frmProfile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

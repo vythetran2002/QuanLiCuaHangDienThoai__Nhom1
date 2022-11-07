@@ -13,7 +13,7 @@ namespace QuanLiCuaHangDienThoai.Forms
 {
     public partial class fStaffMain : Form
     {
-        BL_SanPham db = new BL_SanPham();
+        QLDTDataContext db = new QLDTDataContext();
         public fStaffMain()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             int i;
             flp_Phone.Controls.Clear();
             
-            dgv_sp.DataSource = db.DSSanPham();
+            dgv_sp.DataSource = db.LAYSP();
 
             for(i=0;i<dgv_sp.Rows.Count-1;i++)
             {
@@ -54,7 +54,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         void Click_Phone(object sender, EventArgs e)
         {
             UC_Phone sp = (UC_Phone)sender;
-            QLDTDataContext q = new QLDTDataContext();
+            /*QLDTDataContext q = new QLDTDataContext();
             lb_MaSP.Text= sp.MaSanPham;
             var query = (from item in q.SANPHAMs
                          where item.maSP == lb_MaSP.Text
@@ -68,14 +68,22 @@ namespace QuanLiCuaHangDienThoai.Forms
 
             btn_AddHDCT.Enabled = true;
 
-            //pictureBox1.image=;
-
+            //pictureBox1.image=;*/
+            lb_MaSP.Text = sp.MaSanPham;
+            string maSP = sp.MaSanPham;
+            lb_TenSP.Text = db.TenSP(maSP);
+            lb_NCC.Text = db.MaNCC_SP(maSP);
+            lb_DM.Text = db.MaDM_SP(maSP);
+            lb_Gia.Text = db.Gia_SP(maSP);
+            lb_SL.Text = db.SL_SP(maSP);
+            pictureBox1.Image = Image.FromFile(@"..\..\image\" + db.HinhAnh(maSP));
+            btn_AddHDCT.Enabled = true;
         }
         void Load_HDCT()
         {
             
             flp_HDCT.Controls.Clear();
-
+            
             QLDTDataContext q = new QLDTDataContext();
             var query = from item in q.HOADONCHITIETs
                         where item.maHD.ToString() == cbb_ChonHD.Text
@@ -92,13 +100,13 @@ namespace QuanLiCuaHangDienThoai.Forms
         }
         bool CheckSpInHd(string maHD, string maSP)
         {
-            QLDTDataContext q = new QLDTDataContext();
+         /*   QLDTDataContext q = new QLDTDataContext();
 
             var query = from item in q.HOADONCHITIETs
                         where maHD == item.maHD.ToString() && maSP == item.maSP
-                        select item;
+                        select item;*/
 
-            if (query.Count() == 0) return false;
+            if (db.CHECK_SP_HD(maHD,maSP).Count() == 0) return false;
             else
             {
                 MessageBox.Show("Sản phẩm đã có trong hđ");
@@ -108,10 +116,10 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btn_AddHDCT_Click(object sender, EventArgs e)
         {
             
-            QLDTDataContext q = new QLDTDataContext();
+            
             if(CheckSpInHd(cbb_ChonHD.Text,lb_MaSP.Text)==false)
             {
-                q.THEMHDCT(cbb_ChonHD.Text, lb_MaSP.Text, 0, 1, 0);
+               db.THEMHDCT(cbb_ChonHD.Text, lb_MaSP.Text,1);
                 MessageBox.Show("add success");
                 LoadData_HD_ChuaThanhToan();
             }
@@ -119,13 +127,13 @@ namespace QuanLiCuaHangDienThoai.Forms
             {
 
             }
-
+            
         }
 
         private void btn_NewHD_Click(object sender, EventArgs e)
         {
-            QLDTDataContext q = new QLDTDataContext();
-            q.THEMHD("duynhut", "abc", " ",dateTimePicker1.Value, 0, 0);
+           
+            db.THEMHD("duynhut", "abc", " ",dateTimePicker1.Value, 0, 0);
             MessageBox.Show("success");
         }
 
@@ -143,6 +151,11 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             fBill f = new fBill(cbb_ChonHD.Text);
             f.ShowDialog();
+        }
+
+        private void fStaffMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
