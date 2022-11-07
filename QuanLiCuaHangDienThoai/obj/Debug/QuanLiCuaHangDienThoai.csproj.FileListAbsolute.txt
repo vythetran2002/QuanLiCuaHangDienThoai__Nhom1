@@ -81,3 +81,4 @@ E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\Qua
 E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.UC_Phone.resources
 E:\Final CSDL\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.UC_PhoneOrder.resources
 E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.frmProfile.resources
+E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Forms.fBill.resources
