@@ -19,6 +19,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             InitializeComponent();
             LoadData_SP();
             LoadData_HD_ChuaThanhToan();
+            btn_AddHDCT.Enabled = false;
         }
 
         void LoadData_SP()
@@ -65,12 +66,14 @@ namespace QuanLiCuaHangDienThoai.Forms
             lb_Gia.Text = query.gia.ToString();
             lb_SL.Text = "Tồn kho: " + query.soLuong.ToString();
 
+            btn_AddHDCT.Enabled = true;
+
             //pictureBox1.image=;
 
         }
         void Load_HDCT()
         {
-            int i;
+            
             flp_HDCT.Controls.Clear();
 
             QLDTDataContext q = new QLDTDataContext();
@@ -104,7 +107,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         }
         private void btn_AddHDCT_Click(object sender, EventArgs e)
         {
-            int i;
+            
             QLDTDataContext q = new QLDTDataContext();
             if(CheckSpInHd(cbb_ChonHD.Text,lb_MaSP.Text)==false)
             {
@@ -138,7 +141,8 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
-
+            fBill f = new fBill(cbb_ChonHD.Text);
+            f.ShowDialog();
         }
     }
 }
