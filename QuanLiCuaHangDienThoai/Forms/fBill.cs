@@ -29,6 +29,8 @@ namespace QuanLiCuaHangDienThoai.Forms
 
             lb_ngayTaoHD.Text = query.ngayTao.ToString();
             lb_user.Text = query.username;
+            txtbox_TenKH.Text = query.tenKH;
+            txtbox_SDT.Text = query.sdt;
 
             var queryhdct = from item in q.HOADONCHITIETs
                             join item2 in q.SANPHAMs on item.maSP equals item2.maSP
@@ -73,6 +75,17 @@ namespace QuanLiCuaHangDienThoai.Forms
                 query.sdt = txtbox_SDT.Text;
                 q.SubmitChanges();
             }
+        }
+
+        private void btn_XuatHoaDon_Click(object sender, EventArgs e)
+        {
+            XuatBill f = new XuatBill(maHD);
+            f.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

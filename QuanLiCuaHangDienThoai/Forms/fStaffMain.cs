@@ -121,12 +121,12 @@ namespace QuanLiCuaHangDienThoai.Forms
         
         private void btn_NewHD_Click(object sender, EventArgs e)
         {
-            int n = blHDCT.CheckID_HDCT();
-            db.THEMHD(n,"duynhut", "abc", " ",dateTimePicker1.Value, 0, 0);
+            
+            db.THEMHD("duynhut", " ", " ",dateTimePicker1.Value, 0);
             MessageBox.Show("success");
             
             LoadData_HD_ChuaThanhToan();
-            cbb_ChonHD.Text = (n).ToString();
+            cbb_ChonHD.Text = db.LAYHD().LastOrDefault().maHD.ToString();
             flp_HDCT.Controls.Clear();
         }
 
