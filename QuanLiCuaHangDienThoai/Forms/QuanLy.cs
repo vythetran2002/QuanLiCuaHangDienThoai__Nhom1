@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using QuanLiCuaHangDienThoai.BS_Layer;
 //using System.Data.SqlClient;
 //using QuanLiCuaHangDienThoai.BS_Layer;
 
@@ -17,7 +17,12 @@ namespace QuanLiCuaHangDienThoai.Forms
     public partial class QuanLy : Form
     {
         bool themSP,themDM,themNCC,themTK;
+        BL_SanPham blSP = new BL_SanPham();
+        BL_DanhMuc blDM = new BL_DanhMuc();
+        BL_TaiKhoan blTK = new BL_TaiKhoan();
+        BL_NCC blNCC = new BL_NCC();
         QLDTDataContext db = new QLDTDataContext();
+
         BindingSource listSanPham = new BindingSource();
         BindingSource listDanhMuc = new BindingSource();
         BindingSource listNhaCC = new BindingSource();
@@ -248,11 +253,16 @@ namespace QuanLiCuaHangDienThoai.Forms
 
               
         }
+        
+        
+       
         private void button_ThemSP_Click(object sender, EventArgs e)
         {
             themSP = true;
             panel2.Enabled = true;
-            textBox_MaSP.ResetText();
+            textBox_MaSP.Enabled = false;
+            string maSP = blSP.CHECKID_SP();
+            this.textBox_MaSP.Text = maSP;
             textBox_TenSP.ResetText();
             textBox_Gia.ResetText();
             textBox_SoLuong.ResetText();
@@ -321,6 +331,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                       MessageBox.Show("Sản phẩm không thể thêm!");*/
                 try
                 {
+                    
                     String maDM = db.ID_MADM_TEN(comboBox_MaDM.SelectedItem.ToString());
                     String maNCC = db.ID_NCC_TEN(comboBox_MaNCC.SelectedItem.ToString());
                     db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), this.textBox_LinkPicture.Text, this.textBox_SoLuong.Text, maDM, maNCC);
@@ -426,7 +437,9 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void button_ThemNCC_Click(object sender, EventArgs e)
         {
-            textBox_MaNCC.ResetText();
+            textBox_MaNCC.Enabled=false;
+            string ncc = blNCC.CHECKID_NCC();
+            textBox_MaNCC.Text = ncc;
             textBox_TenNCC.ResetText();
             themNCC = true;
             button_ThemNCC.Enabled = false;
@@ -572,6 +585,31 @@ namespace QuanLiCuaHangDienThoai.Forms
             }
         }
 
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimSP_Click(object sender, EventArgs e)
+        {
+            dataGridView_SP.DataSource = blSP.TimSP(this.cbxTTSP.Text.Trim(),this.txtycSP.Text.Trim());
+        }
+
+        private void btnTimDM_Click(object sender, EventArgs e)
+        {
+            dataGridView_DM.DataSource = blDM.TimDM(this.cbbTTDM.Text.Trim(), this.txtYCDM.Text.Trim());
+        }
+
+        private void btnTIMNCC_Click(object sender, EventArgs e)
+        {
+            dataGridView_NhaCC.DataSource = blNCC.TimNCC(this.cbbTTNCC.Text.Trim(), this.txtYCNCC.Text.Trim());
+        }
+
+        private void btnTIMTK_Click(object sender, EventArgs e)
+        {
+            dataGridView_TK.DataSource = blTK.TimTK(this.cbbTTTK.Text.Trim(), this.txtYCTK.Text.Trim());
+        }
+
         private void button_LuuNCC_Click(object sender, EventArgs e)
         {
             if(themNCC)
@@ -639,7 +677,9 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void button_ThemDM_Click(object sender, EventArgs e)
         {
             themDM = true;
-            textBox_MaDM.ResetText();
+            textBox_MaDM.Enabled = false;
+            string maDM = blDM.CHECKID_DM();
+            textBox_MaDM.Text=maDM;
             textBox_TenDM.ResetText();
             button_ThemDM.Enabled = false;
             button_XoaDM.Enabled = false;

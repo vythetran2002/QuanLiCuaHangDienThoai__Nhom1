@@ -14,6 +14,8 @@ namespace QuanLiCuaHangDienThoai.Forms
     public partial class fStaffMain : Form
     {
         QLDTDataContext db = new QLDTDataContext();
+        BL_SanPham blSP = new BL_SanPham();
+        BL_HDCT blHDCT = new BL_HDCT();
         public fStaffMain()
         {
             InitializeComponent();
@@ -76,52 +78,39 @@ namespace QuanLiCuaHangDienThoai.Forms
             lb_DM.Text = db.MaDM_SP(maSP);
             lb_Gia.Text = db.Gia_SP(maSP);
             lb_SL.Text = db.SL_SP(maSP);
-            pictureBox1.Image = Image.FromFile(@"..\..\image\" + db.HinhAnh(maSP));
+            
+            string hinhanh = blSP.HinhAnh(maSP) ;
+            pictureBox1.Image = Image.FromFile(@"..\..\image\" + hinhanh);
             btn_AddHDCT.Enabled = true;
         }
         void Load_HDCT()
         {
-            
             flp_HDCT.Controls.Clear();
             
             QLDTDataContext q = new QLDTDataContext();
             var query = from item in q.HOADONCHITIETs
                         where item.maHD.ToString() == cbb_ChonHD.Text
-                        select item;
+                        select item;       
+                foreach (var item in query)
+                {
 
-            foreach(var item in query)
-            {
-
-                UC_PhoneOrder po = new UC_PhoneOrder(item.maHD.ToString(),item.maSP);
-                po.AutoSize = true;
-                flp_HDCT.Controls.Add(po);
-            }
+                    UC_PhoneOrder po = new UC_PhoneOrder(item.maHD.ToString(), item.maSP);
+                    po.AutoSize = true;
+                    flp_HDCT.Controls.Add(po);
+                }
 
         }
-        bool CheckSpInHd(string maHD, string maSP)
-        {
-         /*   QLDTDataContext q = new QLDTDataContext();
-
-            var query = from item in q.HOADONCHITIETs
-                        where maHD == item.maHD.ToString() && maSP == item.maSP
-                        select item;*/
-
-            if (db.CHECK_SP_HD(maHD,maSP).Count() == 0) return false;
-            else
-            {
-                MessageBox.Show("Sản phẩm đã có trong hđ");
-                return true;
-            }
-        }
+        
         private void btn_AddHDCT_Click(object sender, EventArgs e)
         {
             
             
-            if(CheckSpInHd(cbb_ChonHD.Text,lb_MaSP.Text)==false)
+            if(blSP.CheckSpInHd(cbb_ChonHD.Text,lb_MaSP.Text)==false)
             {
-               db.THEMHDCT(cbb_ChonHD.Text, lb_MaSP.Text,1);
+               db.THEMHDCT(Convert.ToInt32(cbb_ChonHD.Text), lb_MaSP.Text,1);
                 MessageBox.Show("add success");
-                LoadData_HD_ChuaThanhToan();
+                //LoadData_HD_ChuaThanhToan();
+                Load_HDCT();
             }
             else
             {
@@ -129,12 +118,16 @@ namespace QuanLiCuaHangDienThoai.Forms
             }
             
         }
-
+        
         private void btn_NewHD_Click(object sender, EventArgs e)
         {
-           
-            db.THEMHD("duynhut", "abc", " ",dateTimePicker1.Value, 0, 0);
+            int n = blHDCT.CheckID_HDCT();
+            db.THEMHD(n,"duynhut", "abc", " ",dateTimePicker1.Value, 0, 0);
             MessageBox.Show("success");
+            
+            LoadData_HD_ChuaThanhToan();
+            cbb_ChonHD.Text = (n).ToString();
+            flp_HDCT.Controls.Clear();
         }
 
         private void btn_LoadHDCT_Click(object sender, EventArgs e)
@@ -144,6 +137,7 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void cbb_ChonHD_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             Load_HDCT();
         }
 
@@ -151,6 +145,35 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             fBill f = new fBill(cbb_ChonHD.Text);
             f.ShowDialog();
+        }
+
+        private void btnXoaHDCT_Click(object sender, EventArgs e)
+        {
+
+                DialogResult traloi;
+                // Hiện hộp thoại hỏi đáp
+                traloi = MessageBox.Show("Chắc xóa hoá đơn này không?", "Trả lời",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (traloi == DialogResult.Yes)
+                {
+                    var query = from item in db.HOADONCHITIETs
+                                where item.maHD.ToString() == cbb_ChonHD.Text
+                                select item;
+                    foreach (var item in query)
+                    {
+                        db.XOAHDCT(item.maHD, item.maSP);
+                    }
+                    db.XOAHD(Convert.ToInt32(cbb_ChonHD.Text));
+                    MessageBox.Show("Xóa thành công!");
+                    LoadData_HD_ChuaThanhToan();
+                   
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+                }
+  
         }
 
         private void fStaffMain_Load(object sender, EventArgs e)

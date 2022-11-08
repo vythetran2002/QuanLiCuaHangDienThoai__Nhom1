@@ -23,6 +23,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             InitializeComponent();
             QLDTDataContext q = new QLDTDataContext();
+            BL_SanPham blSP = new BL_SanPham();
            /* var query = (from item in q.SANPHAMs
                          where item.maSP == maSP.Trim()
                          select item).SingleOrDefault();
@@ -32,7 +33,8 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.msp = maSP;
             lb_TenSP.Text = q.TenSP(maSP);
             lb_Gia.Text = q.Gia_SP(maSP);
-            pictureBox1.Image = Image.FromFile(@"..\..\image\" + q.HinhAnh(maSP));
+            string hinhanh = blSP.HinhAnh(maSP);
+            pictureBox1.Image = Image.FromFile(@"..\..\image\" + hinhanh);
             //load picture
             //pictureBox1.Image==
             panel1.Enabled = false;

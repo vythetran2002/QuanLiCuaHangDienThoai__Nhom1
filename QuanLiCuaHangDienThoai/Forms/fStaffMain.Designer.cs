@@ -46,6 +46,7 @@
             this.lb_MaHD = new System.Windows.Forms.Label();
             this.dgv_sp = new System.Windows.Forms.DataGridView();
             this.cbb_ChonHD = new System.Windows.Forms.ComboBox();
+            this.btnXoaHDCT = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sp)).BeginInit();
@@ -62,7 +63,7 @@
             this.panel1.Controls.Add(this.lb_TenSP);
             this.panel1.Controls.Add(this.lb_NCC);
             this.panel1.Location = new System.Drawing.Point(714, 46);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(334, 129);
             this.panel1.TabIndex = 13;
@@ -81,7 +82,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.pictureBox1.Location = new System.Drawing.Point(5, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(70, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,7 +112,7 @@
             // btn_AddHDCT
             // 
             this.btn_AddHDCT.Location = new System.Drawing.Point(208, 103);
-            this.btn_AddHDCT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_AddHDCT.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AddHDCT.Name = "btn_AddHDCT";
             this.btn_AddHDCT.Size = new System.Drawing.Size(126, 25);
             this.btn_AddHDCT.TabIndex = 7;
@@ -155,7 +156,7 @@
             this.flp_Phone.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flp_Phone.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.flp_Phone.Location = new System.Drawing.Point(25, 45);
-            this.flp_Phone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flp_Phone.Margin = new System.Windows.Forms.Padding(2);
             this.flp_Phone.Name = "flp_Phone";
             this.flp_Phone.Size = new System.Drawing.Size(685, 420);
             this.flp_Phone.TabIndex = 10;
@@ -163,7 +164,7 @@
             // btn_ThanhToan
             // 
             this.btn_ThanhToan.Location = new System.Drawing.Point(957, 191);
-            this.btn_ThanhToan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_ThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ThanhToan.Name = "btn_ThanhToan";
             this.btn_ThanhToan.Size = new System.Drawing.Size(89, 31);
             this.btn_ThanhToan.TabIndex = 18;
@@ -174,7 +175,7 @@
             // btn_NewHD
             // 
             this.btn_NewHD.Location = new System.Drawing.Point(714, 191);
-            this.btn_NewHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_NewHD.Margin = new System.Windows.Forms.Padding(2);
             this.btn_NewHD.Name = "btn_NewHD";
             this.btn_NewHD.Size = new System.Drawing.Size(85, 31);
             this.btn_NewHD.TabIndex = 17;
@@ -185,7 +186,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(738, 19);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
             this.dateTimePicker1.TabIndex = 16;
@@ -196,7 +197,7 @@
             this.flp_HDCT.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flp_HDCT.BackColor = System.Drawing.SystemColors.ControlLight;
             this.flp_HDCT.Location = new System.Drawing.Point(714, 260);
-            this.flp_HDCT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flp_HDCT.Margin = new System.Windows.Forms.Padding(2);
             this.flp_HDCT.Name = "flp_HDCT";
             this.flp_HDCT.Size = new System.Drawing.Size(337, 207);
             this.flp_HDCT.TabIndex = 15;
@@ -204,7 +205,7 @@
             // btn_LoadHDCT
             // 
             this.btn_LoadHDCT.Location = new System.Drawing.Point(973, 226);
-            this.btn_LoadHDCT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_LoadHDCT.Margin = new System.Windows.Forms.Padding(2);
             this.btn_LoadHDCT.Name = "btn_LoadHDCT";
             this.btn_LoadHDCT.Size = new System.Drawing.Size(73, 30);
             this.btn_LoadHDCT.TabIndex = 14;
@@ -226,7 +227,7 @@
             // 
             this.dgv_sp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_sp.Location = new System.Drawing.Point(27, 46);
-            this.dgv_sp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_sp.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_sp.Name = "dgv_sp";
             this.dgv_sp.RowHeadersWidth = 62;
             this.dgv_sp.RowTemplate.Height = 28;
@@ -237,17 +238,29 @@
             // 
             this.cbb_ChonHD.FormattingEnabled = true;
             this.cbb_ChonHD.Location = new System.Drawing.Point(760, 233);
-            this.cbb_ChonHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbb_ChonHD.Margin = new System.Windows.Forms.Padding(2);
             this.cbb_ChonHD.Name = "cbb_ChonHD";
             this.cbb_ChonHD.Size = new System.Drawing.Size(82, 21);
             this.cbb_ChonHD.TabIndex = 20;
             this.cbb_ChonHD.SelectedIndexChanged += new System.EventHandler(this.cbb_ChonHD_SelectedIndexChanged);
+            // 
+            // btnXoaHDCT
+            // 
+            this.btnXoaHDCT.Location = new System.Drawing.Point(896, 227);
+            this.btnXoaHDCT.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoaHDCT.Name = "btnXoaHDCT";
+            this.btnXoaHDCT.Size = new System.Drawing.Size(73, 30);
+            this.btnXoaHDCT.TabIndex = 21;
+            this.btnXoaHDCT.Text = "Xoá HĐCT";
+            this.btnXoaHDCT.UseVisualStyleBackColor = true;
+            this.btnXoaHDCT.Click += new System.EventHandler(this.btnXoaHDCT_Click);
             // 
             // fStaffMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 473);
+            this.Controls.Add(this.btnXoaHDCT);
             this.Controls.Add(this.cbb_ChonHD);
             this.Controls.Add(this.lb_MaHD);
             this.Controls.Add(this.panel1);
@@ -258,7 +271,7 @@
             this.Controls.Add(this.flp_HDCT);
             this.Controls.Add(this.btn_LoadHDCT);
             this.Controls.Add(this.dgv_sp);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fStaffMain";
             this.Text = "fStaffMain";
             this.Load += new System.EventHandler(this.fStaffMain_Load);
@@ -291,5 +304,6 @@
         private System.Windows.Forms.DataGridView dgv_sp;
         private System.Windows.Forms.Label lb_SL;
         private System.Windows.Forms.ComboBox cbb_ChonHD;
+        private System.Windows.Forms.Button btnXoaHDCT;
     }
 }

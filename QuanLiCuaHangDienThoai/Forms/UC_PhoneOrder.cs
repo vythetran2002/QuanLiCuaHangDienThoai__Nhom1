@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using QuanLiCuaHangDienThoai.BS_Layer;
 namespace QuanLiCuaHangDienThoai.Forms
 {
     public partial class UC_PhoneOrder : UserControl
     {
         QLDTDataContext db = new QLDTDataContext();
+        BL_SanPham blSP = new BL_SanPham();
         public UC_PhoneOrder()
         {
             InitializeComponent();
@@ -45,7 +46,8 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.mahd = query.maHD.ToString();
             this.masp = query.maSP;
             this.gia = query.gia.ToString();
-            pictureBox1.Image = Image.FromFile(@"..\..\image\" + db.HinhAnh(maSP));
+            string hinhanh = blSP.HinhAnh(maSP);
+            pictureBox1.Image = Image.FromFile(@"..\..\image\" + hinhanh);
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -70,7 +72,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                 }
                 else
                 {
-                    db.XOAHDCT(mahd,masp);
+                    db.XOAHDCT(Convert.ToInt32(mahd),masp);
                 }
             }
         }
