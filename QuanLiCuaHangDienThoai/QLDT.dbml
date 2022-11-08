@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLiCuaHangDienThoai" Class="QLDTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GB8LVRE\SQLEXPRESS;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DANHMUC" Member="DANHMUCs">
     <Type Name="DANHMUC">
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -196,16 +196,6 @@
   <Function Name="dbo.ThemDM" Method="ThemDM">
     <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="tenDM" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="dbo.THEMHD" Method="THEMHD">
-    <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
-    <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="tenKH" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="sdt" Type="System.String" DbType="NVarChar(50)" />
-    <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="tongTien" Type="System.Int32" DbType="Int" />
-    <Parameter Name="status" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.THEMHDCT" Method="THEMHDCT">
@@ -445,5 +435,141 @@
       <Column Name="loai" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.TIMNCC_MANCC" Method="TIMNCC_MANCC1">
+    <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMNCC_MANCCResult1">
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMTK_TK" Method="TIMTK_TK1">
+    <Parameter Name="useName" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMTK_TKResult1">
+      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="mk" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="loai" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMNCC_TENNCC" Method="TIMNCC_TENNCC1">
+    <Parameter Name="tenNCC" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMNCC_TENNCCResult1">
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMSP_MADM" Method="TIMSP_MADM1">
+    <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMSP_MADMResult1">
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMSP_MANCC" Method="TIMSP_MANCC1">
+    <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMSP_MANCCResult1">
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMSP_MASP" Method="TIMSP_MASP1">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMSP_MASPResult1">
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMSP_TEN" Method="TIMSP_TEN1">
+    <Parameter Name="tenSP" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMSP_TENResult1">
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMTK_EMAIL" Method="TIMTK_EMAIL1">
+    <Parameter Name="email" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMTK_EMAILResult1">
+      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="mk" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="loai" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMTK_LOAI" Method="TIMTK_LOAI1">
+    <Parameter Name="loai" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMTK_LOAIResult1">
+      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="mk" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="loai" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMTK_SDT" Method="TIMTK_SDT1">
+    <Parameter Name="sdt" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMTK_SDTResult1">
+      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="mk" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ten" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngaySinh" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="loai" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMDM_MADM" Method="TIMDM_MADM1">
+    <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMDM_MADMResult1">
+      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMDM_TENDM" Method="TIMDM_TENDM1">
+    <Parameter Name="tenDM" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMDM_TENDMResult1">
+      <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.THEMHD" Method="THEMHD">
+    <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenKH" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="sdt" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="tongTien" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>
