@@ -114,7 +114,10 @@ namespace QuanLiCuaHangDienThoai.Forms
         }
         void LoadDoanhThu_byDate()
         {
-            dataGridView_DT.DataSource = db.LAYHD();
+            //dataGridView_DT.DataSource = db.DOANH_THU_THEO_NGAY(dateTimePicker_FromDate.Value.Date, dateTimePicker_ToDate.Value.Date);
+            textBox1.Text = dateTimePicker_FromDate.Value.Day.ToString();
+            textBox2.Text = dateTimePicker_ToDate.Value.Date.ToString();
+
         }//!sửa
         void SanPhamBinding()
         {
@@ -169,6 +172,10 @@ namespace QuanLiCuaHangDienThoai.Forms
             DateTime today = DateTime.Now;
             dateTimePicker_FromDate.Value = new DateTime(today.Year, today.Month, 1);
             dateTimePicker_ToDate.Value = dateTimePicker_FromDate.Value.AddMonths(1).AddDays(-1);
+        }
+        void Thong_Ke_Doanh_Thu_Theo_Ngay(DateTime checkIn,DateTime checkOut)
+        {
+            dataGridView_TK.DataSource = db.DOANH_THU_THEO_NGAY(checkIn, checkOut);
         }
         /*
         //string Tim_ID_DM_Theo_Ten(string ten, string database)
@@ -608,6 +615,13 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btnTIMTK_Click(object sender, EventArgs e)
         {
             dataGridView_TK.DataSource = blTK.TimTK(this.cbbTTTK.Text.Trim(), this.txtYCTK.Text.Trim());
+        }
+
+        private void button_ThongKe_Click(object sender, EventArgs e)
+        {
+            //LoadDoanhThu_byDate();
+            dataGridView_DT.DataSource = db.DOANH_THU_THEO_NGAY(dateTimePicker_FromDate.Value.Date, dateTimePicker_ToDate.Value.Date);
+
         }
 
         private void button_LuuNCC_Click(object sender, EventArgs e)
