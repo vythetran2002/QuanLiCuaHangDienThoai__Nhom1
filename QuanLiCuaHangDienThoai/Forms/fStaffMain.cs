@@ -16,12 +16,14 @@ namespace QuanLiCuaHangDienThoai.Forms
         QLDTDataContext db = new QLDTDataContext();
         BL_SanPham blSP = new BL_SanPham();
         BL_HDCT blHDCT = new BL_HDCT();
+        public string tenNV;
         public fStaffMain()
         {
             InitializeComponent();
             LoadData_SP();
             LoadData_HD_ChuaThanhToan();
             btn_AddHDCT.Enabled = false;
+            
         }
 
         void LoadData_SP()
@@ -122,7 +124,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btn_NewHD_Click(object sender, EventArgs e)
         {
             
-            db.THEMHD("duynhut", " ", " ",dateTimePicker1.Value, 0);
+            db.THEMHD(tenNV, " ", " ",dateTimePicker1.Value, 0,0);
             MessageBox.Show("success");
             
             LoadData_HD_ChuaThanhToan();
@@ -149,36 +151,21 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void btnXoaHDCT_Click(object sender, EventArgs e)
         {
+            blHDCT.XoaDHCT(cbb_ChonHD.Text);
+            LoadData_HD_ChuaThanhToan();
 
-                DialogResult traloi;
-                // Hiện hộp thoại hỏi đáp
-                traloi = MessageBox.Show("Chắc xóa hoá đơn này không?", "Trả lời",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (traloi == DialogResult.Yes)
-                {
-                    var query = from item in db.HOADONCHITIETs
-                                where item.maHD.ToString() == cbb_ChonHD.Text
-                                select item;
-                    foreach (var item in query)
-                    {
-                        db.XOAHDCT(item.maHD, item.maSP);
-                    }
-                    db.XOAHD(Convert.ToInt32(cbb_ChonHD.Text));
-                    MessageBox.Show("Xóa thành công!");
-                    LoadData_HD_ChuaThanhToan();
-                   
-                }
-                else
-                {
-                    // Thông báo
-                    MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
-                }
-  
         }
 
         private void fStaffMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmProfile fr = new frmProfile();
+            fr.usename = tenNV;
+            fr.ShowDialog();
         }
     }
 }

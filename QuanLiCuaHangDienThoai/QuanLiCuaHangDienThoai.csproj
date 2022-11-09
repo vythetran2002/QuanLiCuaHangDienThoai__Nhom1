@@ -74,6 +74,7 @@
     <Compile Include="BS_Layer\BLBill.cs" />
     <Compile Include="BS_Layer\BL_DanhMuc.cs" />
     <Compile Include="BS_Layer\BL_HDCT.cs" />
+    <Compile Include="BS_Layer\BL_Login.cs" />
     <Compile Include="BS_Layer\BL_NCC.cs" />
     <Compile Include="BS_Layer\BL_SanPham.cs" />
     <Compile Include="BS_Layer\BL_TaiKhoan.cs" />
@@ -137,6 +138,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDT.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLiCuaHangDienThoaiDataSet.cs">
+      <DependentUpon>QuanLiCuaHangDienThoaiDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="QuanLiCuaHangDienThoaiDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

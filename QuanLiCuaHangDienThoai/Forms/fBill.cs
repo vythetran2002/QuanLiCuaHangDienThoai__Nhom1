@@ -87,5 +87,10 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             this.Close();
         }
+
+        private void fBill_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -3,27 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLiCuaHangDienThoai.BS_Layer
 {
     class BL_HDCT
     {
         QLDTDataContext db = new QLDTDataContext();
-        public int CheckID_HDCT()
+       
+        public void XoaDHCT(String maHD)
         {
-            int n = db.LAYHD().Count();
-            var query = db.LAYHD();
-            int i = 1;
-            foreach (var j in query)
+            DialogResult traloi;
+            // Hiện hộp thoại hỏi đáp
+            traloi = MessageBox.Show("Chắc xóa hoá đơn này không?", "Trả lời",
+            MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (traloi == DialogResult.Yes)
             {
-                if (j.maHD != i)
+                var query = from item in db.HOADONCHITIETs
+                            where item.maHD.ToString() == maHD
+                            select item;
+                foreach (var item in query)
                 {
-                    return i;
+                    db.XOAHDCT(item.maHD, item.maSP);
                 }
-                else { i += 1; continue; }
-            }
+                db.XOAHD(Convert.ToInt32(maHD));
+                MessageBox.Show("Xóa thành công!");
+               
 
-            return n + 1;
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Không thực hiện việc xóa mẫu tin!");
+            }
         }
     }
 }
