@@ -40,7 +40,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                     {
                         fStaffMain staff = new fStaffMain();
 
-                        staff.tenNV = tendangnhap;
+                        staff.username= tendangnhap;
                         this.Hide();
                         staff.ShowDialog();
                         this.Show();

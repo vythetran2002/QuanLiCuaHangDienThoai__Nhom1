@@ -79,6 +79,8 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void btn_XuatHoaDon_Click(object sender, EventArgs e)
         {
+            QLDTDataContext db = new QLDTDataContext();
+            db.update_status(int.Parse(maHD));
             XuatBill f = new XuatBill(maHD);
             f.ShowDialog();
         }

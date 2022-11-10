@@ -503,4 +503,8 @@
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.String" />
   </Function>
+  <Function Name="dbo.update_status" Method="update_status">
+    <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

@@ -16,16 +16,22 @@ namespace QuanLiCuaHangDienThoai.Forms
         QLDTDataContext db = new QLDTDataContext();
         BL_SanPham blSP = new BL_SanPham();
         BL_HDCT blHDCT = new BL_HDCT();
-        public string tenNV;
+        public string username;
         public fStaffMain()
         {
             InitializeComponent();
             LoadData_SP();
             LoadData_HD_ChuaThanhToan();
             btn_AddHDCT.Enabled = false;
-            
+           
         }
-
+        string Lay_Ten_NV(string username)
+        {
+            var query = (from iten in db.TAIKHOANs
+                         where iten.username == username
+                         select iten.ten).SingleOrDefault();
+            return query;
+                      }
         void LoadData_SP()
         {
             int i;
@@ -169,13 +175,13 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void fStaffMain_Load(object sender, EventArgs e)
         {
-
+            lbtennv.Text = Lay_Ten_NV(username);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             frmProfile fr = new frmProfile();
-            fr.usename = tenNV;
+            fr.usename = username;
             fr.ShowDialog();
         }
     }
