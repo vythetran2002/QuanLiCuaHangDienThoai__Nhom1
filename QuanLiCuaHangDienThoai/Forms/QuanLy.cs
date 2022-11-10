@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLiCuaHangDienThoai.BS_Layer;
+using System.IO;
 //using System.Data.SqlClient;
 //using QuanLiCuaHangDienThoai.BS_Layer;
 
@@ -16,6 +17,7 @@ namespace QuanLiCuaHangDienThoai.Forms
 {
     public partial class QuanLy : Form
     {
+        string linkHinhAnh;
         bool themSP,themDM,themNCC,themTK;
         BL_SanPham blSP = new BL_SanPham();
         BL_DanhMuc blDM = new BL_DanhMuc();
@@ -177,6 +179,30 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             dataGridView_TK.DataSource = db.DOANH_THU_THEO_NGAY(checkIn, checkOut);
         }
+        private Image ByteToImg(string byteString)
+        {
+            byte[] imgBytes = Convert.FromBase64String(byteString);
+            MemoryStream ms = new MemoryStream(imgBytes, 0, imgBytes.Length);
+            ms.Write(imgBytes, 0, imgBytes.Length);
+            Image image = Image.FromStream(ms, true);
+            return image;
+        }
+        private byte[] ImgToByte()
+        {
+            try
+            {
+                FileStream fs;
+                fs = new FileStream(linkHinhAnh, FileMode.Open, FileAccess.Read);
+                byte[] picbyte = new byte[fs.Length];
+                fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
+                fs.Close();
+                return picbyte;
+            }
+            catch
+            { 
+                return null;
+            }
+        }
         /*
         //string Tim_ID_DM_Theo_Ten(string ten, string database)
         //{
@@ -257,12 +283,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             {
                 MessageBox.Show("Không xóa được. Lỗi rồi!");
             }
-
-              
         }
-        
-        
-       
         private void button_ThemSP_Click(object sender, EventArgs e)
         {
             themSP = true;
@@ -302,12 +323,25 @@ namespace QuanLiCuaHangDienThoai.Forms
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 textBox_LinkPicture.Text = openFile.FileName;
+                linkHinhAnh = openFile.FileName;
+                pictureBox1.Image = Image.FromFile(linkHinhAnh);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
 
         private void dataGridView_SP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dataGridView_SP.CurrentRow.Cells["hinhAnh"].Value.ToString() != "")
+            {
+                pictureBox1.Image = ByteToImg(dataGridView_SP.CurrentRow.Cells["hinhAnh"].Value.ToString());
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            else
+            {
+                pictureBox1.Image = null;
+                linkHinhAnh = null;
+            }
+                
         }
 
         private void button_ReloadSP_Click(object sender, EventArgs e)
@@ -341,7 +375,10 @@ namespace QuanLiCuaHangDienThoai.Forms
                     
                     String maDM = db.ID_MADM_TEN(comboBox_MaDM.SelectedItem.ToString());
                     String maNCC = db.ID_NCC_TEN(comboBox_MaNCC.SelectedItem.ToString());
-                    db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), this.textBox_LinkPicture.Text, this.textBox_SoLuong.Text, maDM, maNCC);
+                    if (ImgToByte() != null)
+                        db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), Convert.ToBase64String(ImgToByte()), this.textBox_SoLuong.Text, maDM, maNCC);
+                    else
+                        db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), "", this.textBox_SoLuong.Text, maDM, maNCC);
                     LoadSanPham();
                     MessageBox.Show("Thêm thành công");
                 }
@@ -378,7 +415,10 @@ namespace QuanLiCuaHangDienThoai.Forms
                 {
                     string maDM = db.ID_MADM_TEN(comboBox_MaDM.SelectedItem.ToString());
                     string maNCC = db.ID_NCC_TEN(comboBox_MaNCC.SelectedItem.ToString());
-                    db.CAPNHATSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), this.textBox_LinkPicture.Text, this.textBox_SoLuong.Text, maDM, maNCC);
+                    if (ImgToByte() != null)
+                        db.CAPNHATSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), Convert.ToBase64String(ImgToByte()), this.textBox_SoLuong.Text, maDM, maNCC);
+                    else
+                        db.CAPNHATSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), "", this.textBox_SoLuong.Text, maDM, maNCC);
                     LoadSanPham();
                     MessageBox.Show("Cập nhật thành công");
                 }
