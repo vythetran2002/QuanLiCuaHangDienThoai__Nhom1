@@ -40,8 +40,6 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTao_DoanhThu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker_ToDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,7 +67,6 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.MaDMuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaNCC1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox_LinkPicture = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -211,10 +208,10 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.tabControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(2, 6);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(977, 660);
+            this.tabControl1.Size = new System.Drawing.Size(977, 722);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage_DoanhThu
@@ -222,10 +219,10 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.tabPage_DoanhThu.Controls.Add(this.dataGridView_DT);
             this.tabPage_DoanhThu.Controls.Add(this.panel1);
             this.tabPage_DoanhThu.Location = new System.Drawing.Point(4, 24);
-            this.tabPage_DoanhThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_DoanhThu.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_DoanhThu.Name = "tabPage_DoanhThu";
-            this.tabPage_DoanhThu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage_DoanhThu.Size = new System.Drawing.Size(969, 477);
+            this.tabPage_DoanhThu.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage_DoanhThu.Size = new System.Drawing.Size(969, 694);
             this.tabPage_DoanhThu.TabIndex = 0;
             this.tabPage_DoanhThu.Text = "Doanh thu";
             this.tabPage_DoanhThu.UseVisualStyleBackColor = true;
@@ -244,12 +241,13 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.TongTien,
             this.NgayTao_DoanhThu});
             this.dataGridView_DT.Location = new System.Drawing.Point(258, 6);
-            this.dataGridView_DT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_DT.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_DT.Name = "dataGridView_DT";
             this.dataGridView_DT.RowHeadersWidth = 51;
             this.dataGridView_DT.RowTemplate.Height = 24;
-            this.dataGridView_DT.Size = new System.Drawing.Size(708, 472);
+            this.dataGridView_DT.Size = new System.Drawing.Size(708, 684);
             this.dataGridView_DT.TabIndex = 1;
+            this.dataGridView_DT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_DT_CellContentClick);
             // 
             // MaHD
             // 
@@ -303,39 +301,21 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.dateTimePicker_ToDate);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dateTimePicker_FromDate);
             this.panel1.Controls.Add(this.button_ThongKe);
             this.panel1.Location = new System.Drawing.Point(4, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(232, 242);
+            this.panel1.Size = new System.Drawing.Size(232, 304);
             this.panel1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(15, 129);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(205, 21);
-            this.textBox2.TabIndex = 6;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(15, 52);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 21);
-            this.textBox1.TabIndex = 5;
             // 
             // dateTimePicker_ToDate
             // 
             this.dateTimePicker_ToDate.Location = new System.Drawing.Point(15, 105);
-            this.dateTimePicker_ToDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker_ToDate.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker_ToDate.Name = "dateTimePicker_ToDate";
             this.dateTimePicker_ToDate.Size = new System.Drawing.Size(205, 21);
             this.dateTimePicker_ToDate.TabIndex = 4;
@@ -363,7 +343,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // dateTimePicker_FromDate
             // 
             this.dateTimePicker_FromDate.Location = new System.Drawing.Point(15, 28);
-            this.dateTimePicker_FromDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker_FromDate.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker_FromDate.Name = "dateTimePicker_FromDate";
             this.dateTimePicker_FromDate.Size = new System.Drawing.Size(205, 21);
             this.dateTimePicker_FromDate.TabIndex = 1;
@@ -371,7 +351,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_ThongKe
             // 
             this.button_ThongKe.Location = new System.Drawing.Point(80, 179);
-            this.button_ThongKe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_ThongKe.Margin = new System.Windows.Forms.Padding(2);
             this.button_ThongKe.Name = "button_ThongKe";
             this.button_ThongKe.Size = new System.Drawing.Size(70, 45);
             this.button_ThongKe.TabIndex = 0;
@@ -386,34 +366,35 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.tabPage_SanPham.Controls.Add(this.dataGridView_SP);
             this.tabPage_SanPham.Controls.Add(this.panel2);
             this.tabPage_SanPham.Location = new System.Drawing.Point(4, 24);
-            this.tabPage_SanPham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_SanPham.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_SanPham.Name = "tabPage_SanPham";
-            this.tabPage_SanPham.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage_SanPham.Size = new System.Drawing.Size(969, 632);
+            this.tabPage_SanPham.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage_SanPham.Size = new System.Drawing.Size(969, 694);
             this.tabPage_SanPham.TabIndex = 1;
             this.tabPage_SanPham.Text = "Sản Phẩm";
             this.tabPage_SanPham.UseVisualStyleBackColor = true;
             // 
             // panel13
             // 
+            this.panel13.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel13.BackColor = System.Drawing.Color.SteelBlue;
             this.panel13.Controls.Add(this.btnTimSP);
             this.panel13.Controls.Add(this.label21);
             this.panel13.Controls.Add(this.lab);
             this.panel13.Controls.Add(this.txtycSP);
             this.panel13.Controls.Add(this.cbxTTSP);
-            this.panel13.Location = new System.Drawing.Point(6, 357);
+            this.panel13.Location = new System.Drawing.Point(6, 5);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(172, 135);
+            this.panel13.Size = new System.Drawing.Size(320, 166);
             this.panel13.TabIndex = 52;
             // 
             // btnTimSP
             // 
             this.btnTimSP.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimSP.Location = new System.Drawing.Point(8, 94);
-            this.btnTimSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimSP.Location = new System.Drawing.Point(111, 118);
+            this.btnTimSP.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimSP.Name = "btnTimSP";
-            this.btnTimSP.Size = new System.Drawing.Size(71, 32);
+            this.btnTimSP.Size = new System.Drawing.Size(100, 32);
             this.btnTimSP.TabIndex = 5;
             this.btnTimSP.Text = "Tìm";
             this.btnTimSP.UseVisualStyleBackColor = true;
@@ -424,7 +405,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(10, 48);
+            this.label21.Location = new System.Drawing.Point(14, 57);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(57, 17);
             this.label21.TabIndex = 51;
@@ -435,7 +416,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.lab.AutoSize = true;
             this.lab.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lab.ForeColor = System.Drawing.Color.White;
-            this.lab.Location = new System.Drawing.Point(3, 2);
+            this.lab.Location = new System.Drawing.Point(14, 11);
             this.lab.Name = "lab";
             this.lab.Size = new System.Drawing.Size(78, 17);
             this.lab.TabIndex = 50;
@@ -443,9 +424,9 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             // txtycSP
             // 
-            this.txtycSP.Location = new System.Drawing.Point(6, 68);
+            this.txtycSP.Location = new System.Drawing.Point(17, 77);
             this.txtycSP.Name = "txtycSP";
-            this.txtycSP.Size = new System.Drawing.Size(127, 21);
+            this.txtycSP.Size = new System.Drawing.Size(286, 21);
             this.txtycSP.TabIndex = 49;
             // 
             // cbxTTSP
@@ -457,13 +438,14 @@ namespace QuanLiCuaHangDienThoai.Forms
             "Tên SP",
             "Mã DM",
             "Mã NCC"});
-            this.cbxTTSP.Location = new System.Drawing.Point(6, 22);
+            this.cbxTTSP.Location = new System.Drawing.Point(17, 31);
             this.cbxTTSP.Name = "cbxTTSP";
-            this.cbxTTSP.Size = new System.Drawing.Size(108, 23);
+            this.cbxTTSP.Size = new System.Drawing.Size(286, 23);
             this.cbxTTSP.TabIndex = 48;
             // 
             // panel6
             // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel6.BackColor = System.Drawing.Color.SteelBlue;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.btnHuy);
@@ -471,19 +453,19 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.panel6.Controls.Add(this.button_XoaSP);
             this.panel6.Controls.Add(this.button_SuaSP);
             this.panel6.Controls.Add(this.button_LuuSP);
-            this.panel6.Location = new System.Drawing.Point(6, 497);
-            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel6.Location = new System.Drawing.Point(6, 545);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(171, 131);
+            this.panel6.Size = new System.Drawing.Size(321, 145);
             this.panel6.TabIndex = 11;
             // 
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.Location = new System.Drawing.Point(47, 82);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuy.Location = new System.Drawing.Point(177, 85);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(74, 32);
+            this.btnHuy.Size = new System.Drawing.Size(71, 32);
             this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Huỷ";
             this.btnHuy.UseVisualStyleBackColor = true;
@@ -492,8 +474,8 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_ThemSP
             // 
             this.button_ThemSP.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ThemSP.Location = new System.Drawing.Point(10, 10);
-            this.button_ThemSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_ThemSP.Location = new System.Drawing.Point(14, 26);
+            this.button_ThemSP.Margin = new System.Windows.Forms.Padding(2);
             this.button_ThemSP.Name = "button_ThemSP";
             this.button_ThemSP.Size = new System.Drawing.Size(74, 32);
             this.button_ThemSP.TabIndex = 0;
@@ -504,8 +486,8 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_XoaSP
             // 
             this.button_XoaSP.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_XoaSP.Location = new System.Drawing.Point(10, 46);
-            this.button_XoaSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_XoaSP.Location = new System.Drawing.Point(123, 26);
+            this.button_XoaSP.Margin = new System.Windows.Forms.Padding(2);
             this.button_XoaSP.Name = "button_XoaSP";
             this.button_XoaSP.Size = new System.Drawing.Size(74, 32);
             this.button_XoaSP.TabIndex = 1;
@@ -516,8 +498,8 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_SuaSP
             // 
             this.button_SuaSP.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SuaSP.Location = new System.Drawing.Point(88, 10);
-            this.button_SuaSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_SuaSP.Location = new System.Drawing.Point(231, 26);
+            this.button_SuaSP.Margin = new System.Windows.Forms.Padding(2);
             this.button_SuaSP.Name = "button_SuaSP";
             this.button_SuaSP.Size = new System.Drawing.Size(71, 32);
             this.button_SuaSP.TabIndex = 2;
@@ -528,8 +510,8 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_LuuSP
             // 
             this.button_LuuSP.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LuuSP.Location = new System.Drawing.Point(88, 46);
-            this.button_LuuSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_LuuSP.Location = new System.Drawing.Point(70, 85);
+            this.button_LuuSP.Margin = new System.Windows.Forms.Padding(2);
             this.button_LuuSP.Name = "button_LuuSP";
             this.button_LuuSP.Size = new System.Drawing.Size(71, 32);
             this.button_LuuSP.TabIndex = 3;
@@ -553,13 +535,13 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.MaDMuc,
             this.MaNCC1});
             this.dataGridView_SP.Location = new System.Drawing.Point(351, 4);
-            this.dataGridView_SP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_SP.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_SP.Name = "dataGridView_SP";
             this.dataGridView_SP.RowHeadersWidth = 51;
             this.dataGridView_SP.RowTemplate.Height = 24;
-            this.dataGridView_SP.Size = new System.Drawing.Size(616, 628);
+            this.dataGridView_SP.Size = new System.Drawing.Size(616, 686);
             this.dataGridView_SP.TabIndex = 1;
-            this.dataGridView_SP.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_SP_CellContentClick);
+            this.dataGridView_SP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_SP_CellContentClick);
             // 
             // MaSP
             // 
@@ -591,6 +573,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.hinhanh.HeaderText = "Hình Ảnh";
             this.hinhanh.MinimumWidth = 6;
             this.hinhanh.Name = "hinhanh";
+            this.hinhanh.Visible = false;
             this.hinhanh.Width = 125;
             // 
             // SoLuong
@@ -603,26 +586,25 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             // MaDMuc
             // 
+            this.MaDMuc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MaDMuc.DataPropertyName = "maDM";
             this.MaDMuc.HeaderText = "Mã Danh Mục";
             this.MaDMuc.MinimumWidth = 6;
             this.MaDMuc.Name = "MaDMuc";
-            this.MaDMuc.Width = 125;
             // 
             // MaNCC1
             // 
+            this.MaNCC1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.MaNCC1.DataPropertyName = "maNCC";
             this.MaNCC1.HeaderText = "Mã NCC";
             this.MaNCC1.MinimumWidth = 6;
             this.MaNCC1.Name = "MaNCC1";
-            this.MaNCC1.Width = 125;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.textBox_LinkPicture);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -636,38 +618,31 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.panel2.Controls.Add(this.textBox_Gia);
             this.panel2.Controls.Add(this.textBox_TenSP);
             this.panel2.Controls.Add(this.textBox_MaSP);
-            this.panel2.Location = new System.Drawing.Point(5, 6);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(6, 191);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(172, 346);
+            this.panel2.Size = new System.Drawing.Size(321, 332);
             this.panel2.TabIndex = 0;
-            // 
-            // textBox_LinkPicture
-            // 
-            this.textBox_LinkPicture.Location = new System.Drawing.Point(13, 285);
-            this.textBox_LinkPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox_LinkPicture.Name = "textBox_LinkPicture";
-            this.textBox_LinkPicture.Size = new System.Drawing.Size(147, 21);
-            this.textBox_LinkPicture.TabIndex = 19;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(9, 127);
+            this.label8.Location = new System.Drawing.Point(12, 139);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 15);
+            this.label8.Size = new System.Drawing.Size(48, 15);
             this.label8.TabIndex = 18;
             this.label8.Text = "Nhà CC";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(9, 104);
+            this.label7.Location = new System.Drawing.Point(12, 116);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 15);
@@ -677,33 +652,33 @@ namespace QuanLiCuaHangDienThoai.Forms
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(8, 78);
+            this.label6.Location = new System.Drawing.Point(11, 90);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 15);
+            this.label6.Size = new System.Drawing.Size(60, 15);
             this.label6.TabIndex = 16;
             this.label6.Text = "Số lượng";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(9, 55);
+            this.label5.Location = new System.Drawing.Point(12, 67);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 15);
+            this.label5.Size = new System.Drawing.Size(25, 15);
             this.label5.TabIndex = 15;
             this.label5.Text = "Giá";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(9, 32);
+            this.label4.Location = new System.Drawing.Point(12, 44);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 15);
@@ -713,21 +688,21 @@ namespace QuanLiCuaHangDienThoai.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(9, 11);
+            this.label3.Location = new System.Drawing.Point(12, 23);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 15);
+            this.label3.Size = new System.Drawing.Size(43, 15);
             this.label3.TabIndex = 13;
             this.label3.Text = "Mã SP";
             // 
             // button_ChenAnh
             // 
-            this.button_ChenAnh.Location = new System.Drawing.Point(13, 310);
-            this.button_ChenAnh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_ChenAnh.Location = new System.Drawing.Point(244, 222);
+            this.button_ChenAnh.Margin = new System.Windows.Forms.Padding(2);
             this.button_ChenAnh.Name = "button_ChenAnh";
-            this.button_ChenAnh.Size = new System.Drawing.Size(91, 23);
+            this.button_ChenAnh.Size = new System.Drawing.Size(58, 50);
             this.button_ChenAnh.TabIndex = 10;
             this.button_ChenAnh.Text = "Chọn ảnh...";
             this.button_ChenAnh.UseVisualStyleBackColor = true;
@@ -736,10 +711,10 @@ namespace QuanLiCuaHangDienThoai.Forms
             // comboBox_MaNCC
             // 
             this.comboBox_MaNCC.FormattingEnabled = true;
-            this.comboBox_MaNCC.Location = new System.Drawing.Point(70, 125);
-            this.comboBox_MaNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_MaNCC.Location = new System.Drawing.Point(96, 137);
+            this.comboBox_MaNCC.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_MaNCC.Name = "comboBox_MaNCC";
-            this.comboBox_MaNCC.Size = new System.Drawing.Size(92, 23);
+            this.comboBox_MaNCC.Size = new System.Drawing.Size(206, 23);
             this.comboBox_MaNCC.TabIndex = 9;
             // 
             // comboBox_MaDM
@@ -749,42 +724,42 @@ namespace QuanLiCuaHangDienThoai.Forms
             "Android",
             "IOS",
             "Harmony OS"});
-            this.comboBox_MaDM.Location = new System.Drawing.Point(70, 101);
-            this.comboBox_MaDM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_MaDM.Location = new System.Drawing.Point(96, 113);
+            this.comboBox_MaDM.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_MaDM.Name = "comboBox_MaDM";
-            this.comboBox_MaDM.Size = new System.Drawing.Size(92, 23);
+            this.comboBox_MaDM.Size = new System.Drawing.Size(206, 23);
             this.comboBox_MaDM.TabIndex = 8;
             // 
             // textBox_SoLuong
             // 
-            this.textBox_SoLuong.Location = new System.Drawing.Point(70, 78);
-            this.textBox_SoLuong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_SoLuong.Location = new System.Drawing.Point(96, 90);
+            this.textBox_SoLuong.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_SoLuong.Name = "textBox_SoLuong";
-            this.textBox_SoLuong.Size = new System.Drawing.Size(92, 21);
+            this.textBox_SoLuong.Size = new System.Drawing.Size(206, 21);
             this.textBox_SoLuong.TabIndex = 7;
             // 
             // textBox_Gia
             // 
-            this.textBox_Gia.Location = new System.Drawing.Point(70, 55);
-            this.textBox_Gia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Gia.Location = new System.Drawing.Point(96, 67);
+            this.textBox_Gia.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_Gia.Name = "textBox_Gia";
-            this.textBox_Gia.Size = new System.Drawing.Size(92, 21);
+            this.textBox_Gia.Size = new System.Drawing.Size(206, 21);
             this.textBox_Gia.TabIndex = 6;
             // 
             // textBox_TenSP
             // 
-            this.textBox_TenSP.Location = new System.Drawing.Point(70, 32);
-            this.textBox_TenSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_TenSP.Location = new System.Drawing.Point(96, 44);
+            this.textBox_TenSP.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_TenSP.Name = "textBox_TenSP";
-            this.textBox_TenSP.Size = new System.Drawing.Size(92, 21);
+            this.textBox_TenSP.Size = new System.Drawing.Size(206, 21);
             this.textBox_TenSP.TabIndex = 5;
             // 
             // textBox_MaSP
             // 
-            this.textBox_MaSP.Location = new System.Drawing.Point(70, 10);
-            this.textBox_MaSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_MaSP.Location = new System.Drawing.Point(96, 22);
+            this.textBox_MaSP.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_MaSP.Name = "textBox_MaSP";
-            this.textBox_MaSP.Size = new System.Drawing.Size(92, 21);
+            this.textBox_MaSP.Size = new System.Drawing.Size(206, 21);
             this.textBox_MaSP.TabIndex = 4;
             // 
             // tabPage_DanhMuc
@@ -792,9 +767,9 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.tabPage_DanhMuc.Controls.Add(this.panel3);
             this.tabPage_DanhMuc.Controls.Add(this.dataGridView_DM);
             this.tabPage_DanhMuc.Location = new System.Drawing.Point(4, 24);
-            this.tabPage_DanhMuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_DanhMuc.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_DanhMuc.Name = "tabPage_DanhMuc";
-            this.tabPage_DanhMuc.Size = new System.Drawing.Size(969, 477);
+            this.tabPage_DanhMuc.Size = new System.Drawing.Size(969, 694);
             this.tabPage_DanhMuc.TabIndex = 2;
             this.tabPage_DanhMuc.Text = "Danh Mục";
             this.tabPage_DanhMuc.UseVisualStyleBackColor = true;
@@ -805,7 +780,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.panel3.Controls.Add(this.panel11);
             this.panel3.Controls.Add(this.panel12);
             this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(183, 470);
             this.panel3.TabIndex = 1;
@@ -827,7 +802,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             this.btnTimDM.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimDM.Location = new System.Drawing.Point(8, 94);
-            this.btnTimDM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimDM.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimDM.Name = "btnTimDM";
             this.btnTimDM.Size = new System.Drawing.Size(71, 32);
             this.btnTimDM.TabIndex = 5;
@@ -893,7 +868,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             this.btnHuyDM.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyDM.Location = new System.Drawing.Point(54, 87);
-            this.btnHuyDM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuyDM.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyDM.Name = "btnHuyDM";
             this.btnHuyDM.Size = new System.Drawing.Size(74, 32);
             this.btnHuyDM.TabIndex = 8;
@@ -904,7 +879,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_ThemDM
             // 
             this.button_ThemDM.Location = new System.Drawing.Point(26, 15);
-            this.button_ThemDM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_ThemDM.Margin = new System.Windows.Forms.Padding(2);
             this.button_ThemDM.Name = "button_ThemDM";
             this.button_ThemDM.Size = new System.Drawing.Size(56, 32);
             this.button_ThemDM.TabIndex = 4;
@@ -915,7 +890,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_SuaDM
             // 
             this.button_SuaDM.Location = new System.Drawing.Point(96, 15);
-            this.button_SuaDM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_SuaDM.Margin = new System.Windows.Forms.Padding(2);
             this.button_SuaDM.Name = "button_SuaDM";
             this.button_SuaDM.Size = new System.Drawing.Size(56, 32);
             this.button_SuaDM.TabIndex = 6;
@@ -926,7 +901,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_XoaDM
             // 
             this.button_XoaDM.Location = new System.Drawing.Point(26, 51);
-            this.button_XoaDM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_XoaDM.Margin = new System.Windows.Forms.Padding(2);
             this.button_XoaDM.Name = "button_XoaDM";
             this.button_XoaDM.Size = new System.Drawing.Size(56, 32);
             this.button_XoaDM.TabIndex = 5;
@@ -937,7 +912,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_LuuDM
             // 
             this.button_LuuDM.Location = new System.Drawing.Point(96, 51);
-            this.button_LuuDM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_LuuDM.Margin = new System.Windows.Forms.Padding(2);
             this.button_LuuDM.Name = "button_LuuDM";
             this.button_LuuDM.Size = new System.Drawing.Size(56, 32);
             this.button_LuuDM.TabIndex = 7;
@@ -980,7 +955,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_TenDM
             // 
             this.textBox_TenDM.Location = new System.Drawing.Point(76, 117);
-            this.textBox_TenDM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_TenDM.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_TenDM.Name = "textBox_TenDM";
             this.textBox_TenDM.Size = new System.Drawing.Size(76, 21);
             this.textBox_TenDM.TabIndex = 9;
@@ -988,7 +963,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_MaDM
             // 
             this.textBox_MaDM.Location = new System.Drawing.Point(76, 72);
-            this.textBox_MaDM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_MaDM.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_MaDM.Name = "textBox_MaDM";
             this.textBox_MaDM.Size = new System.Drawing.Size(76, 21);
             this.textBox_MaDM.TabIndex = 8;
@@ -1004,11 +979,11 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.MaDM,
             this.TenDM});
             this.dataGridView_DM.Location = new System.Drawing.Point(190, 6);
-            this.dataGridView_DM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_DM.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_DM.Name = "dataGridView_DM";
             this.dataGridView_DM.RowHeadersWidth = 51;
             this.dataGridView_DM.RowTemplate.Height = 24;
-            this.dataGridView_DM.Size = new System.Drawing.Size(472, 471);
+            this.dataGridView_DM.Size = new System.Drawing.Size(472, 495);
             this.dataGridView_DM.TabIndex = 0;
             // 
             // MaDM
@@ -1032,9 +1007,9 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.tabPage_NhaCC.Controls.Add(this.dataGridView_NhaCC);
             this.tabPage_NhaCC.Controls.Add(this.panel5);
             this.tabPage_NhaCC.Location = new System.Drawing.Point(4, 24);
-            this.tabPage_NhaCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage_NhaCC.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_NhaCC.Name = "tabPage_NhaCC";
-            this.tabPage_NhaCC.Size = new System.Drawing.Size(969, 477);
+            this.tabPage_NhaCC.Size = new System.Drawing.Size(969, 694);
             this.tabPage_NhaCC.TabIndex = 4;
             this.tabPage_NhaCC.Text = "Nhà Cung Cấp";
             this.tabPage_NhaCC.UseVisualStyleBackColor = true;
@@ -1050,11 +1025,11 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.MaNCC,
             this.TenNCC});
             this.dataGridView_NhaCC.Location = new System.Drawing.Point(190, 6);
-            this.dataGridView_NhaCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_NhaCC.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_NhaCC.Name = "dataGridView_NhaCC";
             this.dataGridView_NhaCC.RowHeadersWidth = 51;
             this.dataGridView_NhaCC.RowTemplate.Height = 24;
-            this.dataGridView_NhaCC.Size = new System.Drawing.Size(472, 471);
+            this.dataGridView_NhaCC.Size = new System.Drawing.Size(472, 495);
             this.dataGridView_NhaCC.TabIndex = 3;
             // 
             // MaNCC
@@ -1078,7 +1053,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.panel5.Controls.Add(this.panel16);
             this.panel5.Controls.Add(this.panel10);
             this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(183, 472);
             this.panel5.TabIndex = 2;
@@ -1101,7 +1076,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             this.btnTIMNCC.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTIMNCC.Location = new System.Drawing.Point(8, 94);
-            this.btnTIMNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTIMNCC.Margin = new System.Windows.Forms.Padding(2);
             this.btnTIMNCC.Name = "btnTIMNCC";
             this.btnTIMNCC.Size = new System.Drawing.Size(71, 32);
             this.btnTIMNCC.TabIndex = 5;
@@ -1126,7 +1101,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             this.btnHuyNCC.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyNCC.Location = new System.Drawing.Point(50, 87);
-            this.btnHuyNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuyNCC.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyNCC.Name = "btnHuyNCC";
             this.btnHuyNCC.Size = new System.Drawing.Size(74, 32);
             this.btnHuyNCC.TabIndex = 9;
@@ -1137,7 +1112,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_ThemNCC
             // 
             this.button_ThemNCC.Location = new System.Drawing.Point(26, 15);
-            this.button_ThemNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_ThemNCC.Margin = new System.Windows.Forms.Padding(2);
             this.button_ThemNCC.Name = "button_ThemNCC";
             this.button_ThemNCC.Size = new System.Drawing.Size(56, 32);
             this.button_ThemNCC.TabIndex = 4;
@@ -1148,7 +1123,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_SuaNCC
             // 
             this.button_SuaNCC.Location = new System.Drawing.Point(97, 15);
-            this.button_SuaNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_SuaNCC.Margin = new System.Windows.Forms.Padding(2);
             this.button_SuaNCC.Name = "button_SuaNCC";
             this.button_SuaNCC.Size = new System.Drawing.Size(56, 32);
             this.button_SuaNCC.TabIndex = 6;
@@ -1159,7 +1134,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // butto_XoaNCC
             // 
             this.butto_XoaNCC.Location = new System.Drawing.Point(26, 51);
-            this.butto_XoaNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.butto_XoaNCC.Margin = new System.Windows.Forms.Padding(2);
             this.butto_XoaNCC.Name = "butto_XoaNCC";
             this.butto_XoaNCC.Size = new System.Drawing.Size(56, 32);
             this.butto_XoaNCC.TabIndex = 5;
@@ -1170,7 +1145,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_LuuNCC
             // 
             this.button_LuuNCC.Location = new System.Drawing.Point(97, 51);
-            this.button_LuuNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_LuuNCC.Margin = new System.Windows.Forms.Padding(2);
             this.button_LuuNCC.Name = "button_LuuNCC";
             this.button_LuuNCC.Size = new System.Drawing.Size(56, 32);
             this.button_LuuNCC.TabIndex = 7;
@@ -1254,7 +1229,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_TenNCC
             // 
             this.textBox_TenNCC.Location = new System.Drawing.Point(97, 76);
-            this.textBox_TenNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_TenNCC.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_TenNCC.Name = "textBox_TenNCC";
             this.textBox_TenNCC.Size = new System.Drawing.Size(76, 21);
             this.textBox_TenNCC.TabIndex = 9;
@@ -1262,7 +1237,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_MaNCC
             // 
             this.textBox_MaNCC.Location = new System.Drawing.Point(97, 37);
-            this.textBox_MaNCC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_MaNCC.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_MaNCC.Name = "textBox_MaNCC";
             this.textBox_MaNCC.Size = new System.Drawing.Size(76, 21);
             this.textBox_MaNCC.TabIndex = 8;
@@ -1272,9 +1247,9 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.tabPage4_TaiKhoan.Controls.Add(this.dataGridView_TK);
             this.tabPage4_TaiKhoan.Controls.Add(this.panel4);
             this.tabPage4_TaiKhoan.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4_TaiKhoan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4_TaiKhoan.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4_TaiKhoan.Name = "tabPage4_TaiKhoan";
-            this.tabPage4_TaiKhoan.Size = new System.Drawing.Size(969, 477);
+            this.tabPage4_TaiKhoan.Size = new System.Drawing.Size(969, 694);
             this.tabPage4_TaiKhoan.TabIndex = 3;
             this.tabPage4_TaiKhoan.Text = "Tài Khoản Đăng Nhập";
             this.tabPage4_TaiKhoan.UseVisualStyleBackColor = true;
@@ -1295,12 +1270,12 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.ngaysinh,
             this.Loai,
             this.NgayTao});
-            this.dataGridView_TK.Location = new System.Drawing.Point(196, -3);
-            this.dataGridView_TK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView_TK.Location = new System.Drawing.Point(196, 3);
+            this.dataGridView_TK.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView_TK.Name = "dataGridView_TK";
             this.dataGridView_TK.RowHeadersWidth = 51;
             this.dataGridView_TK.RowTemplate.Height = 24;
-            this.dataGridView_TK.Size = new System.Drawing.Size(777, 471);
+            this.dataGridView_TK.Size = new System.Drawing.Size(777, 489);
             this.dataGridView_TK.TabIndex = 1;
             // 
             // Username
@@ -1373,7 +1348,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(183, 472);
             this.panel4.TabIndex = 0;
@@ -1395,7 +1370,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             this.btnTIMTK.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTIMTK.Location = new System.Drawing.Point(8, 94);
-            this.btnTIMTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTIMTK.Margin = new System.Windows.Forms.Padding(2);
             this.btnTIMTK.Name = "btnTIMTK";
             this.btnTIMTK.Size = new System.Drawing.Size(71, 32);
             this.btnTIMTK.TabIndex = 5;
@@ -1463,7 +1438,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             this.btnHuyTK.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuyTK.Location = new System.Drawing.Point(49, 87);
-            this.btnHuyTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHuyTK.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyTK.Name = "btnHuyTK";
             this.btnHuyTK.Size = new System.Drawing.Size(74, 32);
             this.btnHuyTK.TabIndex = 10;
@@ -1474,7 +1449,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_LuuTK
             // 
             this.button_LuuTK.Location = new System.Drawing.Point(97, 51);
-            this.button_LuuTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_LuuTK.Margin = new System.Windows.Forms.Padding(2);
             this.button_LuuTK.Name = "button_LuuTK";
             this.button_LuuTK.Size = new System.Drawing.Size(56, 32);
             this.button_LuuTK.TabIndex = 7;
@@ -1485,7 +1460,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_SuaTK
             // 
             this.button_SuaTK.Location = new System.Drawing.Point(97, 15);
-            this.button_SuaTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_SuaTK.Margin = new System.Windows.Forms.Padding(2);
             this.button_SuaTK.Name = "button_SuaTK";
             this.button_SuaTK.Size = new System.Drawing.Size(56, 32);
             this.button_SuaTK.TabIndex = 6;
@@ -1496,7 +1471,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_XoaTK
             // 
             this.button_XoaTK.Location = new System.Drawing.Point(26, 51);
-            this.button_XoaTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_XoaTK.Margin = new System.Windows.Forms.Padding(2);
             this.button_XoaTK.Name = "button_XoaTK";
             this.button_XoaTK.Size = new System.Drawing.Size(56, 32);
             this.button_XoaTK.TabIndex = 5;
@@ -1507,7 +1482,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // button_ThemTK
             // 
             this.button_ThemTK.Location = new System.Drawing.Point(26, 15);
-            this.button_ThemTK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_ThemTK.Margin = new System.Windows.Forms.Padding(2);
             this.button_ThemTK.Name = "button_ThemTK";
             this.button_ThemTK.Size = new System.Drawing.Size(56, 32);
             this.button_ThemTK.TabIndex = 4;
@@ -1623,7 +1598,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_Sdt
             // 
             this.textBox_Sdt.Location = new System.Drawing.Point(89, 105);
-            this.textBox_Sdt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Sdt.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_Sdt.Name = "textBox_Sdt";
             this.textBox_Sdt.Size = new System.Drawing.Size(76, 21);
             this.textBox_Sdt.TabIndex = 15;
@@ -1631,7 +1606,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_Username
             // 
             this.textBox_Username.Location = new System.Drawing.Point(89, 9);
-            this.textBox_Username.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Username.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(76, 21);
             this.textBox_Username.TabIndex = 8;
@@ -1639,7 +1614,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_Email
             // 
             this.textBox_Email.Location = new System.Drawing.Point(89, 80);
-            this.textBox_Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Email.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_Email.Name = "textBox_Email";
             this.textBox_Email.Size = new System.Drawing.Size(76, 21);
             this.textBox_Email.TabIndex = 14;
@@ -1647,7 +1622,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_Ten
             // 
             this.textBox_Ten.Location = new System.Drawing.Point(89, 32);
-            this.textBox_Ten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Ten.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_Ten.Name = "textBox_Ten";
             this.textBox_Ten.Size = new System.Drawing.Size(76, 21);
             this.textBox_Ten.TabIndex = 9;
@@ -1655,7 +1630,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_NgaySinh
             // 
             this.textBox_NgaySinh.Location = new System.Drawing.Point(89, 130);
-            this.textBox_NgaySinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_NgaySinh.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_NgaySinh.Name = "textBox_NgaySinh";
             this.textBox_NgaySinh.Size = new System.Drawing.Size(76, 21);
             this.textBox_NgaySinh.TabIndex = 13;
@@ -1663,7 +1638,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_Password
             // 
             this.textBox_Password.Location = new System.Drawing.Point(89, 55);
-            this.textBox_Password.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Password.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(76, 21);
             this.textBox_Password.TabIndex = 10;
@@ -1671,7 +1646,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_NgayTao
             // 
             this.textBox_NgayTao.Location = new System.Drawing.Point(89, 180);
-            this.textBox_NgayTao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_NgayTao.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_NgayTao.Name = "textBox_NgayTao";
             this.textBox_NgayTao.Size = new System.Drawing.Size(76, 21);
             this.textBox_NgayTao.TabIndex = 12;
@@ -1679,16 +1654,16 @@ namespace QuanLiCuaHangDienThoai.Forms
             // textBox_Loai
             // 
             this.textBox_Loai.Location = new System.Drawing.Point(89, 155);
-            this.textBox_Loai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Loai.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_Loai.Name = "textBox_Loai";
             this.textBox_Loai.Size = new System.Drawing.Size(76, 21);
             this.textBox_Loai.TabIndex = 11;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 163);
+            this.pictureBox1.Location = new System.Drawing.Point(96, 180);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(149, 117);
+            this.pictureBox1.Size = new System.Drawing.Size(129, 129);
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
@@ -1698,10 +1673,10 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(980, 669);
+            this.ClientSize = new System.Drawing.Size(980, 731);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "QuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý";
@@ -1803,7 +1778,6 @@ namespace QuanLiCuaHangDienThoai.Forms
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_LinkPicture;
         private System.Windows.Forms.TextBox textBox_TenDM;
         private System.Windows.Forms.TextBox textBox_MaDM;
         private System.Windows.Forms.Button button_LuuDM;
@@ -1814,13 +1788,6 @@ namespace QuanLiCuaHangDienThoai.Forms
         private System.Windows.Forms.TextBox textBox_MaNCC;
         private System.Windows.Forms.Button button_SuaNCC;
         private System.Windows.Forms.Button button_ThemNCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hinhanh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDMuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
@@ -1878,8 +1845,6 @@ namespace QuanLiCuaHangDienThoai.Forms
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtYCTK;
         private System.Windows.Forms.ComboBox cbbTTTK;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username_DoanhThu;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
@@ -1887,5 +1852,12 @@ namespace QuanLiCuaHangDienThoai.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTao_DoanhThu;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hinhanh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDMuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNCC1;
     }
 }

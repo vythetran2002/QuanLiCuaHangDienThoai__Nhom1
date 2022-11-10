@@ -35,6 +35,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             InitializeComponent();
             Load_DateTimePicker_DoanhThu(); //Load 2 thanh thời gian ngày bắt đầu và ngày kết thúc để thống kê doanh thu 
                                             //trong khoảng tgian đó
+
             LoadData();
         }
         private void QuanLy_Load(object sender, EventArgs e)
@@ -63,6 +64,14 @@ namespace QuanLiCuaHangDienThoai.Forms
             DanhMucBinding();
             TaiKhoanBinding();
             NhaCCBinding();
+
+            dataGridView_SP.RowHeadersVisible = false;
+            dataGridView_DM.RowHeadersVisible = false;
+            dataGridView_DT.RowHeadersVisible = false;
+            dataGridView_NhaCC.RowHeadersVisible = false;
+            dataGridView_TK.RowHeadersVisible = false;
+
+            dataGridView_SP.AllowUserToAddRows= false;
         }
 
         void LoadSanPham()
@@ -116,9 +125,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         }
         void LoadDoanhThu_byDate()
         {
-            //dataGridView_DT.DataSource = db.DOANH_THU_THEO_NGAY(dateTimePicker_FromDate.Value.Date, dateTimePicker_ToDate.Value.Date);
-            textBox1.Text = dateTimePicker_FromDate.Value.Day.ToString();
-            textBox2.Text = dateTimePicker_ToDate.Value.Date.ToString();
+            dataGridView_DT.DataSource = db.DOANH_THU_THEO_NGAY(dateTimePicker_FromDate.Value.Date, dateTimePicker_ToDate.Value.Date);
 
         }//!sửa
         void SanPhamBinding()
@@ -129,6 +136,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                 textBox_TenSP.DataBindings.Add("Text", dataGridView_SP.DataSource, "TenSP", true, DataSourceUpdateMode.Never);
                 textBox_Gia.DataBindings.Add("Text", dataGridView_SP.DataSource, "Gia", true, DataSourceUpdateMode.Never);
                 textBox_SoLuong.DataBindings.Add("Text", dataGridView_SP.DataSource, "SoLuong", true, DataSourceUpdateMode.Never);
+                
             }
             catch { }
         }
@@ -322,10 +330,9 @@ namespace QuanLiCuaHangDienThoai.Forms
             openFile.RestoreDirectory = true;
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                textBox_LinkPicture.Text = openFile.FileName;
                 linkHinhAnh = openFile.FileName;
                 pictureBox1.Image = Image.FromFile(linkHinhAnh);
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
 
@@ -341,7 +348,8 @@ namespace QuanLiCuaHangDienThoai.Forms
                 pictureBox1.Image = null;
                 linkHinhAnh = null;
             }
-                
+            comboBox_MaDM.Text = db.Lay_Ten_DM(dataGridView_SP.CurrentRow.Cells["MaDMuc"].Value.ToString());
+            comboBox_MaNCC.Text = db.Lay_Ten_NCC(dataGridView_SP.CurrentRow.Cells["MaNCC1"].Value.ToString());
         }
 
         private void button_ReloadSP_Click(object sender, EventArgs e)
@@ -659,8 +667,17 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void button_ThongKe_Click(object sender, EventArgs e)
         {
-            //LoadDoanhThu_byDate();
-            dataGridView_DT.DataSource = db.DOANH_THU_THEO_NGAY(dateTimePicker_FromDate.Value.Date, dateTimePicker_ToDate.Value.Date);
+            Thong_Ke_Doanh_Thu_Theo_Ngay(dateTimePicker_FromDate.Value, dateTimePicker_ToDate.Value);
+
+        }
+
+        private void dataGridView_DT_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 

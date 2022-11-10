@@ -55,6 +55,14 @@ namespace QuanLiCuaHangDienThoai.Forms
 
             cbb_ChonHD.DataSource = query;
         }
+        private Image ByteToImg(string byteString)
+        {
+            byte[] imgBytes = Convert.FromBase64String(byteString);
+            MemoryStream ms = new MemoryStream(imgBytes, 0, imgBytes.Length);
+            ms.Write(imgBytes, 0, imgBytes.Length);
+            Image image = Image.FromStream(ms, true);
+            return image;
+        }
         void Click_Phone(object sender, EventArgs e)
         {
             UC_Phone sp = (UC_Phone)sender;
@@ -79,10 +87,13 @@ namespace QuanLiCuaHangDienThoai.Forms
             lb_NCC.Text = db.MaNCC_SP(maSP);
             lb_DM.Text = db.MaDM_SP(maSP);
             lb_Gia.Text = db.Gia_SP(maSP);
-            lb_SL.Text = db.SL_SP(maSP);
-            
-            string hinhanh = blSP.HinhAnh(maSP) ;
-            pictureBox1.Image = Image.FromFile(@"..\..\image\" + hinhanh);
+            lb_SL.Text = db.SL_SP(maSP);     
+            try
+            {
+                pictureBox1.Image = ByteToImg(db.Lay_Chuoi_Byte_Hinh_Anh(maSP));
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            }
+            catch { }
             btn_AddHDCT.Enabled = true;
         }
         void Load_HDCT()
@@ -124,7 +135,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btn_NewHD_Click(object sender, EventArgs e)
         {
             
-            db.THEMHD(tenNV, " ", " ",dateTimePicker1.Value, 0,0);
+            db.THEMHD("duynhut", " ", " ",dateTimePicker1.Value);
             MessageBox.Show("success");
             
             LoadData_HD_ChuaThanhToan();

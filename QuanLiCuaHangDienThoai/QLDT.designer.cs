@@ -36,6 +36,9 @@ namespace QuanLiCuaHangDienThoai
     partial void InsertTAIKHOAN(TAIKHOAN instance);
     partial void UpdateTAIKHOAN(TAIKHOAN instance);
     partial void DeleteTAIKHOAN(TAIKHOAN instance);
+    partial void InsertHOADON(HOADON instance);
+    partial void UpdateHOADON(HOADON instance);
+    partial void DeleteHOADON(HOADON instance);
     partial void InsertHOADONCHITIET(HOADONCHITIET instance);
     partial void UpdateHOADONCHITIET(HOADONCHITIET instance);
     partial void DeleteHOADONCHITIET(HOADONCHITIET instance);
@@ -45,9 +48,6 @@ namespace QuanLiCuaHangDienThoai
     partial void InsertSANPHAM(SANPHAM instance);
     partial void UpdateSANPHAM(SANPHAM instance);
     partial void DeleteSANPHAM(SANPHAM instance);
-    partial void InsertHOADON(HOADON instance);
-    partial void UpdateHOADON(HOADON instance);
-    partial void DeleteHOADON(HOADON instance);
     #endregion
 		
 		public QLDTDataContext() : 
@@ -96,6 +96,14 @@ namespace QuanLiCuaHangDienThoai
 			}
 		}
 		
+		public System.Data.Linq.Table<HOADON> HOADONs
+		{
+			get
+			{
+				return this.GetTable<HOADON>();
+			}
+		}
+		
 		public System.Data.Linq.Table<HOADONCHITIET> HOADONCHITIETs
 		{
 			get
@@ -117,14 +125,6 @@ namespace QuanLiCuaHangDienThoai
 			get
 			{
 				return this.GetTable<SANPHAM>();
-			}
-		}
-		
-		public System.Data.Linq.Table<HOADON> HOADONs
-		{
-			get
-			{
-				return this.GetTable<HOADON>();
 			}
 		}
 		
@@ -182,6 +182,13 @@ namespace QuanLiCuaHangDienThoai
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHD, maSP);
 			return ((ISingleResult<CHECK_SP_HDResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DOI_PASS")]
+		public int DOI_PASS([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string password)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DS_SP_TEN")]
@@ -303,6 +310,13 @@ namespace QuanLiCuaHangDienThoai
 			return ((ISingleResult<TIMDM_TENDMResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.timHD")]
+		public ISingleResult<timHDResult> timHD([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maHD)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHD);
+			return ((ISingleResult<timHDResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TIMNCC_MANCC")]
 		public ISingleResult<TIMNCC_MANCCResult> TIMNCC_MANCC([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maNCC)
 		{
@@ -373,6 +387,13 @@ namespace QuanLiCuaHangDienThoai
 			return ((ISingleResult<TIMTK_TKResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TK_DN")]
+		public ISingleResult<TK_DNResult> TK_DN([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string usename, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mk)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usename, mk);
+			return ((ISingleResult<TK_DNResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.XoaDM")]
 		public int XoaDM([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maDM)
 		{
@@ -438,6 +459,12 @@ namespace QuanLiCuaHangDienThoai
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenNCC).ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LOAI_TK", IsComposable=true)]
+		public string LOAI_TK([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string usename, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mk)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usename, mk).ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.MaDM_SP", IsComposable=true)]
 		public string MaDM_SP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSP)
 		{
@@ -463,36 +490,9 @@ namespace QuanLiCuaHangDienThoai
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.THEMHD")]
-		public int THEMHD([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string usename, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenKH, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaytao, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> tongTien, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
+		public int THEMHD([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string usename, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenKH, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaytao)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usename, tenKH, sdt, ngaytao, tongTien, status);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.timHD")]
-		public ISingleResult<timHDResult> timHD([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maHD)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHD);
-			return ((ISingleResult<timHDResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TK_DN")]
-		public ISingleResult<TK_DNResult> TK_DN([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string usename, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mk)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usename, mk);
-			return ((ISingleResult<TK_DNResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LOAI_TK", IsComposable=true)]
-		public string LOAI_TK([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string usename, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mk)
-		{
-			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usename, mk).ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DOI_PASS")]
-		public int DOI_PASS([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string password)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, password);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usename, tenKH, sdt, ngaytao);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -501,6 +501,24 @@ namespace QuanLiCuaHangDienThoai
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), checkIn, checkOut);
 			return ((ISingleResult<DOANH_THU_THEO_NGAYResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Lay_Ten_DM", IsComposable=true)]
+		public string Lay_Ten_DM([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string maDM)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDM).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Lay_Ten_NCC", IsComposable=true)]
+		public string Lay_Ten_NCC([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string maNCC)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maNCC).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Lay_Chuoi_Byte_Hinh_Anh", IsComposable=true)]
+		public string Lay_Chuoi_Byte_Hinh_Anh([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string maSP)
+		{
+			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSP).ReturnValue));
 		}
 	}
 	
@@ -876,6 +894,281 @@ namespace QuanLiCuaHangDienThoai
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOADON")]
+	public partial class HOADON : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _maHD;
+		
+		private string _username;
+		
+		private string _tenKH;
+		
+		private string _sdt;
+		
+		private System.DateTime _ngayTao;
+		
+		private int _tongTien;
+		
+		private int _status;
+		
+		private EntitySet<HOADONCHITIET> _HOADONCHITIETs;
+		
+		private EntityRef<TAIKHOAN> _TAIKHOAN;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnmaHDChanging(int value);
+    partial void OnmaHDChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OntenKHChanging(string value);
+    partial void OntenKHChanged();
+    partial void OnsdtChanging(string value);
+    partial void OnsdtChanged();
+    partial void OnngayTaoChanging(System.DateTime value);
+    partial void OnngayTaoChanged();
+    partial void OntongTienChanging(int value);
+    partial void OntongTienChanged();
+    partial void OnstatusChanging(int value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public HOADON()
+		{
+			this._HOADONCHITIETs = new EntitySet<HOADONCHITIET>(new Action<HOADONCHITIET>(this.attach_HOADONCHITIETs), new Action<HOADONCHITIET>(this.detach_HOADONCHITIETs));
+			this._TAIKHOAN = default(EntityRef<TAIKHOAN>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHD", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int maHD
+		{
+			get
+			{
+				return this._maHD;
+			}
+			set
+			{
+				if ((this._maHD != value))
+				{
+					this.OnmaHDChanging(value);
+					this.SendPropertyChanging();
+					this._maHD = value;
+					this.SendPropertyChanged("maHD");
+					this.OnmaHDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					if (this._TAIKHOAN.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenKH", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string tenKH
+		{
+			get
+			{
+				return this._tenKH;
+			}
+			set
+			{
+				if ((this._tenKH != value))
+				{
+					this.OntenKHChanging(value);
+					this.SendPropertyChanging();
+					this._tenKH = value;
+					this.SendPropertyChanged("tenKH");
+					this.OntenKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sdt", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string sdt
+		{
+			get
+			{
+				return this._sdt;
+			}
+			set
+			{
+				if ((this._sdt != value))
+				{
+					this.OnsdtChanging(value);
+					this.SendPropertyChanging();
+					this._sdt = value;
+					this.SendPropertyChanged("sdt");
+					this.OnsdtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayTao", DbType="Date NOT NULL")]
+		public System.DateTime ngayTao
+		{
+			get
+			{
+				return this._ngayTao;
+			}
+			set
+			{
+				if ((this._ngayTao != value))
+				{
+					this.OnngayTaoChanging(value);
+					this.SendPropertyChanging();
+					this._ngayTao = value;
+					this.SendPropertyChanged("ngayTao");
+					this.OnngayTaoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongTien", DbType="Int NOT NULL")]
+		public int tongTien
+		{
+			get
+			{
+				return this._tongTien;
+			}
+			set
+			{
+				if ((this._tongTien != value))
+				{
+					this.OntongTienChanging(value);
+					this.SendPropertyChanging();
+					this._tongTien = value;
+					this.SendPropertyChanged("tongTien");
+					this.OntongTienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
+		public int status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
+					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_HOADONCHITIET", Storage="_HOADONCHITIETs", ThisKey="maHD", OtherKey="maHD")]
+		public EntitySet<HOADONCHITIET> HOADONCHITIETs
+		{
+			get
+			{
+				return this._HOADONCHITIETs;
+			}
+			set
+			{
+				this._HOADONCHITIETs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TAIKHOAN_HOADON", Storage="_TAIKHOAN", ThisKey="username", OtherKey="username", IsForeignKey=true)]
+		public TAIKHOAN TAIKHOAN
+		{
+			get
+			{
+				return this._TAIKHOAN.Entity;
+			}
+			set
+			{
+				TAIKHOAN previousValue = this._TAIKHOAN.Entity;
+				if (((previousValue != value) 
+							|| (this._TAIKHOAN.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TAIKHOAN.Entity = null;
+						previousValue.HOADONs.Remove(this);
+					}
+					this._TAIKHOAN.Entity = value;
+					if ((value != null))
+					{
+						value.HOADONs.Add(this);
+						this._username = value.username;
+					}
+					else
+					{
+						this._username = default(string);
+					}
+					this.SendPropertyChanged("TAIKHOAN");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_HOADONCHITIETs(HOADONCHITIET entity)
+		{
+			this.SendPropertyChanging();
+			entity.HOADON = this;
+		}
+		
+		private void detach_HOADONCHITIETs(HOADONCHITIET entity)
+		{
+			this.SendPropertyChanging();
+			entity.HOADON = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOADONCHITIET")]
 	public partial class HOADONCHITIET : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -888,9 +1181,9 @@ namespace QuanLiCuaHangDienThoai
 		
 		private int _soLuong;
 		
-		private EntityRef<SANPHAM> _SANPHAM;
-		
 		private EntityRef<HOADON> _HOADON;
+		
+		private EntityRef<SANPHAM> _SANPHAM;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -906,8 +1199,8 @@ namespace QuanLiCuaHangDienThoai
 		
 		public HOADONCHITIET()
 		{
-			this._SANPHAM = default(EntityRef<SANPHAM>);
 			this._HOADON = default(EntityRef<HOADON>);
+			this._SANPHAM = default(EntityRef<SANPHAM>);
 			OnCreated();
 		}
 		
@@ -979,40 +1272,6 @@ namespace QuanLiCuaHangDienThoai
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SANPHAM_HOADONCHITIET", Storage="_SANPHAM", ThisKey="maSP", OtherKey="maSP", IsForeignKey=true)]
-		public SANPHAM SANPHAM
-		{
-			get
-			{
-				return this._SANPHAM.Entity;
-			}
-			set
-			{
-				SANPHAM previousValue = this._SANPHAM.Entity;
-				if (((previousValue != value) 
-							|| (this._SANPHAM.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._SANPHAM.Entity = null;
-						previousValue.HOADONCHITIETs.Remove(this);
-					}
-					this._SANPHAM.Entity = value;
-					if ((value != null))
-					{
-						value.HOADONCHITIETs.Add(this);
-						this._maSP = value.maSP;
-					}
-					else
-					{
-						this._maSP = default(string);
-					}
-					this.SendPropertyChanged("SANPHAM");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_HOADONCHITIET", Storage="_HOADON", ThisKey="maHD", OtherKey="maHD", IsForeignKey=true)]
 		public HOADON HOADON
 		{
@@ -1043,6 +1302,40 @@ namespace QuanLiCuaHangDienThoai
 						this._maHD = default(int);
 					}
 					this.SendPropertyChanged("HOADON");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SANPHAM_HOADONCHITIET", Storage="_SANPHAM", ThisKey="maSP", OtherKey="maSP", IsForeignKey=true)]
+		public SANPHAM SANPHAM
+		{
+			get
+			{
+				return this._SANPHAM.Entity;
+			}
+			set
+			{
+				SANPHAM previousValue = this._SANPHAM.Entity;
+				if (((previousValue != value) 
+							|| (this._SANPHAM.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._SANPHAM.Entity = null;
+						previousValue.HOADONCHITIETs.Remove(this);
+					}
+					this._SANPHAM.Entity = value;
+					if ((value != null))
+					{
+						value.HOADONCHITIETs.Add(this);
+						this._maSP = value.maSP;
+					}
+					else
+					{
+						this._maSP = default(string);
+					}
+					this.SendPropertyChanged("SANPHAM");
 				}
 			}
 		}
@@ -1495,281 +1788,6 @@ namespace QuanLiCuaHangDienThoai
 		{
 			this.SendPropertyChanging();
 			entity.SANPHAM = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOADON")]
-	public partial class HOADON : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _maHD;
-		
-		private string _username;
-		
-		private string _tenKH;
-		
-		private string _sdt;
-		
-		private System.DateTime _ngayTao;
-		
-		private int _tongTien;
-		
-		private int _status;
-		
-		private EntitySet<HOADONCHITIET> _HOADONCHITIETs;
-		
-		private EntityRef<TAIKHOAN> _TAIKHOAN;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnmaHDChanging(int value);
-    partial void OnmaHDChanged();
-    partial void OnusernameChanging(string value);
-    partial void OnusernameChanged();
-    partial void OntenKHChanging(string value);
-    partial void OntenKHChanged();
-    partial void OnsdtChanging(string value);
-    partial void OnsdtChanged();
-    partial void OnngayTaoChanging(System.DateTime value);
-    partial void OnngayTaoChanged();
-    partial void OntongTienChanging(int value);
-    partial void OntongTienChanged();
-    partial void OnstatusChanging(int value);
-    partial void OnstatusChanged();
-    #endregion
-		
-		public HOADON()
-		{
-			this._HOADONCHITIETs = new EntitySet<HOADONCHITIET>(new Action<HOADONCHITIET>(this.attach_HOADONCHITIETs), new Action<HOADONCHITIET>(this.detach_HOADONCHITIETs));
-			this._TAIKHOAN = default(EntityRef<TAIKHOAN>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHD", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int maHD
-		{
-			get
-			{
-				return this._maHD;
-			}
-			set
-			{
-				if ((this._maHD != value))
-				{
-					this.OnmaHDChanging(value);
-					this.SendPropertyChanging();
-					this._maHD = value;
-					this.SendPropertyChanged("maHD");
-					this.OnmaHDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
-		public string username
-		{
-			get
-			{
-				return this._username;
-			}
-			set
-			{
-				if ((this._username != value))
-				{
-					if (this._TAIKHOAN.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnusernameChanging(value);
-					this.SendPropertyChanging();
-					this._username = value;
-					this.SendPropertyChanged("username");
-					this.OnusernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenKH", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
-		public string tenKH
-		{
-			get
-			{
-				return this._tenKH;
-			}
-			set
-			{
-				if ((this._tenKH != value))
-				{
-					this.OntenKHChanging(value);
-					this.SendPropertyChanging();
-					this._tenKH = value;
-					this.SendPropertyChanged("tenKH");
-					this.OntenKHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sdt", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
-		public string sdt
-		{
-			get
-			{
-				return this._sdt;
-			}
-			set
-			{
-				if ((this._sdt != value))
-				{
-					this.OnsdtChanging(value);
-					this.SendPropertyChanging();
-					this._sdt = value;
-					this.SendPropertyChanged("sdt");
-					this.OnsdtChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayTao", DbType="Date NOT NULL")]
-		public System.DateTime ngayTao
-		{
-			get
-			{
-				return this._ngayTao;
-			}
-			set
-			{
-				if ((this._ngayTao != value))
-				{
-					this.OnngayTaoChanging(value);
-					this.SendPropertyChanging();
-					this._ngayTao = value;
-					this.SendPropertyChanged("ngayTao");
-					this.OnngayTaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongTien", DbType="Int NOT NULL")]
-		public int tongTien
-		{
-			get
-			{
-				return this._tongTien;
-			}
-			set
-			{
-				if ((this._tongTien != value))
-				{
-					this.OntongTienChanging(value);
-					this.SendPropertyChanging();
-					this._tongTien = value;
-					this.SendPropertyChanged("tongTien");
-					this.OntongTienChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
-		public int status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this.OnstatusChanging(value);
-					this.SendPropertyChanging();
-					this._status = value;
-					this.SendPropertyChanged("status");
-					this.OnstatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HOADON_HOADONCHITIET", Storage="_HOADONCHITIETs", ThisKey="maHD", OtherKey="maHD")]
-		public EntitySet<HOADONCHITIET> HOADONCHITIETs
-		{
-			get
-			{
-				return this._HOADONCHITIETs;
-			}
-			set
-			{
-				this._HOADONCHITIETs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TAIKHOAN_HOADON", Storage="_TAIKHOAN", ThisKey="username", OtherKey="username", IsForeignKey=true)]
-		public TAIKHOAN TAIKHOAN
-		{
-			get
-			{
-				return this._TAIKHOAN.Entity;
-			}
-			set
-			{
-				TAIKHOAN previousValue = this._TAIKHOAN.Entity;
-				if (((previousValue != value) 
-							|| (this._TAIKHOAN.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TAIKHOAN.Entity = null;
-						previousValue.HOADONs.Remove(this);
-					}
-					this._TAIKHOAN.Entity = value;
-					if ((value != null))
-					{
-						value.HOADONs.Add(this);
-						this._username = value.username;
-					}
-					else
-					{
-						this._username = default(string);
-					}
-					this.SendPropertyChanged("TAIKHOAN");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_HOADONCHITIETs(HOADONCHITIET entity)
-		{
-			this.SendPropertyChanging();
-			entity.HOADON = this;
-		}
-		
-		private void detach_HOADONCHITIETs(HOADONCHITIET entity)
-		{
-			this.SendPropertyChanging();
-			entity.HOADON = null;
 		}
 	}
 	
@@ -2844,6 +2862,140 @@ namespace QuanLiCuaHangDienThoai
 				if ((this._tenDM != value))
 				{
 					this._tenDM = value;
+				}
+			}
+		}
+	}
+	
+	public partial class timHDResult
+	{
+		
+		private int _maHD;
+		
+		private string _username;
+		
+		private string _tenKH;
+		
+		private string _sdt;
+		
+		private System.DateTime _ngayTao;
+		
+		private int _tongTien;
+		
+		private int _status;
+		
+		public timHDResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHD", DbType="Int NOT NULL")]
+		public int maHD
+		{
+			get
+			{
+				return this._maHD;
+			}
+			set
+			{
+				if ((this._maHD != value))
+				{
+					this._maHD = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenKH", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string tenKH
+		{
+			get
+			{
+				return this._tenKH;
+			}
+			set
+			{
+				if ((this._tenKH != value))
+				{
+					this._tenKH = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sdt", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string sdt
+		{
+			get
+			{
+				return this._sdt;
+			}
+			set
+			{
+				if ((this._sdt != value))
+				{
+					this._sdt = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayTao", DbType="Date NOT NULL")]
+		public System.DateTime ngayTao
+		{
+			get
+			{
+				return this._ngayTao;
+			}
+			set
+			{
+				if ((this._ngayTao != value))
+				{
+					this._ngayTao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongTien", DbType="Int NOT NULL")]
+		public int tongTien
+		{
+			get
+			{
+				return this._tongTien;
+			}
+			set
+			{
+				if ((this._tongTien != value))
+				{
+					this._tongTien = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
+		public int status
+		{
+			get
+			{
+				return this._status;
+			}
+			set
+			{
+				if ((this._status != value))
+				{
+					this._status = value;
 				}
 			}
 		}
@@ -4076,140 +4228,6 @@ namespace QuanLiCuaHangDienThoai
 				if ((this._ngayTao != value))
 				{
 					this._ngayTao = value;
-				}
-			}
-		}
-	}
-	
-	public partial class timHDResult
-	{
-		
-		private int _maHD;
-		
-		private string _username;
-		
-		private string _tenKH;
-		
-		private string _sdt;
-		
-		private System.DateTime _ngayTao;
-		
-		private int _tongTien;
-		
-		private int _status;
-		
-		public timHDResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maHD", DbType="Int NOT NULL")]
-		public int maHD
-		{
-			get
-			{
-				return this._maHD;
-			}
-			set
-			{
-				if ((this._maHD != value))
-				{
-					this._maHD = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
-		public string username
-		{
-			get
-			{
-				return this._username;
-			}
-			set
-			{
-				if ((this._username != value))
-				{
-					this._username = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tenKH", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
-		public string tenKH
-		{
-			get
-			{
-				return this._tenKH;
-			}
-			set
-			{
-				if ((this._tenKH != value))
-				{
-					this._tenKH = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sdt", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
-		public string sdt
-		{
-			get
-			{
-				return this._sdt;
-			}
-			set
-			{
-				if ((this._sdt != value))
-				{
-					this._sdt = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ngayTao", DbType="Date NOT NULL")]
-		public System.DateTime ngayTao
-		{
-			get
-			{
-				return this._ngayTao;
-			}
-			set
-			{
-				if ((this._ngayTao != value))
-				{
-					this._ngayTao = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tongTien", DbType="Int NOT NULL")]
-		public int tongTien
-		{
-			get
-			{
-				return this._tongTien;
-			}
-			set
-			{
-				if ((this._tongTien != value))
-				{
-					this._tongTien = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_status", DbType="Int NOT NULL")]
-		public int status
-		{
-			get
-			{
-				return this._status;
-			}
-			set
-			{
-				if ((this._status != value))
-				{
-					this._status = value;
 				}
 			}
 		}
