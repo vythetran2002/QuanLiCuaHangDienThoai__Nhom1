@@ -72,6 +72,10 @@ namespace QuanLiCuaHangDienThoai.Forms
             dataGridView_TK.RowHeadersVisible = false;
 
             dataGridView_SP.AllowUserToAddRows= false;
+            dataGridView_DM.AllowUserToAddRows = false;
+            dataGridView_DT.AllowUserToAddRows = false;
+            dataGridView_NhaCC.AllowUserToAddRows = false;
+            dataGridView_TK.AllowUserToAddRows = false;
         }
 
         void LoadSanPham()
@@ -677,6 +681,16 @@ namespace QuanLiCuaHangDienThoai.Forms
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage_SanPham_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -51,7 +51,7 @@ namespace QuanLiCuaHangDienThoai
     #endregion
 		
 		public QLDTDataContext() : 
-				base(global::QuanLiCuaHangDienThoai.Properties.Settings.Default.QuanLiCuaHangDienThoaiConnectionString2, mappingSource)
+				base(global::QuanLiCuaHangDienThoai.Properties.Settings.Default.QuanLiCuaHangDienThoaiConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

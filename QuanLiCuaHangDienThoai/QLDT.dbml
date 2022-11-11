@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLiCuaHangDienThoai" Class="QLDTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GB8LVRE\SQLEXPRESS;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HALO\SQLEXPRESS;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DANHMUC" Member="DANHMUCs">
     <Type Name="DANHMUC">
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
