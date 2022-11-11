@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLiCuaHangDienThoai" Class="QLDTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=HALO\SQLEXPRESS;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GB8LVRE\SQLEXPRESS;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DANHMUC" Member="DANHMUCs">
     <Type Name="DANHMUC">
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -121,6 +121,18 @@
       <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DOANH_THU_THEO_NGAY" Method="DOANH_THU_THEO_NGAY">
+    <Parameter Name="checkIn" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="checkOut" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="DOANH_THU_THEO_NGAYResult">
+      <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tongTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenKH" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="sdt" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="dbo.DOI_PASS" Method="DOI_PASS">
@@ -451,6 +463,18 @@
     <Parameter Name="tenNCC" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.String" />
   </Function>
+  <Function Name="dbo.Lay_Chuoi_Byte_Hinh_Anh" Method="Lay_Chuoi_Byte_Hinh_Anh" IsComposable="true">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.Lay_Ten_DM" Method="Lay_Ten_DM" IsComposable="true">
+    <Parameter Name="maDM" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.Lay_Ten_NCC" Method="Lay_Ten_NCC" IsComposable="true">
+    <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.String" />
+  </Function>
   <Function Name="dbo.LOAI_TK" Method="LOAI_TK" IsComposable="true">
     <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="mk" Type="System.String" DbType="NVarChar(50)" />
@@ -479,28 +503,8 @@
     <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.DOANH_THU_THEO_NGAY" Method="DOANH_THU_THEO_NGAY">
-    <Parameter Name="checkIn" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="checkOut" Type="System.DateTime" DbType="Date" />
-    <ElementType Name="DOANH_THU_THEO_NGAYResult">
-      <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="tongTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
-      <Column Name="tenKH" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
-      <Column Name="sdt" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
-      <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.Lay_Ten_DM" Method="Lay_Ten_DM" IsComposable="true">
-    <Parameter Name="maDM" Type="System.String" DbType="NVarChar(100)" />
-    <Return Type="System.String" />
-  </Function>
-  <Function Name="dbo.Lay_Ten_NCC" Method="Lay_Ten_NCC" IsComposable="true">
-    <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(100)" />
-    <Return Type="System.String" />
-  </Function>
-  <Function Name="dbo.Lay_Chuoi_Byte_Hinh_Anh" Method="Lay_Chuoi_Byte_Hinh_Anh" IsComposable="true">
-    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(100)" />
+  <Function Name="dbo.LAY_TENNV" Method="LAY_TENNV" IsComposable="true">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.String" />
   </Function>
   <Function Name="dbo.update_status" Method="update_status">

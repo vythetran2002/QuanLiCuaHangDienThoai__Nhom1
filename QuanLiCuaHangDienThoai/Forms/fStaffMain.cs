@@ -25,13 +25,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             btn_AddHDCT.Enabled = false;
            
         }
-        string Lay_Ten_NV(string username)
-        {
-            var query = (from iten in db.TAIKHOANs
-                         where iten.username == username
-                         select iten.ten).SingleOrDefault();
-            return query;
-                      }
+        
         void LoadData_SP()
         {
             int i;
@@ -140,8 +134,8 @@ namespace QuanLiCuaHangDienThoai.Forms
         
         private void btn_NewHD_Click(object sender, EventArgs e)
         {
-            
-            db.THEMHD("duynhut", " ", " ",dateTimePicker1.Value);
+            string tenNV = db.LAY_TENNV(username);
+            db.THEMHD(tenNV, " ", " ",dateTimePicker1.Value);
             MessageBox.Show("success");
             
             LoadData_HD_ChuaThanhToan();
@@ -175,7 +169,7 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void fStaffMain_Load(object sender, EventArgs e)
         {
-            lbtennv.Text = Lay_Ten_NV(username);
+            lbtennv.Text = db.LAY_TENNV(username);
         }
 
         private void button1_Click(object sender, EventArgs e)
