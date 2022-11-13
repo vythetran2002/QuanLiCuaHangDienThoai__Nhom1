@@ -355,3 +355,9 @@ C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vyx)\QuanLiCuaHang
 C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vyx)\QuanLiCuaHangDienThoai\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vyx)\QuanLiCuaHangDienThoai\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vyx)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.csproj.CopyComplete
+E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\Microsoft.MSXML.dll

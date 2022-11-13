@@ -29,43 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.hDCTMaHDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanLiCuaHangDienThoaiDataSet = new QuanLiCuaHangDienThoai.QuanLiCuaHangDienThoaiDataSet();
-            this.timHDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnDong = new System.Windows.Forms.Button();
-            this.hDCTMaHDTableAdapter = new QuanLiCuaHangDienThoai.QuanLiCuaHangDienThoaiDataSetTableAdapters.HDCTMaHDTableAdapter();
             this.timHDTableAdapter = new QuanLiCuaHangDienThoai.QuanLiCuaHangDienThoaiDataSetTableAdapters.timHDTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.hDCTMaHDBindingSource)).BeginInit();
+            this.quanLiCuaHangDienThoaiDataSet = new QuanLiCuaHangDienThoai.QuanLiCuaHangDienThoaiDataSet();
+            this.hDCTMaHDBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hDCTMaHDTableAdapter = new QuanLiCuaHangDienThoai.QuanLiCuaHangDienThoaiDataSetTableAdapters.HDCTMaHDTableAdapter();
+            this.timHDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.quanLiCuaHangDienThoaiDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hDCTMaHDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timHDBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // hDCTMaHDBindingSource
-            // 
-            this.hDCTMaHDBindingSource.DataMember = "HDCTMaHD";
-            this.hDCTMaHDBindingSource.DataSource = this.quanLiCuaHangDienThoaiDataSet;
-            // 
-            // quanLiCuaHangDienThoaiDataSet
-            // 
-            this.quanLiCuaHangDienThoaiDataSet.DataSetName = "QuanLiCuaHangDienThoaiDataSet";
-            this.quanLiCuaHangDienThoaiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // timHDBindingSource
-            // 
-            this.timHDBindingSource.DataMember = "timHD";
-            this.timHDBindingSource.DataSource = this.quanLiCuaHangDienThoaiDataSet;
-            // 
             // reportViewer1
             // 
-            reportDataSource3.Name = "NDBill";
-            reportDataSource3.Value = this.hDCTMaHDBindingSource;
-            reportDataSource4.Name = "NDBillKH";
-            reportDataSource4.Value = this.timHDBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.hDCTMaHDBindingSource;
+            reportDataSource2.Name = "DataSet2";
+            reportDataSource2.Value = this.timHDBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "QuanLiCuaHangDienThoai.Forms.XuatBill.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 76);
             this.reportViewer1.Name = "reportViewer1";
@@ -83,13 +68,28 @@
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
+            // timHDTableAdapter
+            // 
+            this.timHDTableAdapter.ClearBeforeFill = true;
+            // 
+            // quanLiCuaHangDienThoaiDataSet
+            // 
+            this.quanLiCuaHangDienThoaiDataSet.DataSetName = "QuanLiCuaHangDienThoaiDataSet";
+            this.quanLiCuaHangDienThoaiDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // hDCTMaHDBindingSource
+            // 
+            this.hDCTMaHDBindingSource.DataMember = "HDCTMaHD";
+            this.hDCTMaHDBindingSource.DataSource = this.quanLiCuaHangDienThoaiDataSet;
+            // 
             // hDCTMaHDTableAdapter
             // 
             this.hDCTMaHDTableAdapter.ClearBeforeFill = true;
             // 
-            // timHDTableAdapter
+            // timHDBindingSource
             // 
-            this.timHDTableAdapter.ClearBeforeFill = true;
+            this.timHDBindingSource.DataMember = "timHD";
+            this.timHDBindingSource.DataSource = this.quanLiCuaHangDienThoaiDataSet;
             // 
             // XuatBill
             // 
@@ -101,8 +101,8 @@
             this.Name = "XuatBill";
             this.Text = "XuatBill";
             this.Load += new System.EventHandler(this.XuatBill_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.hDCTMaHDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLiCuaHangDienThoaiDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hDCTMaHDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timHDBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -112,10 +112,10 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.Button btnDong;
+        private QuanLiCuaHangDienThoaiDataSetTableAdapters.timHDTableAdapter timHDTableAdapter;
         private System.Windows.Forms.BindingSource hDCTMaHDBindingSource;
         private QuanLiCuaHangDienThoaiDataSet quanLiCuaHangDienThoaiDataSet;
         private System.Windows.Forms.BindingSource timHDBindingSource;
         private QuanLiCuaHangDienThoaiDataSetTableAdapters.HDCTMaHDTableAdapter hDCTMaHDTableAdapter;
-        private QuanLiCuaHangDienThoaiDataSetTableAdapters.timHDTableAdapter timHDTableAdapter;
     }
 }
