@@ -60,10 +60,5 @@ namespace QuanLiCuaHangDienThoai.Forms
             get { return msp; }
             set { }
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

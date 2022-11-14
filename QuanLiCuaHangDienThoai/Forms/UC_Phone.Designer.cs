@@ -39,6 +39,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.P;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.lb_Gia);
             this.panel1.Controls.Add(this.lb_TenSP);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -46,11 +48,12 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(184, 309);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // lb_Gia
             // 
             this.lb_Gia.AutoSize = true;
+            this.lb_Gia.BackColor = System.Drawing.Color.Transparent;
+            this.lb_Gia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lb_Gia.Location = new System.Drawing.Point(8, 277);
             this.lb_Gia.Name = "lb_Gia";
             this.lb_Gia.Size = new System.Drawing.Size(51, 20);
@@ -60,7 +63,8 @@
             // lb_TenSP
             // 
             this.lb_TenSP.AutoSize = true;
-            this.lb_TenSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lb_TenSP.BackColor = System.Drawing.Color.Transparent;
+            this.lb_TenSP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lb_TenSP.Location = new System.Drawing.Point(8, 237);
             this.lb_TenSP.Name = "lb_TenSP";
             this.lb_TenSP.Size = new System.Drawing.Size(51, 20);

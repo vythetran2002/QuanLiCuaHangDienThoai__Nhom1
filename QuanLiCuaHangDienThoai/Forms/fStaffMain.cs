@@ -22,7 +22,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             InitializeComponent();
             LoadData_SP();
             LoadData_HD_ChuaThanhToan();
-            btn_AddHDCT.Enabled = false;
+            btn_AddHDCT.Visible = false;
            
         }
         
@@ -52,8 +52,15 @@ namespace QuanLiCuaHangDienThoai.Forms
             var query = from item in q.HOADONs
                         where item.status == 0
                         select item.maHD;
+            if (query.Count() != 0)
+            {
+                cbb_ChonHD.DataSource = query;
+            }
+            else
+            {
+                cbb_ChonHD.Text = "";
+            }    
 
-            cbb_ChonHD.DataSource = query;
         }
         private Image ByteToImg(string byteString)
         {
@@ -92,14 +99,21 @@ namespace QuanLiCuaHangDienThoai.Forms
             {
                 pictureBox1.Image = ByteToImg(db.Lay_Chuoi_Byte_Hinh_Anh(maSP));
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+               
             }
             catch { }
-            btn_AddHDCT.Enabled = true;
+            
+            if( int.Parse(lb_SL.Text) <= 0)
+            {
+                btn_AddHDCT.Visible = false;
+            }
+            else btn_AddHDCT.Visible = true;
         }
         void Load_HDCT()
         {
+
+            LoadData_HD_ChuaThanhToan();
             flp_HDCT.Controls.Clear();
-            
             QLDTDataContext q = new QLDTDataContext();
             var query = from item in q.HOADONCHITIETs
                         where item.maHD.ToString() == cbb_ChonHD.Text
@@ -116,19 +130,21 @@ namespace QuanLiCuaHangDienThoai.Forms
         
         private void btn_AddHDCT_Click(object sender, EventArgs e)
         {
-            
-            
-            if(blSP.CheckSpInHd(cbb_ChonHD.Text,lb_MaSP.Text)==false)
+            try
             {
-               db.THEMHDCT(Convert.ToInt32(cbb_ChonHD.Text), lb_MaSP.Text,1);
-                MessageBox.Show("add success");
-                //LoadData_HD_ChuaThanhToan();
-                Load_HDCT();
-            }
-            else
-            {
+                if (blSP.CheckSpInHd(cbb_ChonHD.Text, lb_MaSP.Text) == false)
+                {
+                    db.THEMHDCT(Convert.ToInt32(cbb_ChonHD.Text), lb_MaSP.Text, 1);
+                    MessageBox.Show("add success");
+                    //LoadData_HD_ChuaThanhToan();
+                    Load_HDCT();
+                }
+                else
+                {
 
+                }
             }
+            catch { }
             
         }
         
@@ -150,21 +166,26 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void cbb_ChonHD_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             Load_HDCT();
         }
 
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
-            fBill f = new fBill(cbb_ChonHD.Text);
-            f.ShowDialog();
+            if(cbb_ChonHD.Text!="")
+            {
+                fBill f = new fBill(cbb_ChonHD.Text);
+                f.ShowDialog();
+            }
         }
 
         private void btnXoaHDCT_Click(object sender, EventArgs e)
         {
-            blHDCT.XoaDHCT(cbb_ChonHD.Text);
-            LoadData_HD_ChuaThanhToan();
-
+            if (cbb_ChonHD.Text != "")
+            {
+                blHDCT.XoaDHCT(cbb_ChonHD.Text);
+                LoadData_HD_ChuaThanhToan();
+            }
+            else { }
         }
 
         private void fStaffMain_Load(object sender, EventArgs e)

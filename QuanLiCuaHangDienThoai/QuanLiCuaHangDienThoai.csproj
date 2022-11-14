@@ -215,6 +215,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="image\back2.png" />
+    <None Include="image\nenInfoSP.jpg" />
+    <None Include="image\PhoneNull.jpg" />
+    <None Include="image\P.png" />
+    <None Include="image\phoneorder.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
