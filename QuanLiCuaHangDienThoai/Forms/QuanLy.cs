@@ -467,7 +467,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                     {
                         try
                         {
-                            db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), Convert.ToBase64String(ImgToByte()), this.textBox_SoLuong.Text, maDM, maNCC);
+                            db.CAPNHATSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), Convert.ToBase64String(ImgToByte()), this.textBox_SoLuong.Text, maDM, maNCC);
                         }
                         catch
                         {
@@ -480,7 +480,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                     {
                         try
                         {
-                            db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), "", this.textBox_SoLuong.Text, maDM, maNCC);
+                            db.CAPNHATSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), "", this.textBox_SoLuong.Text, maDM, maNCC);
                         }
                         catch
                         { 

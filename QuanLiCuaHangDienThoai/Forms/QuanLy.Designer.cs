@@ -53,6 +53,8 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.txtycSP = new System.Windows.Forms.TextBox();
             this.cbxTTSP = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label_ChucNang_SP = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.button_ThemSP = new System.Windows.Forms.Button();
             this.button_XoaSP = new System.Windows.Forms.Button();
@@ -82,6 +84,14 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.textBox_TenSP = new System.Windows.Forms.TextBox();
             this.textBox_MaSP = new System.Windows.Forms.TextBox();
             this.tabPage_DanhMuc = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.btnHuyDM = new System.Windows.Forms.Button();
+            this.button_ThemDM = new System.Windows.Forms.Button();
+            this.button_XoaDM = new System.Windows.Forms.Button();
+            this.button_SuaDM = new System.Windows.Forms.Button();
+            this.button_LuuDM = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.btnTimDM = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
@@ -97,6 +107,14 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.textBox_TenDM = new System.Windows.Forms.TextBox();
             this.textBox_MaDM = new System.Windows.Forms.TextBox();
             this.tabPage_NhaCC = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.btnHuyNCC = new System.Windows.Forms.Button();
+            this.button_ThemNCC = new System.Windows.Forms.Button();
+            this.butto_XoaNCC = new System.Windows.Forms.Button();
+            this.button_SuaNCC = new System.Windows.Forms.Button();
+            this.button_LuuNCC = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.btnTIMNCC = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
@@ -112,6 +130,14 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.textBox_TenNCC = new System.Windows.Forms.TextBox();
             this.textBox_MaNCC = new System.Windows.Forms.TextBox();
             this.tabPage4_TaiKhoan = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.btnHuyTK = new System.Windows.Forms.Button();
+            this.button_ThemTK = new System.Windows.Forms.Button();
+            this.button_XoaTK = new System.Windows.Forms.Button();
+            this.button_SuaTK = new System.Windows.Forms.Button();
+            this.button_LuuTK = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.btnTIMTK = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
@@ -144,32 +170,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.textBox_Password = new System.Windows.Forms.TextBox();
             this.textBox_NgayTao = new System.Windows.Forms.TextBox();
             this.textBox_Loai = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label_ChucNang_SP = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.btnHuyDM = new System.Windows.Forms.Button();
-            this.button_ThemDM = new System.Windows.Forms.Button();
-            this.button_XoaDM = new System.Windows.Forms.Button();
-            this.button_SuaDM = new System.Windows.Forms.Button();
-            this.button_LuuDM = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.btnHuyNCC = new System.Windows.Forms.Button();
-            this.button_ThemNCC = new System.Windows.Forms.Button();
-            this.butto_XoaNCC = new System.Windows.Forms.Button();
-            this.button_SuaNCC = new System.Windows.Forms.Button();
-            this.button_LuuNCC = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.btnHuyTK = new System.Windows.Forms.Button();
-            this.button_ThemTK = new System.Windows.Forms.Button();
-            this.button_XoaTK = new System.Windows.Forms.Button();
-            this.button_SuaTK = new System.Windows.Forms.Button();
-            this.button_LuuTK = new System.Windows.Forms.Button();
+            this.label34 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage_DoanhThu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DT)).BeginInit();
@@ -181,20 +182,20 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage_DanhMuc.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DM)).BeginInit();
             this.panel12.SuspendLayout();
             this.tabPage_NhaCC.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NhaCC)).BeginInit();
             this.panel10.SuspendLayout();
             this.tabPage4_TaiKhoan.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TK)).BeginInit();
             this.panel7.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -207,7 +208,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.tabControl1.Controls.Add(this.tabPage_DanhMuc);
             this.tabControl1.Controls.Add(this.tabPage_NhaCC);
             this.tabControl1.Controls.Add(this.tabPage4_TaiKhoan);
-            this.tabControl1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tabControl1.Location = new System.Drawing.Point(24, 22);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
@@ -219,19 +220,25 @@ namespace QuanLiCuaHangDienThoai.Forms
             // tabPage_DoanhThu
             // 
             this.tabPage_DoanhThu.BackColor = System.Drawing.Color.LightCyan;
+            this.tabPage_DoanhThu.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.back2;
+            this.tabPage_DoanhThu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage_DoanhThu.Controls.Add(this.dataGridView_DT);
             this.tabPage_DoanhThu.Controls.Add(this.panel1);
             this.tabPage_DoanhThu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage_DoanhThu.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_DoanhThu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage_DoanhThu.Location = new System.Drawing.Point(4, 26);
             this.tabPage_DoanhThu.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_DoanhThu.Name = "tabPage_DoanhThu";
             this.tabPage_DoanhThu.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage_DoanhThu.Size = new System.Drawing.Size(1108, 742);
+            this.tabPage_DoanhThu.Size = new System.Drawing.Size(1108, 740);
             this.tabPage_DoanhThu.TabIndex = 0;
             this.tabPage_DoanhThu.Text = "Doanh thu";
             // 
             // dataGridView_DT
             // 
+            this.dataGridView_DT.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_DT.BackgroundColor = System.Drawing.Color.LightSteelBlue;
             this.dataGridView_DT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_DT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -371,16 +378,20 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             // tabPage_SanPham
             // 
+            this.tabPage_SanPham.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.back2;
+            this.tabPage_SanPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage_SanPham.Controls.Add(this.panel13);
             this.tabPage_SanPham.Controls.Add(this.panel6);
             this.tabPage_SanPham.Controls.Add(this.dataGridView_SP);
             this.tabPage_SanPham.Controls.Add(this.panel2);
             this.tabPage_SanPham.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage_SanPham.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_SanPham.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage_SanPham.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabPage_SanPham.Location = new System.Drawing.Point(4, 26);
             this.tabPage_SanPham.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_SanPham.Name = "tabPage_SanPham";
             this.tabPage_SanPham.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage_SanPham.Size = new System.Drawing.Size(1108, 742);
+            this.tabPage_SanPham.Size = new System.Drawing.Size(1108, 740);
             this.tabPage_SanPham.TabIndex = 1;
             this.tabPage_SanPham.Text = "Sản Phẩm";
             this.tabPage_SanPham.UseVisualStyleBackColor = true;
@@ -472,6 +483,26 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(321, 145);
             this.panel6.TabIndex = 11;
+            // 
+            // label_ChucNang_SP
+            // 
+            this.label_ChucNang_SP.AutoSize = true;
+            this.label_ChucNang_SP.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ChucNang_SP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label_ChucNang_SP.Location = new System.Drawing.Point(58, 27);
+            this.label_ChucNang_SP.Name = "label_ChucNang_SP";
+            this.label_ChucNang_SP.Size = new System.Drawing.Size(52, 16);
+            this.label_ChucNang_SP.TabIndex = 6;
+            this.label_ChucNang_SP.Text = "label28";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(107, 37);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(10, 15);
+            this.label27.TabIndex = 5;
+            this.label27.Text = " ";
             // 
             // btnHuy
             // 
@@ -568,7 +599,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.dataGridView_SP.Name = "dataGridView_SP";
             this.dataGridView_SP.RowHeadersWidth = 51;
             this.dataGridView_SP.RowTemplate.Height = 24;
-            this.dataGridView_SP.Size = new System.Drawing.Size(715, 700);
+            this.dataGridView_SP.Size = new System.Drawing.Size(715, 698);
             this.dataGridView_SP.TabIndex = 1;
             this.dataGridView_SP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_SP_CellContentClick);
             // 
@@ -802,18 +833,133 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             // tabPage_DanhMuc
             // 
+            this.tabPage_DanhMuc.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.back2;
+            this.tabPage_DanhMuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage_DanhMuc.Controls.Add(this.panel3);
             this.tabPage_DanhMuc.Controls.Add(this.panel14);
             this.tabPage_DanhMuc.Controls.Add(this.dataGridView_DM);
             this.tabPage_DanhMuc.Controls.Add(this.panel12);
             this.tabPage_DanhMuc.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage_DanhMuc.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_DanhMuc.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage_DanhMuc.Location = new System.Drawing.Point(4, 26);
             this.tabPage_DanhMuc.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_DanhMuc.Name = "tabPage_DanhMuc";
-            this.tabPage_DanhMuc.Size = new System.Drawing.Size(1108, 742);
+            this.tabPage_DanhMuc.Size = new System.Drawing.Size(1108, 740);
             this.tabPage_DanhMuc.TabIndex = 2;
             this.tabPage_DanhMuc.Text = "Danh Mục";
             this.tabPage_DanhMuc.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label28);
+            this.panel3.Controls.Add(this.label29);
+            this.panel3.Controls.Add(this.btnHuyDM);
+            this.panel3.Controls.Add(this.button_ThemDM);
+            this.panel3.Controls.Add(this.button_XoaDM);
+            this.panel3.Controls.Add(this.button_SuaDM);
+            this.panel3.Controls.Add(this.button_LuuDM);
+            this.panel3.Location = new System.Drawing.Point(23, 459);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(321, 145);
+            this.panel3.TabIndex = 54;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label28.Location = new System.Drawing.Point(58, 27);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(52, 16);
+            this.label28.TabIndex = 6;
+            this.label28.Text = "label28";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(107, 37);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(10, 15);
+            this.label29.TabIndex = 5;
+            this.label29.Text = " ";
+            // 
+            // btnHuyDM
+            // 
+            this.btnHuyDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnHuyDM.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnHuyDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHuyDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyDM.Location = new System.Drawing.Point(171, 73);
+            this.btnHuyDM.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHuyDM.Name = "btnHuyDM";
+            this.btnHuyDM.Size = new System.Drawing.Size(81, 43);
+            this.btnHuyDM.TabIndex = 4;
+            this.btnHuyDM.Text = "Huỷ";
+            this.btnHuyDM.UseVisualStyleBackColor = false;
+            this.btnHuyDM.Click += new System.EventHandler(this.btnHuyDM_Click);
+            // 
+            // button_ThemDM
+            // 
+            this.button_ThemDM.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_ThemDM.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button_ThemDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_ThemDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ThemDM.Location = new System.Drawing.Point(16, 51);
+            this.button_ThemDM.Margin = new System.Windows.Forms.Padding(2);
+            this.button_ThemDM.Name = "button_ThemDM";
+            this.button_ThemDM.Size = new System.Drawing.Size(84, 43);
+            this.button_ThemDM.TabIndex = 0;
+            this.button_ThemDM.Text = "Thêm";
+            this.button_ThemDM.UseVisualStyleBackColor = false;
+            this.button_ThemDM.Click += new System.EventHandler(this.button_ThemDM_Click);
+            // 
+            // button_XoaDM
+            // 
+            this.button_XoaDM.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_XoaDM.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button_XoaDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_XoaDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_XoaDM.Location = new System.Drawing.Point(116, 51);
+            this.button_XoaDM.Margin = new System.Windows.Forms.Padding(2);
+            this.button_XoaDM.Name = "button_XoaDM";
+            this.button_XoaDM.Size = new System.Drawing.Size(84, 43);
+            this.button_XoaDM.TabIndex = 1;
+            this.button_XoaDM.Text = "Xóa";
+            this.button_XoaDM.UseVisualStyleBackColor = false;
+            this.button_XoaDM.Click += new System.EventHandler(this.button_XoaDM_Click);
+            // 
+            // button_SuaDM
+            // 
+            this.button_SuaDM.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_SuaDM.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button_SuaDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_SuaDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SuaDM.Location = new System.Drawing.Point(221, 51);
+            this.button_SuaDM.Margin = new System.Windows.Forms.Padding(2);
+            this.button_SuaDM.Name = "button_SuaDM";
+            this.button_SuaDM.Size = new System.Drawing.Size(81, 43);
+            this.button_SuaDM.TabIndex = 2;
+            this.button_SuaDM.Text = "Sửa";
+            this.button_SuaDM.UseVisualStyleBackColor = false;
+            this.button_SuaDM.Click += new System.EventHandler(this.button_SuaDM_Click);
+            // 
+            // button_LuuDM
+            // 
+            this.button_LuuDM.BackColor = System.Drawing.Color.Lime;
+            this.button_LuuDM.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button_LuuDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_LuuDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_LuuDM.Location = new System.Drawing.Point(64, 73);
+            this.button_LuuDM.Margin = new System.Windows.Forms.Padding(2);
+            this.button_LuuDM.Name = "button_LuuDM";
+            this.button_LuuDM.Size = new System.Drawing.Size(81, 43);
+            this.button_LuuDM.TabIndex = 3;
+            this.button_LuuDM.Text = "Lưu";
+            this.button_LuuDM.UseVisualStyleBackColor = false;
+            this.button_LuuDM.Click += new System.EventHandler(this.button_LuuDM_Click);
             // 
             // panel14
             // 
@@ -898,7 +1044,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.dataGridView_DM.Name = "dataGridView_DM";
             this.dataGridView_DM.RowHeadersWidth = 51;
             this.dataGridView_DM.RowTemplate.Height = 24;
-            this.dataGridView_DM.Size = new System.Drawing.Size(717, 698);
+            this.dataGridView_DM.Size = new System.Drawing.Size(717, 696);
             this.dataGridView_DM.TabIndex = 0;
             // 
             // MaDM
@@ -969,18 +1115,133 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             // tabPage_NhaCC
             // 
+            this.tabPage_NhaCC.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.back2;
+            this.tabPage_NhaCC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage_NhaCC.Controls.Add(this.panel4);
             this.tabPage_NhaCC.Controls.Add(this.panel16);
             this.tabPage_NhaCC.Controls.Add(this.dataGridView_NhaCC);
             this.tabPage_NhaCC.Controls.Add(this.panel10);
             this.tabPage_NhaCC.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage_NhaCC.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_NhaCC.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage_NhaCC.Location = new System.Drawing.Point(4, 26);
             this.tabPage_NhaCC.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage_NhaCC.Name = "tabPage_NhaCC";
-            this.tabPage_NhaCC.Size = new System.Drawing.Size(1108, 742);
+            this.tabPage_NhaCC.Size = new System.Drawing.Size(1108, 740);
             this.tabPage_NhaCC.TabIndex = 4;
             this.tabPage_NhaCC.Text = "Nhà Cung Cấp";
             this.tabPage_NhaCC.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label30);
+            this.panel4.Controls.Add(this.label31);
+            this.panel4.Controls.Add(this.btnHuyNCC);
+            this.panel4.Controls.Add(this.button_ThemNCC);
+            this.panel4.Controls.Add(this.butto_XoaNCC);
+            this.panel4.Controls.Add(this.button_SuaNCC);
+            this.panel4.Controls.Add(this.button_LuuNCC);
+            this.panel4.Location = new System.Drawing.Point(21, 413);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(321, 145);
+            this.panel4.TabIndex = 55;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label30.Location = new System.Drawing.Point(47, 27);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(52, 16);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "label30";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(107, 37);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(10, 15);
+            this.label31.TabIndex = 5;
+            this.label31.Text = " ";
+            // 
+            // btnHuyNCC
+            // 
+            this.btnHuyNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnHuyNCC.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnHuyNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHuyNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyNCC.Location = new System.Drawing.Point(171, 73);
+            this.btnHuyNCC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHuyNCC.Name = "btnHuyNCC";
+            this.btnHuyNCC.Size = new System.Drawing.Size(81, 43);
+            this.btnHuyNCC.TabIndex = 4;
+            this.btnHuyNCC.Text = "Huỷ";
+            this.btnHuyNCC.UseVisualStyleBackColor = false;
+            this.btnHuyNCC.Click += new System.EventHandler(this.btnHuyNCC_Click);
+            // 
+            // button_ThemNCC
+            // 
+            this.button_ThemNCC.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_ThemNCC.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button_ThemNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_ThemNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ThemNCC.Location = new System.Drawing.Point(16, 51);
+            this.button_ThemNCC.Margin = new System.Windows.Forms.Padding(2);
+            this.button_ThemNCC.Name = "button_ThemNCC";
+            this.button_ThemNCC.Size = new System.Drawing.Size(84, 43);
+            this.button_ThemNCC.TabIndex = 0;
+            this.button_ThemNCC.Text = "Thêm";
+            this.button_ThemNCC.UseVisualStyleBackColor = false;
+            this.button_ThemNCC.Click += new System.EventHandler(this.button_ThemNCC_Click);
+            // 
+            // butto_XoaNCC
+            // 
+            this.butto_XoaNCC.BackColor = System.Drawing.Color.SkyBlue;
+            this.butto_XoaNCC.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.butto_XoaNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.butto_XoaNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.butto_XoaNCC.Location = new System.Drawing.Point(116, 51);
+            this.butto_XoaNCC.Margin = new System.Windows.Forms.Padding(2);
+            this.butto_XoaNCC.Name = "butto_XoaNCC";
+            this.butto_XoaNCC.Size = new System.Drawing.Size(84, 43);
+            this.butto_XoaNCC.TabIndex = 1;
+            this.butto_XoaNCC.Text = "Xóa";
+            this.butto_XoaNCC.UseVisualStyleBackColor = false;
+            this.butto_XoaNCC.Click += new System.EventHandler(this.butto_XoaNCC_Click);
+            // 
+            // button_SuaNCC
+            // 
+            this.button_SuaNCC.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_SuaNCC.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button_SuaNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_SuaNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SuaNCC.Location = new System.Drawing.Point(221, 51);
+            this.button_SuaNCC.Margin = new System.Windows.Forms.Padding(2);
+            this.button_SuaNCC.Name = "button_SuaNCC";
+            this.button_SuaNCC.Size = new System.Drawing.Size(81, 43);
+            this.button_SuaNCC.TabIndex = 2;
+            this.button_SuaNCC.Text = "Sửa";
+            this.button_SuaNCC.UseVisualStyleBackColor = false;
+            this.button_SuaNCC.Click += new System.EventHandler(this.button_SuaNCC_Click);
+            // 
+            // button_LuuNCC
+            // 
+            this.button_LuuNCC.BackColor = System.Drawing.Color.Lime;
+            this.button_LuuNCC.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button_LuuNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_LuuNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_LuuNCC.Location = new System.Drawing.Point(64, 73);
+            this.button_LuuNCC.Margin = new System.Windows.Forms.Padding(2);
+            this.button_LuuNCC.Name = "button_LuuNCC";
+            this.button_LuuNCC.Size = new System.Drawing.Size(81, 43);
+            this.button_LuuNCC.TabIndex = 3;
+            this.button_LuuNCC.Text = "Lưu";
+            this.button_LuuNCC.UseVisualStyleBackColor = false;
+            this.button_LuuNCC.Click += new System.EventHandler(this.button_LuuNCC_Click);
             // 
             // panel16
             // 
@@ -1065,7 +1326,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.dataGridView_NhaCC.Name = "dataGridView_NhaCC";
             this.dataGridView_NhaCC.RowHeadersWidth = 51;
             this.dataGridView_NhaCC.RowTemplate.Height = 24;
-            this.dataGridView_NhaCC.Size = new System.Drawing.Size(721, 701);
+            this.dataGridView_NhaCC.Size = new System.Drawing.Size(721, 699);
             this.dataGridView_NhaCC.TabIndex = 3;
             // 
             // MaNCC
@@ -1136,18 +1397,133 @@ namespace QuanLiCuaHangDienThoai.Forms
             // 
             // tabPage4_TaiKhoan
             // 
+            this.tabPage4_TaiKhoan.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.back2;
+            this.tabPage4_TaiKhoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tabPage4_TaiKhoan.Controls.Add(this.panel5);
             this.tabPage4_TaiKhoan.Controls.Add(this.panel15);
             this.tabPage4_TaiKhoan.Controls.Add(this.dataGridView_TK);
             this.tabPage4_TaiKhoan.Controls.Add(this.panel7);
             this.tabPage4_TaiKhoan.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabPage4_TaiKhoan.Location = new System.Drawing.Point(4, 24);
+            this.tabPage4_TaiKhoan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage4_TaiKhoan.Location = new System.Drawing.Point(4, 26);
             this.tabPage4_TaiKhoan.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4_TaiKhoan.Name = "tabPage4_TaiKhoan";
-            this.tabPage4_TaiKhoan.Size = new System.Drawing.Size(1108, 742);
+            this.tabPage4_TaiKhoan.Size = new System.Drawing.Size(1108, 740);
             this.tabPage4_TaiKhoan.TabIndex = 3;
             this.tabPage4_TaiKhoan.Text = "Tài Khoản Đăng Nhập";
             this.tabPage4_TaiKhoan.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.label32);
+            this.panel5.Controls.Add(this.label33);
+            this.panel5.Controls.Add(this.btnHuyTK);
+            this.panel5.Controls.Add(this.button_ThemTK);
+            this.panel5.Controls.Add(this.button_XoaTK);
+            this.panel5.Controls.Add(this.button_SuaTK);
+            this.panel5.Controls.Add(this.button_LuuTK);
+            this.panel5.Location = new System.Drawing.Point(22, 495);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(321, 145);
+            this.panel5.TabIndex = 55;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label32.Location = new System.Drawing.Point(58, 27);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(52, 16);
+            this.label32.TabIndex = 6;
+            this.label32.Text = "label32";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(107, 37);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(10, 15);
+            this.label33.TabIndex = 5;
+            this.label33.Text = " ";
+            // 
+            // btnHuyTK
+            // 
+            this.btnHuyTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnHuyTK.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnHuyTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHuyTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyTK.Location = new System.Drawing.Point(171, 73);
+            this.btnHuyTK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHuyTK.Name = "btnHuyTK";
+            this.btnHuyTK.Size = new System.Drawing.Size(81, 43);
+            this.btnHuyTK.TabIndex = 4;
+            this.btnHuyTK.Text = "Huỷ";
+            this.btnHuyTK.UseVisualStyleBackColor = false;
+            this.btnHuyTK.Click += new System.EventHandler(this.btnHuyTK_Click);
+            // 
+            // button_ThemTK
+            // 
+            this.button_ThemTK.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_ThemTK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button_ThemTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_ThemTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_ThemTK.Location = new System.Drawing.Point(16, 51);
+            this.button_ThemTK.Margin = new System.Windows.Forms.Padding(2);
+            this.button_ThemTK.Name = "button_ThemTK";
+            this.button_ThemTK.Size = new System.Drawing.Size(84, 43);
+            this.button_ThemTK.TabIndex = 0;
+            this.button_ThemTK.Text = "Thêm";
+            this.button_ThemTK.UseVisualStyleBackColor = false;
+            this.button_ThemTK.Click += new System.EventHandler(this.button_ThemTK_Click);
+            // 
+            // button_XoaTK
+            // 
+            this.button_XoaTK.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_XoaTK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button_XoaTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_XoaTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_XoaTK.Location = new System.Drawing.Point(116, 51);
+            this.button_XoaTK.Margin = new System.Windows.Forms.Padding(2);
+            this.button_XoaTK.Name = "button_XoaTK";
+            this.button_XoaTK.Size = new System.Drawing.Size(84, 43);
+            this.button_XoaTK.TabIndex = 1;
+            this.button_XoaTK.Text = "Xóa";
+            this.button_XoaTK.UseVisualStyleBackColor = false;
+            this.button_XoaTK.Click += new System.EventHandler(this.button_XoaTK_Click);
+            // 
+            // button_SuaTK
+            // 
+            this.button_SuaTK.BackColor = System.Drawing.Color.SkyBlue;
+            this.button_SuaTK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button_SuaTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_SuaTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_SuaTK.Location = new System.Drawing.Point(221, 51);
+            this.button_SuaTK.Margin = new System.Windows.Forms.Padding(2);
+            this.button_SuaTK.Name = "button_SuaTK";
+            this.button_SuaTK.Size = new System.Drawing.Size(81, 43);
+            this.button_SuaTK.TabIndex = 2;
+            this.button_SuaTK.Text = "Sửa";
+            this.button_SuaTK.UseVisualStyleBackColor = false;
+            this.button_SuaTK.Click += new System.EventHandler(this.button_SuaTK_Click);
+            // 
+            // button_LuuTK
+            // 
+            this.button_LuuTK.BackColor = System.Drawing.Color.Lime;
+            this.button_LuuTK.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button_LuuTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_LuuTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_LuuTK.Location = new System.Drawing.Point(64, 73);
+            this.button_LuuTK.Margin = new System.Windows.Forms.Padding(2);
+            this.button_LuuTK.Name = "button_LuuTK";
+            this.button_LuuTK.Size = new System.Drawing.Size(81, 43);
+            this.button_LuuTK.TabIndex = 3;
+            this.button_LuuTK.Text = "Lưu";
+            this.button_LuuTK.UseVisualStyleBackColor = false;
+            this.button_LuuTK.Click += new System.EventHandler(this.button_LuuTK_Click);
             // 
             // panel15
             // 
@@ -1240,7 +1616,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.dataGridView_TK.Name = "dataGridView_TK";
             this.dataGridView_TK.RowHeadersWidth = 51;
             this.dataGridView_TK.RowTemplate.Height = 24;
-            this.dataGridView_TK.Size = new System.Drawing.Size(723, 705);
+            this.dataGridView_TK.Size = new System.Drawing.Size(723, 703);
             this.dataGridView_TK.TabIndex = 1;
             // 
             // Username
@@ -1484,361 +1860,19 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.textBox_Loai.Size = new System.Drawing.Size(174, 21);
             this.textBox_Loai.TabIndex = 11;
             // 
-            // label27
+            // label34
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(107, 37);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(10, 15);
-            this.label27.TabIndex = 5;
-            this.label27.Text = " ";
-            // 
-            // label_ChucNang_SP
-            // 
-            this.label_ChucNang_SP.AutoSize = true;
-            this.label_ChucNang_SP.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ChucNang_SP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_ChucNang_SP.Location = new System.Drawing.Point(58, 27);
-            this.label_ChucNang_SP.Name = "label_ChucNang_SP";
-            this.label_ChucNang_SP.Size = new System.Drawing.Size(52, 16);
-            this.label_ChucNang_SP.TabIndex = 6;
-            this.label_ChucNang_SP.Text = "label28";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label28);
-            this.panel3.Controls.Add(this.label29);
-            this.panel3.Controls.Add(this.btnHuyDM);
-            this.panel3.Controls.Add(this.button_ThemDM);
-            this.panel3.Controls.Add(this.button_XoaDM);
-            this.panel3.Controls.Add(this.button_SuaDM);
-            this.panel3.Controls.Add(this.button_LuuDM);
-            this.panel3.Location = new System.Drawing.Point(23, 459);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(321, 145);
-            this.panel3.TabIndex = 54;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label28.Location = new System.Drawing.Point(58, 27);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(52, 16);
-            this.label28.TabIndex = 6;
-            this.label28.Text = "label28";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(107, 37);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(10, 15);
-            this.label29.TabIndex = 5;
-            this.label29.Text = " ";
-            // 
-            // btnHuyDM
-            // 
-            this.btnHuyDM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnHuyDM.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnHuyDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHuyDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyDM.Location = new System.Drawing.Point(171, 73);
-            this.btnHuyDM.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHuyDM.Name = "btnHuyDM";
-            this.btnHuyDM.Size = new System.Drawing.Size(81, 43);
-            this.btnHuyDM.TabIndex = 4;
-            this.btnHuyDM.Text = "Huỷ";
-            this.btnHuyDM.UseVisualStyleBackColor = false;
-            this.btnHuyDM.Click += new System.EventHandler(this.btnHuyDM_Click);
-            // 
-            // button_ThemDM
-            // 
-            this.button_ThemDM.BackColor = System.Drawing.Color.SkyBlue;
-            this.button_ThemDM.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button_ThemDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_ThemDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ThemDM.Location = new System.Drawing.Point(16, 51);
-            this.button_ThemDM.Margin = new System.Windows.Forms.Padding(2);
-            this.button_ThemDM.Name = "button_ThemDM";
-            this.button_ThemDM.Size = new System.Drawing.Size(84, 43);
-            this.button_ThemDM.TabIndex = 0;
-            this.button_ThemDM.Text = "Thêm";
-            this.button_ThemDM.UseVisualStyleBackColor = false;
-            this.button_ThemDM.Click += new System.EventHandler(this.button_ThemDM_Click);
-            // 
-            // button_XoaDM
-            // 
-            this.button_XoaDM.BackColor = System.Drawing.Color.SkyBlue;
-            this.button_XoaDM.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button_XoaDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_XoaDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_XoaDM.Location = new System.Drawing.Point(116, 51);
-            this.button_XoaDM.Margin = new System.Windows.Forms.Padding(2);
-            this.button_XoaDM.Name = "button_XoaDM";
-            this.button_XoaDM.Size = new System.Drawing.Size(84, 43);
-            this.button_XoaDM.TabIndex = 1;
-            this.button_XoaDM.Text = "Xóa";
-            this.button_XoaDM.UseVisualStyleBackColor = false;
-            this.button_XoaDM.Click += new System.EventHandler(this.button_XoaDM_Click);
-            // 
-            // button_SuaDM
-            // 
-            this.button_SuaDM.BackColor = System.Drawing.Color.SkyBlue;
-            this.button_SuaDM.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button_SuaDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_SuaDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SuaDM.Location = new System.Drawing.Point(221, 51);
-            this.button_SuaDM.Margin = new System.Windows.Forms.Padding(2);
-            this.button_SuaDM.Name = "button_SuaDM";
-            this.button_SuaDM.Size = new System.Drawing.Size(81, 43);
-            this.button_SuaDM.TabIndex = 2;
-            this.button_SuaDM.Text = "Sửa";
-            this.button_SuaDM.UseVisualStyleBackColor = false;
-            this.button_SuaDM.Click += new System.EventHandler(this.button_SuaDM_Click);
-            // 
-            // button_LuuDM
-            // 
-            this.button_LuuDM.BackColor = System.Drawing.Color.Lime;
-            this.button_LuuDM.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button_LuuDM.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_LuuDM.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LuuDM.Location = new System.Drawing.Point(64, 73);
-            this.button_LuuDM.Margin = new System.Windows.Forms.Padding(2);
-            this.button_LuuDM.Name = "button_LuuDM";
-            this.button_LuuDM.Size = new System.Drawing.Size(81, 43);
-            this.button_LuuDM.TabIndex = 3;
-            this.button_LuuDM.Text = "Lưu";
-            this.button_LuuDM.UseVisualStyleBackColor = false;
-            this.button_LuuDM.Click += new System.EventHandler(this.button_LuuDM_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label30);
-            this.panel4.Controls.Add(this.label31);
-            this.panel4.Controls.Add(this.btnHuyNCC);
-            this.panel4.Controls.Add(this.button_ThemNCC);
-            this.panel4.Controls.Add(this.butto_XoaNCC);
-            this.panel4.Controls.Add(this.button_SuaNCC);
-            this.panel4.Controls.Add(this.button_LuuNCC);
-            this.panel4.Location = new System.Drawing.Point(21, 413);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(321, 145);
-            this.panel4.TabIndex = 55;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label30.Location = new System.Drawing.Point(47, 27);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(52, 16);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "label30";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(107, 37);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(10, 15);
-            this.label31.TabIndex = 5;
-            this.label31.Text = " ";
-            // 
-            // btnHuyNCC
-            // 
-            this.btnHuyNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnHuyNCC.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnHuyNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHuyNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyNCC.Location = new System.Drawing.Point(171, 73);
-            this.btnHuyNCC.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHuyNCC.Name = "btnHuyNCC";
-            this.btnHuyNCC.Size = new System.Drawing.Size(81, 43);
-            this.btnHuyNCC.TabIndex = 4;
-            this.btnHuyNCC.Text = "Huỷ";
-            this.btnHuyNCC.UseVisualStyleBackColor = false;
-            this.btnHuyNCC.Click += new System.EventHandler(this.btnHuyNCC_Click);
-            // 
-            // button_ThemNCC
-            // 
-            this.button_ThemNCC.BackColor = System.Drawing.Color.SkyBlue;
-            this.button_ThemNCC.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button_ThemNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_ThemNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ThemNCC.Location = new System.Drawing.Point(16, 51);
-            this.button_ThemNCC.Margin = new System.Windows.Forms.Padding(2);
-            this.button_ThemNCC.Name = "button_ThemNCC";
-            this.button_ThemNCC.Size = new System.Drawing.Size(84, 43);
-            this.button_ThemNCC.TabIndex = 0;
-            this.button_ThemNCC.Text = "Thêm";
-            this.button_ThemNCC.UseVisualStyleBackColor = false;
-            this.button_ThemNCC.Click += new System.EventHandler(this.button_ThemNCC_Click);
-            // 
-            // butto_XoaNCC
-            // 
-            this.butto_XoaNCC.BackColor = System.Drawing.Color.SkyBlue;
-            this.butto_XoaNCC.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.butto_XoaNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.butto_XoaNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butto_XoaNCC.Location = new System.Drawing.Point(116, 51);
-            this.butto_XoaNCC.Margin = new System.Windows.Forms.Padding(2);
-            this.butto_XoaNCC.Name = "butto_XoaNCC";
-            this.butto_XoaNCC.Size = new System.Drawing.Size(84, 43);
-            this.butto_XoaNCC.TabIndex = 1;
-            this.butto_XoaNCC.Text = "Xóa";
-            this.butto_XoaNCC.UseVisualStyleBackColor = false;
-            this.butto_XoaNCC.Click += new System.EventHandler(this.butto_XoaNCC_Click);
-            // 
-            // button_SuaNCC
-            // 
-            this.button_SuaNCC.BackColor = System.Drawing.Color.SkyBlue;
-            this.button_SuaNCC.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button_SuaNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_SuaNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SuaNCC.Location = new System.Drawing.Point(221, 51);
-            this.button_SuaNCC.Margin = new System.Windows.Forms.Padding(2);
-            this.button_SuaNCC.Name = "button_SuaNCC";
-            this.button_SuaNCC.Size = new System.Drawing.Size(81, 43);
-            this.button_SuaNCC.TabIndex = 2;
-            this.button_SuaNCC.Text = "Sửa";
-            this.button_SuaNCC.UseVisualStyleBackColor = false;
-            this.button_SuaNCC.Click += new System.EventHandler(this.button_SuaNCC_Click);
-            // 
-            // button_LuuNCC
-            // 
-            this.button_LuuNCC.BackColor = System.Drawing.Color.Lime;
-            this.button_LuuNCC.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button_LuuNCC.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_LuuNCC.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LuuNCC.Location = new System.Drawing.Point(64, 73);
-            this.button_LuuNCC.Margin = new System.Windows.Forms.Padding(2);
-            this.button_LuuNCC.Name = "button_LuuNCC";
-            this.button_LuuNCC.Size = new System.Drawing.Size(81, 43);
-            this.button_LuuNCC.TabIndex = 3;
-            this.button_LuuNCC.Text = "Lưu";
-            this.button_LuuNCC.UseVisualStyleBackColor = false;
-            this.button_LuuNCC.Click += new System.EventHandler(this.button_LuuNCC_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label32);
-            this.panel5.Controls.Add(this.label33);
-            this.panel5.Controls.Add(this.btnHuyTK);
-            this.panel5.Controls.Add(this.button_ThemTK);
-            this.panel5.Controls.Add(this.button_XoaTK);
-            this.panel5.Controls.Add(this.button_SuaTK);
-            this.panel5.Controls.Add(this.button_LuuTK);
-            this.panel5.Location = new System.Drawing.Point(22, 495);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(321, 145);
-            this.panel5.TabIndex = 55;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label32.Location = new System.Drawing.Point(58, 27);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(52, 16);
-            this.label32.TabIndex = 6;
-            this.label32.Text = "label32";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(107, 37);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(10, 15);
-            this.label33.TabIndex = 5;
-            this.label33.Text = " ";
-            // 
-            // btnHuyTK
-            // 
-            this.btnHuyTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnHuyTK.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnHuyTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHuyTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuyTK.Location = new System.Drawing.Point(171, 73);
-            this.btnHuyTK.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHuyTK.Name = "btnHuyTK";
-            this.btnHuyTK.Size = new System.Drawing.Size(81, 43);
-            this.btnHuyTK.TabIndex = 4;
-            this.btnHuyTK.Text = "Huỷ";
-            this.btnHuyTK.UseVisualStyleBackColor = false;
-            this.btnHuyTK.Click += new System.EventHandler(this.btnHuyTK_Click);
-            // 
-            // button_ThemTK
-            // 
-            this.button_ThemTK.BackColor = System.Drawing.Color.SkyBlue;
-            this.button_ThemTK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button_ThemTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_ThemTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ThemTK.Location = new System.Drawing.Point(16, 51);
-            this.button_ThemTK.Margin = new System.Windows.Forms.Padding(2);
-            this.button_ThemTK.Name = "button_ThemTK";
-            this.button_ThemTK.Size = new System.Drawing.Size(84, 43);
-            this.button_ThemTK.TabIndex = 0;
-            this.button_ThemTK.Text = "Thêm";
-            this.button_ThemTK.UseVisualStyleBackColor = false;
-            this.button_ThemTK.Click += new System.EventHandler(this.button_ThemTK_Click);
-            // 
-            // button_XoaTK
-            // 
-            this.button_XoaTK.BackColor = System.Drawing.Color.SkyBlue;
-            this.button_XoaTK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button_XoaTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_XoaTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_XoaTK.Location = new System.Drawing.Point(116, 51);
-            this.button_XoaTK.Margin = new System.Windows.Forms.Padding(2);
-            this.button_XoaTK.Name = "button_XoaTK";
-            this.button_XoaTK.Size = new System.Drawing.Size(84, 43);
-            this.button_XoaTK.TabIndex = 1;
-            this.button_XoaTK.Text = "Xóa";
-            this.button_XoaTK.UseVisualStyleBackColor = false;
-            this.button_XoaTK.Click += new System.EventHandler(this.button_XoaTK_Click);
-            // 
-            // button_SuaTK
-            // 
-            this.button_SuaTK.BackColor = System.Drawing.Color.SkyBlue;
-            this.button_SuaTK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button_SuaTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_SuaTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_SuaTK.Location = new System.Drawing.Point(221, 51);
-            this.button_SuaTK.Margin = new System.Windows.Forms.Padding(2);
-            this.button_SuaTK.Name = "button_SuaTK";
-            this.button_SuaTK.Size = new System.Drawing.Size(81, 43);
-            this.button_SuaTK.TabIndex = 2;
-            this.button_SuaTK.Text = "Sửa";
-            this.button_SuaTK.UseVisualStyleBackColor = false;
-            this.button_SuaTK.Click += new System.EventHandler(this.button_SuaTK_Click);
-            // 
-            // button_LuuTK
-            // 
-            this.button_LuuTK.BackColor = System.Drawing.Color.Lime;
-            this.button_LuuTK.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button_LuuTK.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_LuuTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_LuuTK.Location = new System.Drawing.Point(64, 73);
-            this.button_LuuTK.Margin = new System.Windows.Forms.Padding(2);
-            this.button_LuuTK.Name = "button_LuuTK";
-            this.button_LuuTK.Size = new System.Drawing.Size(81, 43);
-            this.button_LuuTK.TabIndex = 3;
-            this.button_LuuTK.Text = "Lưu";
-            this.button_LuuTK.UseVisualStyleBackColor = false;
-            this.button_LuuTK.Click += new System.EventHandler(this.button_LuuTK_Click);
+            this.label34.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.Transparent;
+            this.label34.Font = new System.Drawing.Font("Futura BdCn BT", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.Gold;
+            this.label34.Location = new System.Drawing.Point(979, 8);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(161, 35);
+            this.label34.TabIndex = 2;
+            this.label34.Text = "MOBILE STORE";
             // 
             // QuanLy
             // 
@@ -1846,11 +1880,17 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.back2;
+            this.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.phoneorder;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1161, 809);
+            this.Controls.Add(this.label34);
             this.Controls.Add(this.tabControl1);
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "QuanLy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản Lý";
@@ -1870,30 +1910,31 @@ namespace QuanLiCuaHangDienThoai.Forms
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage_DanhMuc.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_DM)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
             this.tabPage_NhaCC.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_NhaCC)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.tabPage4_TaiKhoan.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_TK)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -2039,5 +2080,6 @@ namespace QuanLiCuaHangDienThoai.Forms
         private System.Windows.Forms.Button button_XoaTK;
         private System.Windows.Forms.Button button_SuaTK;
         private System.Windows.Forms.Button button_LuuTK;
+        private System.Windows.Forms.Label label34;
     }
 }

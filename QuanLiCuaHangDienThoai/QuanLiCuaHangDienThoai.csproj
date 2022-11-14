@@ -150,6 +150,9 @@
       <DependentUpon>QuanLiCuaHangDienThoaiDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\fBill.resx">
       <DependentUpon>fBill.cs</DependentUpon>
     </EmbeddedResource>
