@@ -34,7 +34,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                         QuanLy admin = new QuanLy();
                         this.Hide();
                         admin.ShowDialog();
-                        this.Show();
+                        this.Close();
                     }
                     else
                     {
@@ -43,7 +43,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                         staff.username= tendangnhap;
                         this.Hide();
                         staff.ShowDialog();
-                        this.Show();
+                        this.Close();
                     }
                 }
                 else

@@ -43,7 +43,12 @@ namespace QuanLiCuaHangDienThoai.Forms
             var query = db.JOIN_SP_HDCT(maHD, maSP).SingleOrDefault();
             lb_TenSP.Text = query.tenSP;
             numericUpDown1.Value = int.Parse(query.soLuong.ToString());
-            lb_ThanhTien.Text=(int.Parse(query.gia.ToString())* int.Parse(query.soLuong.ToString())).ToString();
+
+            var maxslsp = (from item in db.SANPHAMs
+                        where item.maSP == maSP
+                        select item.soLuong).SingleOrDefault();
+            numericUpDown1.Maximum = Convert.ToInt32(maxslsp)+1;
+            lb_ThanhTien.Text = (int.Parse(query.gia.ToString()) * int.Parse(query.soLuong.ToString())).ToString();
             this.mahd = query.maHD.ToString();
             this.masp = query.maSP;
             this.gia = query.gia.ToString();
