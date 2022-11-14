@@ -89,43 +89,49 @@ namespace QuanLiCuaHangDienThoai.Forms
                                         select u.tenNCC;
             //comboBox_MaNCC.DataSource = db.TB_TENNCC();
             comboBox_MaNCC.DisplayMember = "TenNCC";
-            button_ThemSP.Enabled = true;
-            button_XoaSP.Enabled = true;
-            button_LuuSP.Enabled = false;
-            btnHuy.Enabled = false;
-            button_SuaSP.Enabled = true;
+            button_ThemSP.Visible = true;
+            button_XoaSP.Visible = true;
+            button_LuuSP.Visible = false;
+            btnHuy.Visible = false;
+            button_SuaSP.Visible = true;
             panel2.Enabled = false;
+            button_ChenAnh.Visible = false;
+            label_ChucNang_SP.Visible = false;
+            dataGridView_SP.Columns[3].Visible = false;
         }
         void LoadDanhMuc()
         {
             
             listDanhMuc.DataSource = db.LayDM();
-            button_ThemDM.Enabled = true;
-            button_XoaDM.Enabled = true;
-            button_SuaDM.Enabled = true;
-            button_LuuDM.Enabled = false;
-            btnHuyDM.Enabled = false;
+            button_ThemDM.Visible = true;
+            button_XoaDM.Visible = true;
+            button_SuaDM.Visible = true;
+            button_LuuDM.Visible = false;
+            btnHuyDM.Visible = false;
             panel12.Enabled = false;
+            label28.Visible = false;
         }
         void LoadNhaCC()
         {
             listNhaCC.DataSource = db.LAYNCC();
-            button_ThemNCC.Enabled = true;
-            butto_XoaNCC.Enabled = true;
-            button_SuaNCC.Enabled = true;
-            button_LuuNCC.Enabled = false;
-            btnHuyNCC.Enabled = false;
+            button_ThemNCC.Visible = true;
+            butto_XoaNCC.Visible = true;
+            button_SuaNCC.Visible = true;
+            button_LuuNCC.Visible = false;
+            btnHuyNCC.Visible = false;
             panel10.Enabled = false;
+            label30.Visible = false;
         }
         void LoadTaiKhoan()
         {
             listTaiKhoan.DataSource = db.LAYTK();
-            button_ThemTK.Enabled = true;
-            button_XoaTK.Enabled = true;
-            button_SuaTK.Enabled = true;
-            button_LuuTK.Enabled = false;
-            btnHuyTK.Enabled = false;
+            button_ThemTK.Visible = true;
+            button_XoaTK.Visible = true;
+            button_SuaTK.Visible = true;
+            button_LuuTK.Visible = false;
+            btnHuyTK.Visible = false;
             panel7.Enabled = false;
+            label32.Visible = false;
         }
         void LoadDoanhThu_byDate()
         {
@@ -189,7 +195,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         }
         void Thong_Ke_Doanh_Thu_Theo_Ngay(DateTime checkIn,DateTime checkOut)
         {
-            dataGridView_TK.DataSource = db.DOANH_THU_THEO_NGAY(checkIn, checkOut);
+            dataGridView_DT.DataSource = db.DOANH_THU_THEO_NGAY(checkIn, checkOut);
         }
         private Image ByteToImg(string byteString)
         {
@@ -308,22 +314,28 @@ namespace QuanLiCuaHangDienThoai.Forms
             textBox_SoLuong.ResetText();
             comboBox_MaDM.ResetText();
             comboBox_MaNCC.ResetText();
-            button_ThemSP.Enabled = false;
-            button_SuaSP.Enabled = false;
-            button_XoaSP.Enabled = false;
-            button_LuuSP.Enabled = true;
-            btnHuy.Enabled = true;
+            button_ThemSP.Visible = false;
+            button_SuaSP.Visible = false;
+            button_XoaSP.Visible = false;
+            button_LuuSP.Visible = true;
+            btnHuy.Visible = true;
+            button_ChenAnh.Visible = true;
+            label_ChucNang_SP.Text = "Đang tiến hành THÊM sản phẩm...";
+            label_ChucNang_SP.Visible = true;
+            
         }
         private void button_SuaSP_Click(object sender, EventArgs e)
         {
             themSP = false;
             panel2.Enabled = true;
-            button_ThemSP.Enabled = false;
-            button_SuaSP.Enabled = false;
-            button_XoaSP.Enabled = false;
-            button_LuuSP.Enabled = true;
-            btnHuy.Enabled = true;
-
+            button_ThemSP.Visible = false;
+            button_SuaSP.Visible = false;
+            button_XoaSP.Visible = false;
+            button_LuuSP.Visible = true;
+            btnHuy.Visible = true;
+            button_ChenAnh.Visible = true;
+            label_ChucNang_SP.Text = "Đang tiến hành SỬA sản phẩm...";
+            label_ChucNang_SP.Visible = true;
         }
         private void button_ChenAnh_Click(object sender, EventArgs e)
         {
@@ -342,9 +354,9 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void dataGridView_SP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView_SP.CurrentRow.Cells["hinhAnh"].Value.ToString() != "")
+            if (dataGridView_SP.CurrentRow.Cells[3].Value.ToString() != "")
             {
-                pictureBox1.Image = ByteToImg(dataGridView_SP.CurrentRow.Cells["hinhAnh"].Value.ToString());
+                pictureBox1.Image = ByteToImg(dataGridView_SP.CurrentRow.Cells[3].Value.ToString());
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
             else
@@ -352,8 +364,9 @@ namespace QuanLiCuaHangDienThoai.Forms
                 pictureBox1.Image = null;
                 linkHinhAnh = null;
             }
-            comboBox_MaDM.Text = db.Lay_Ten_DM(dataGridView_SP.CurrentRow.Cells["MaDMuc"].Value.ToString());
-            comboBox_MaNCC.Text = db.Lay_Ten_NCC(dataGridView_SP.CurrentRow.Cells["MaNCC1"].Value.ToString());
+            comboBox_MaDM.Text = db.Lay_Ten_DM(dataGridView_SP.CurrentRow.Cells[5].Value.ToString());
+            comboBox_MaNCC.Text = db.Lay_Ten_NCC(dataGridView_SP.CurrentRow.Cells[6].Value.ToString());
+            
         }
 
         private void button_ReloadSP_Click(object sender, EventArgs e)
@@ -388,13 +401,36 @@ namespace QuanLiCuaHangDienThoai.Forms
                     String maDM = db.ID_MADM_TEN(comboBox_MaDM.SelectedItem.ToString());
                     String maNCC = db.ID_NCC_TEN(comboBox_MaNCC.SelectedItem.ToString());
                     if (ImgToByte() != null)
-                        db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), Convert.ToBase64String(ImgToByte()), this.textBox_SoLuong.Text, maDM, maNCC);
+                    {
+                        try
+                        {
+                            db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), Convert.ToBase64String(ImgToByte()), this.textBox_SoLuong.Text, maDM, maNCC);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Không thêm được, lỗi rồi !");
+                            return;
+                        }
+                    }
+
                     else
-                        db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), "", this.textBox_SoLuong.Text, maDM, maNCC);
+                    {
+                        try
+                        {
+                            db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), "", this.textBox_SoLuong.Text, maDM, maNCC);
+                        }
+                        catch 
+                        { 
+                            MessageBox.Show("Không thêm được, lỗi rồi !");
+                            return;
+                        }
+                        
+                    }
+                    MessageBox.Show("THÊM THÀNH CÔNG!!");
                     LoadSanPham();
-                    MessageBox.Show("Thêm thành công");
+                    
                 }
-                catch(SqlException)
+                catch
                 {
                     MessageBox.Show("Không thêm được, lỗi rồi !");
                 }
@@ -428,11 +464,34 @@ namespace QuanLiCuaHangDienThoai.Forms
                     string maDM = db.ID_MADM_TEN(comboBox_MaDM.SelectedItem.ToString());
                     string maNCC = db.ID_NCC_TEN(comboBox_MaNCC.SelectedItem.ToString());
                     if (ImgToByte() != null)
-                        db.CAPNHATSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), Convert.ToBase64String(ImgToByte()), this.textBox_SoLuong.Text, maDM, maNCC);
+                    {
+                        try
+                        {
+                            db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), Convert.ToBase64String(ImgToByte()), this.textBox_SoLuong.Text, maDM, maNCC);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Không thêm được, lỗi rồi !");
+                            return;
+                        }
+                    }
+
                     else
-                        db.CAPNHATSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), "", this.textBox_SoLuong.Text, maDM, maNCC);
+                    {
+                        try
+                        {
+                            db.THEMSP(this.textBox_MaSP.Text, this.textBox_TenSP.Text, Convert.ToInt32(this.textBox_Gia.Text), "", this.textBox_SoLuong.Text, maDM, maNCC);
+                        }
+                        catch
+                        { 
+                            DialogResult dialogResult = MessageBox.Show("Không thêm được, lỗi rồi !");
+                            return;
+                        }
+
+                    }
+                    MessageBox.Show("CẬP NHẬT THÀNH CÔNG!!" );
                     LoadSanPham();
-                    MessageBox.Show("Cập nhật thành công");
+                    
                 }
                 catch(SqlException)
                 {
@@ -455,12 +514,14 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void button_SuaDM_Click(object sender, EventArgs e)
         {
             themDM = false;
-            button_ThemDM.Enabled = false;
-            button_XoaDM.Enabled = false;
-            button_SuaDM.Enabled = false;
-            button_LuuDM.Enabled = true;
-            btnHuyDM.Enabled = true;
+            button_ThemDM.Visible = false;
+            button_XoaDM.Visible = false;
+            button_SuaDM.Visible = false;
+            button_LuuDM.Visible = true;
+            btnHuyDM.Visible = true;
             panel12.Enabled = true;
+            label28.Text = "Đang tiến hành SỬA danh mục...";
+            label28.Visible = true;
         }
 
         private void button_XoaDM_Click(object sender, EventArgs e)
@@ -501,23 +562,27 @@ namespace QuanLiCuaHangDienThoai.Forms
             textBox_MaNCC.Text = ncc;
             textBox_TenNCC.ResetText();
             themNCC = true;
-            button_ThemNCC.Enabled = false;
-            butto_XoaNCC.Enabled = false;
-            button_SuaNCC.Enabled = false;
-            button_LuuNCC.Enabled = true;
-            btnHuyNCC.Enabled = true;
+            button_ThemNCC.Visible = false;
+            butto_XoaNCC.Visible = false;
+            button_SuaNCC.Visible = false;
+            button_LuuNCC.Visible = true;
+            btnHuyNCC.Visible = true;
             panel10.Enabled = true;
+            label30.Text = "Đang tiến hành THÊM nhà cung cấp...";
+            label30.Visible = true;
         }
 
         private void button_SuaNCC_Click(object sender, EventArgs e)
         {
             themNCC = false;
-            button_ThemNCC.Enabled = false;
-            butto_XoaNCC.Enabled = false;
-            button_SuaNCC.Enabled = false;
-            button_LuuNCC.Enabled = true;
-            btnHuyNCC.Enabled = true;
+            button_ThemNCC.Visible = false;
+            butto_XoaNCC.Visible = false;
+            button_SuaNCC.Visible = false;
+            button_LuuNCC.Visible = true;
+            btnHuyNCC.Visible = true;
             panel10.Enabled = true;
+            label30.Text = "Đang tiến hành SỬA nhà cung cấp...";
+            label30.Visible = true;
         }
 
         private void butto_XoaNCC_Click(object sender, EventArgs e)
@@ -562,22 +627,26 @@ namespace QuanLiCuaHangDienThoai.Forms
             textBox_NgaySinh.ResetText();
             textBox_Loai.ResetText();
             textBox_NgayTao.ResetText();
-            button_ThemTK.Enabled = false;
-            button_XoaTK.Enabled = false;
-            button_SuaTK.Enabled = false;
-            button_LuuTK.Enabled = true;
-            btnHuyTK.Enabled = true;
+            button_ThemTK.Visible = false;
+            button_XoaTK.Visible = false;
+            button_SuaTK.Visible = false;
+            button_LuuTK.Visible = true;
+            btnHuyTK.Visible = true;
+            label32.Text = "Đang tiến hành THÊM tài khoản...";
+            label32.Visible = true;
             panel7.Enabled = true;
         }
 
         private void button_SuaTK_Click(object sender, EventArgs e)
         {
             themTK = false;
-            button_ThemTK.Enabled = false;
-            button_XoaTK.Enabled = false;
-            button_SuaTK.Enabled = false;
-            button_LuuTK.Enabled = true;
-            btnHuyTK.Enabled = true;
+            button_ThemTK.Visible = false;
+            button_XoaTK.Visible = false;
+            button_SuaTK.Visible = false;
+            button_LuuTK.Visible = true;
+            btnHuyTK.Visible = true;
+            label32.Text = "Đang tiến hành SỬA tài khoản...";
+            label32.Visible = true;
             panel7.Enabled = true;
         }
 
@@ -618,8 +687,16 @@ namespace QuanLiCuaHangDienThoai.Forms
             {
                 try
                 {
-                    db.THEMTK(this.textBox_Username.Text, this.textBox_Password.Text, this.textBox_Email.Text, this.textBox_Ten.Text,
-                        Convert.ToDateTime(this.textBox_NgaySinh.Text), this.textBox_Sdt.Text, this.textBox_Loai.Text, Convert.ToDateTime(this.textBox_NgayTao.Text));
+                    try
+                    {
+                        db.THEMTK(this.textBox_Username.Text, this.textBox_Password.Text, this.textBox_Email.Text, this.textBox_Ten.Text,
+                            Convert.ToDateTime(this.textBox_NgaySinh.Text), this.textBox_Sdt.Text, this.textBox_Loai.Text, Convert.ToDateTime(this.textBox_NgayTao.Text));
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Không thêm được, lỗi rồi !");
+                        return;
+                    }
                     LoadTaiKhoan();
                     MessageBox.Show("Thêm Thành Công");
                 }
@@ -632,8 +709,17 @@ namespace QuanLiCuaHangDienThoai.Forms
             {
                 try
                 {
-                    db.CAPNHATTK(this.textBox_Username.Text, this.textBox_Password.Text, this.textBox_Email.Text, this.textBox_Ten.Text,
-                        Convert.ToDateTime(this.textBox_NgaySinh.Text), this.textBox_Sdt.Text, this.textBox_Loai.Text, Convert.ToDateTime(this.textBox_NgayTao.Text));
+                    try
+                    {
+                        db.CAPNHATTK(this.textBox_Username.Text, this.textBox_Password.Text, this.textBox_Email.Text, this.textBox_Ten.Text,
+                            Convert.ToDateTime(this.textBox_NgaySinh.Text), this.textBox_Sdt.Text, this.textBox_Loai.Text, Convert.ToDateTime(this.textBox_NgayTao.Text));
+                        
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Không cập nhật được,Lỗi Rồi!");
+                        return;
+                    }
                     LoadTaiKhoan();
                     MessageBox.Show("CẬP NHẬT THÀNH CÔNG");
                 }
@@ -652,6 +738,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btnTimSP_Click(object sender, EventArgs e)
         {
             dataGridView_SP.DataSource = blSP.TimSP(this.cbxTTSP.Text.Trim(),this.txtycSP.Text.Trim());
+            LoadSanPham();
         }
 
         private void btnTimDM_Click(object sender, EventArgs e)
@@ -766,12 +853,14 @@ namespace QuanLiCuaHangDienThoai.Forms
             string maDM = blDM.CHECKID_DM();
             textBox_MaDM.Text=maDM;
             textBox_TenDM.ResetText();
-            button_ThemDM.Enabled = false;
-            button_XoaDM.Enabled = false;
-            button_SuaDM.Enabled = false;
-            button_LuuDM.Enabled = true;
-            btnHuyDM.Enabled = true;
+            button_ThemDM.Visible = false;
+            button_XoaDM.Visible = false;
+            button_SuaDM.Visible = false;
+            button_LuuDM.Visible = true;
+            btnHuyDM.Visible = true;
             panel12.Enabled = true;
+            label28.Text = "Đang tiến hành THÊM danh mục...";
+            label28.Visible = true;
         }
 
 
