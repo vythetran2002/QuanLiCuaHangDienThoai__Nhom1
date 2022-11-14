@@ -17,20 +17,18 @@
       <Column Name="sdt" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="loai" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Association Name="TAIKHOAN_HOADON" Member="HOADONs" ThisKey="username" OtherKey="username" Type="HOADON" />
     </Type>
   </Table>
   <Table Name="dbo.HOADON" Member="HOADONs">
     <Type Name="HOADON">
       <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenNV" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenKH" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="sdt" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="tongTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="HOADON_HOADONCHITIET" Member="HOADONCHITIETs" ThisKey="maHD" OtherKey="maHD" Type="HOADONCHITIET" />
-      <Association Name="TAIKHOAN_HOADON" Member="TAIKHOAN" ThisKey="username" OtherKey="username" Type="TAIKHOAN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.HOADONCHITIET" Member="HOADONCHITIETs">
@@ -40,6 +38,14 @@
       <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="HOADON_HOADONCHITIET" Member="HOADON" ThisKey="maHD" OtherKey="maHD" Type="HOADON" IsForeignKey="true" />
       <Association Name="SANPHAM_HOADONCHITIET" Member="SANPHAM" ThisKey="maSP" OtherKey="maSP" Type="SANPHAM" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHUYENMAI" Member="KHUYENMAIs">
+    <Type Name="KHUYENMAI">
+      <Column Name="maKM" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39)" CanBeNull="true" />
+      <Column Name="mucgiam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SANPHAM_KHUYENMAI" Member="SANPHAM" ThisKey="maSP" OtherKey="maSP" Type="SANPHAM" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.NHACUNGCAP" Member="NHACUNGCAPs">
@@ -54,11 +60,13 @@
       <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="maNCC" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Association Name="SANPHAM_HOADONCHITIET" Member="HOADONCHITIETs" ThisKey="maSP" OtherKey="maSP" Type="HOADONCHITIET" />
+      <Association Name="SANPHAM_KHUYENMAI" Member="KHUYENMAIs" ThisKey="maSP" OtherKey="maSP" Type="KHUYENMAI" />
       <Association Name="DANHMUC_SANPHAM" Member="DANHMUC" ThisKey="maDM" OtherKey="maDM" Type="DANHMUC" IsForeignKey="true" />
       <Association Name="NHACUNGCAP_SANPHAM" Member="NHACUNGCAP" ThisKey="maNCC" OtherKey="maNCC" Type="NHACUNGCAP" IsForeignKey="true" />
     </Type>
@@ -80,7 +88,6 @@
     <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
     <Parameter Name="TongTien" Parameter="tongTien" Type="System.Int32" DbType="Int" />
     <Parameter Name="status" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.CAPNHATHDCT" Method="CAPNHATHDCT">
     <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
@@ -123,13 +130,17 @@
       <Column Name="soLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.DELETE_KHUYENMAI" Method="DELETE_KHUYENMAI">
+    <Parameter Name="maKM" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.DOANH_THU_THEO_NGAY" Method="DOANH_THU_THEO_NGAY">
     <Parameter Name="checkIn" Type="System.DateTime" DbType="Date" />
     <Parameter Name="checkOut" Type="System.DateTime" DbType="Date" />
     <ElementType Name="DOANH_THU_THEO_NGAYResult">
       <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="tongTien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenNV" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenKH" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="sdt" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
@@ -146,6 +157,7 @@
       <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
@@ -165,6 +177,12 @@
     <ElementType Name="ID_HDCHUATHANHTOANResult">
       <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.INSERT_KHUYENMAI" Method="INSERT_KHUYENMAI">
+    <Parameter Name="maKM" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="mucgiam" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.JOIN_SP_HDCT" Method="JOIN_SP_HDCT">
     <Parameter Name="maHD" Type="System.String" DbType="NVarChar(50)" />
@@ -187,7 +205,7 @@
   <Function Name="dbo.LAYHD" Method="LAYHD">
     <ElementType Name="LAYHDResult">
       <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenNV" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenKH" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="sdt" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
@@ -213,6 +231,7 @@
       <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
@@ -262,7 +281,6 @@
     <Parameter Name="soluong" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.THEMTK" Method="THEMTK">
     <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
@@ -293,7 +311,7 @@
     <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
     <ElementType Name="timHDResult">
       <Column Name="maHD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="tenNV" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenKH" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="sdt" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
@@ -321,6 +339,7 @@
       <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
@@ -333,6 +352,7 @@
       <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
@@ -345,6 +365,7 @@
       <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
@@ -357,6 +378,7 @@
       <Column Name="maSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="tenSP" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="gia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GiaKM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hinhAnh" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="soLuong" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
@@ -429,6 +451,12 @@
       <Column Name="ngayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.UPDATE_KHUYENMAI" Method="UPDATE_KHUYENMAI">
+    <Parameter Name="maKM" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="mucgiam" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.update_status" Method="update_status">
     <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
@@ -454,13 +482,13 @@
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.Gia_SP" Method="Gia_SP" IsComposable="true">
-    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.String" />
-  </Function>
   <Function Name="dbo.TongTienHD" Method="TongTienHD" IsComposable="true">
     <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Gia_SP" Method="Gia_SP" IsComposable="true">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
   </Function>
   <Function Name="dbo.HinhAnh" Method="HinhAnh" IsComposable="true">
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
@@ -486,6 +514,10 @@
     <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.String" />
   </Function>
+  <Function Name="dbo.LAY_TENNV" Method="LAY_TENNV" IsComposable="true">
+    <Parameter Name="username" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
   <Function Name="dbo.LOAI_TK" Method="LOAI_TK" IsComposable="true">
     <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="mk" Type="System.String" DbType="NVarChar(50)" />
@@ -505,10 +537,6 @@
   </Function>
   <Function Name="dbo.TenSP" Method="TenSP" IsComposable="true">
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
-    <Return Type="System.String" />
-  </Function>
-  <Function Name="dbo.LAY_TENNV" Method="LAY_TENNV" IsComposable="true">
-    <Parameter Name="username" Type="System.String" DbType="NVarChar(100)" />
     <Return Type="System.String" />
   </Function>
 </Database>
