@@ -112,7 +112,6 @@ namespace QuanLiCuaHangDienThoai.Forms
         void Load_HDCT()
         {
 
-            LoadData_HD_ChuaThanhToan();
             flp_HDCT.Controls.Clear();
             QLDTDataContext q = new QLDTDataContext();
             var query = from item in q.HOADONCHITIETs
@@ -151,7 +150,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btn_NewHD_Click(object sender, EventArgs e)
         {
             string tenNV = db.LAY_TENNV(username);
-            db.THEMHD(username, " ", " ",dateTimePicker1.Value);
+            db.THEMHD(tenNV, " ", " ",dateTimePicker1.Value);
             MessageBox.Show("success");
             
             LoadData_HD_ChuaThanhToan();
@@ -162,6 +161,8 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btn_LoadHDCT_Click(object sender, EventArgs e)
         {
             Load_HDCT();
+
+            LoadData_HD_ChuaThanhToan();
         }
 
         private void cbb_ChonHD_SelectedIndexChanged(object sender, EventArgs e)

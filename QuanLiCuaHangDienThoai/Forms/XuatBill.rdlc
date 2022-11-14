@@ -289,7 +289,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!username.Value, "DataSet2")</Value>
+                <Value>=First(Fields!tenNV.Value, "DataSet2")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -748,8 +748,8 @@
           <DataField>maHD</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="username">
-          <DataField>username</DataField>
+        <Field Name="tenNV">
+          <DataField>tenNV</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="tenKH">

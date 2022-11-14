@@ -28,7 +28,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                          select item).SingleOrDefault();
 
             lb_ngayTaoHD.Text = query.ngayTao.ToString();
-            lb_user.Text = query.username;
+            lb_user.Text = query.tenNV;
             txtbox_TenKH.Text = query.tenKH;
             txtbox_SDT.Text = query.sdt;
 

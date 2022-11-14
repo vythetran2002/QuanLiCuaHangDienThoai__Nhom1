@@ -362,3 +362,4 @@ E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug
 E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
 E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\bin\Debug\Microsoft.MSXML.dll
 C:\Users\Admin\Documents\GitHub\QuanLiCuaHangDienThoai__Nhom1(Vyx)\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Form1.resources
+E:\DoAn_Nam3\DBMS\QuanLiCuaHangDienThoai__Nhom1\QuanLiCuaHangDienThoai\obj\Debug\QuanLiCuaHangDienThoai.Form1.resources
