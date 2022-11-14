@@ -135,7 +135,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btn_NewHD_Click(object sender, EventArgs e)
         {
             string tenNV = db.LAY_TENNV(username);
-            db.THEMHD(tenNV, " ", " ",dateTimePicker1.Value);
+            db.THEMHD(username, " ", " ",dateTimePicker1.Value);
             MessageBox.Show("success");
             
             LoadData_HD_ChuaThanhToan();

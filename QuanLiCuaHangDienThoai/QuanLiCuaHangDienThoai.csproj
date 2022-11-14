@@ -144,9 +144,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDT.dbml</DependentUpon>
     </Compile>
-    <Compile Include="QuanLiCuaHangDienThoaiDataSet.cs">
-      <DependentUpon>QuanLiCuaHangDienThoaiDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="QuanLiCuaHangDienThoaiDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
