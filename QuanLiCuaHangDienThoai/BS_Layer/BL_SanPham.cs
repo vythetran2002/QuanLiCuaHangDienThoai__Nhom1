@@ -74,6 +74,7 @@ namespace QuanLiCuaHangDienThoai.BS_Layer
             dt.Columns.Add("Mã SP");
             dt.Columns.Add("Tên SP");
             dt.Columns.Add("Giá");
+            dt.Columns.Add("Giá KM");
             dt.Columns.Add("Hình Ảnh");
             dt.Columns.Add("Số lượng");
             dt.Columns.Add("Mã Danh Mục");
@@ -86,7 +87,7 @@ namespace QuanLiCuaHangDienThoai.BS_Layer
                     var query = db.TIMSP_TEN(yeucau);
                     foreach (var x in query)
                     {
-                        dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
+                        dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.GiaKM, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
                     }
                 }
 
@@ -96,7 +97,7 @@ namespace QuanLiCuaHangDienThoai.BS_Layer
                     var query = db.TIMSP_MASP(yeucau);
                     foreach (var x in query)
                     {
-                        dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
+                        dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.GiaKM, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
                     }
                 }
                 else if (thuoctinh.CompareTo("Mã DM") == 0)
@@ -105,7 +106,7 @@ namespace QuanLiCuaHangDienThoai.BS_Layer
                     var query = db.TIMSP_MADM(yeucau);
                     foreach (var x in query)
                     {
-                        dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
+                        dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.GiaKM, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
                     }
                 }
                 else if (thuoctinh.CompareTo("Mã NCC") == 0)
@@ -114,7 +115,7 @@ namespace QuanLiCuaHangDienThoai.BS_Layer
                     var query = db.TIMSP_MANCC(yeucau);
                     foreach (var x in query)
                     {
-                        dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
+                        dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.GiaKM, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
                     }
                 }
             }
@@ -124,7 +125,7 @@ namespace QuanLiCuaHangDienThoai.BS_Layer
                 var query = db.LAYSP();
                 foreach (var x in query)
                 {
-                    dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
+                    dt.Rows.Add(x.maSP, x.tenSP, x.gia, x.GiaKM, x.hinhAnh, x.soLuong, x.maDM, x.maNCC);
                 }
             }
             return dt;

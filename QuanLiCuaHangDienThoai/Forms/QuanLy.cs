@@ -18,10 +18,11 @@ namespace QuanLiCuaHangDienThoai.Forms
     public partial class QuanLy : Form
     {
         string linkHinhAnh;
-        bool themSP,themDM,themNCC,themTK;
+        bool themSP,themDM,themNCC,themTK,themKM;
         BL_SanPham blSP = new BL_SanPham();
         BL_DanhMuc blDM = new BL_DanhMuc();
         BL_TaiKhoan blTK = new BL_TaiKhoan();
+        BL_KhuyenMai blKM = new BL_KhuyenMai();
         BL_NCC blNCC = new BL_NCC();
         QLDTDataContext db = new QLDTDataContext();
 
@@ -29,6 +30,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         BindingSource listDanhMuc = new BindingSource();
         BindingSource listNhaCC = new BindingSource();
         BindingSource listTaiKhoan = new BindingSource();
+        BindingSource listKhuyenMai = new BindingSource();
 
         public QuanLy()
         {
@@ -45,7 +47,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         void LoadData()
         {
             QLDTDataContext db = new QLDTDataContext();
-
+            dataGridView_KM.DataSource = listKhuyenMai;
             dataGridView_SP.DataSource = listSanPham;
             dataGridView_DM.DataSource = listDanhMuc;
             dataGridView_NhaCC.DataSource = listNhaCC;
@@ -57,37 +59,51 @@ namespace QuanLiCuaHangDienThoai.Forms
             LoadDanhMuc();
             LoadNhaCC();
             LoadTaiKhoan();
-           
+            LoadKhuyenMai();
 
             //Khi chọn 1 hàng nào đó bên datagridview thì sẽ hiện lên bên textbox
             SanPhamBinding();
             DanhMucBinding();
             TaiKhoanBinding();
             NhaCCBinding();
-
+            KhuyenMaiBinding();
             dataGridView_SP.RowHeadersVisible = false;
             dataGridView_DM.RowHeadersVisible = false;
             dataGridView_DT.RowHeadersVisible = false;
             dataGridView_NhaCC.RowHeadersVisible = false;
             dataGridView_TK.RowHeadersVisible = false;
+            dataGridView_KM.RowHeadersVisible = false;
 
             dataGridView_SP.AllowUserToAddRows= false;
             dataGridView_DM.AllowUserToAddRows = false;
             dataGridView_DT.AllowUserToAddRows = false;
             dataGridView_NhaCC.AllowUserToAddRows = false;
             dataGridView_TK.AllowUserToAddRows = false;
+            dataGridView_KM.AllowUserToAddRows = false;
+        }
+        void LoadKhuyenMai()
+        {
+            listKhuyenMai.DataSource = db.LAYKM();
+            btn_ThemKM.Visible = true;
+            btnXoaKM.Visible = true;
+            btnSuaKM.Visible = true;
+            btnLuuKM.Visible = false;
+            btnHuyKM.Visible = false;
+            panel9.Enabled = false;
+            label39.Visible = false;
         }
 
         void LoadSanPham()
         {
             listSanPham.DataSource = db.LAYSP();
             //comboBox_MaDM.DataSource = db.TB_TENDM();
-            comboBox_MaDM.DataSource = from i in db.DANHMUCs
-                                       select i.tenDM;
-            comboBox_MaDM.DisplayMember = "TenDM";
-            comboBox_MaNCC.DataSource = from u in db.NHACUNGCAPs
-                                        select u.tenNCC;
-            //comboBox_MaNCC.DataSource = db.TB_TENNCC();
+               comboBox_MaDM.DataSource = from i in db.DANHMUCs
+                                          select i.tenDM;
+               comboBox_MaDM.DisplayMember = "TenDM";
+               comboBox_MaNCC.DataSource = from u in db.NHACUNGCAPs
+                                           select u.tenNCC;
+               //comboBox_MaNCC.DataSource = db.TB_TENNCC();
+            
             comboBox_MaNCC.DisplayMember = "TenNCC";
             button_ThemSP.Visible = true;
             button_XoaSP.Visible = true;
@@ -97,7 +113,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             panel2.Enabled = false;
             button_ChenAnh.Visible = false;
             label_ChucNang_SP.Visible = false;
-            dataGridView_SP.Columns[3].Visible = false;
+            //dataGridView_SP.Columns[3].Visible = false;
         }
         void LoadDanhMuc()
         {
@@ -146,7 +162,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                 textBox_TenSP.DataBindings.Add("Text", dataGridView_SP.DataSource, "TenSP", true, DataSourceUpdateMode.Never);
                 textBox_Gia.DataBindings.Add("Text", dataGridView_SP.DataSource, "Gia", true, DataSourceUpdateMode.Never);
                 textBox_SoLuong.DataBindings.Add("Text", dataGridView_SP.DataSource, "SoLuong", true, DataSourceUpdateMode.Never);
-                
+               
             }
             catch { }
         }
@@ -156,6 +172,16 @@ namespace QuanLiCuaHangDienThoai.Forms
             {
                 textBox_MaDM.DataBindings.Add("Text", dataGridView_DM.DataSource, "MaDM", true, DataSourceUpdateMode.Never);
                 textBox_TenDM.DataBindings.Add("Text", dataGridView_DM.DataSource, "TenDM", true, DataSourceUpdateMode.Never);
+            }
+            catch { }
+        }
+        void KhuyenMaiBinding()
+        {
+            try
+            {
+                txtMaKM.DataBindings.Add("Text", dataGridView_KM.DataSource, "maKM", true, DataSourceUpdateMode.Never);
+                txtMaSP.DataBindings.Add("Text", dataGridView_KM.DataSource, "maSP", true, DataSourceUpdateMode.Never);
+                txtMucGiam.DataBindings.Add("Text", dataGridView_KM.DataSource, "mucgiam", true, DataSourceUpdateMode.Never);
             }
             catch { }
         }
@@ -180,7 +206,7 @@ namespace QuanLiCuaHangDienThoai.Forms
                 textBox_NgaySinh.DataBindings.Add("Text", dataGridView_TK.DataSource, "ngaySinh", true, DataSourceUpdateMode.Never);
                 textBox_Loai.DataBindings.Add("Text", dataGridView_TK.DataSource, "loai", true, DataSourceUpdateMode.Never);
                 textBox_NgayTao.DataBindings.Add("Text", dataGridView_TK.DataSource, "ngayTao", true, DataSourceUpdateMode.Never);
-               
+                
             }
             catch 
             {
@@ -354,9 +380,9 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void dataGridView_SP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView_SP.CurrentRow.Cells[3].Value.ToString() != "")
+            if (dataGridView_SP.CurrentRow.Cells[5].Value.ToString() != "")
             {
-                pictureBox1.Image = ByteToImg(dataGridView_SP.CurrentRow.Cells[3].Value.ToString());
+                pictureBox1.Image = ByteToImg(dataGridView_SP.CurrentRow.Cells[5].Value.ToString());
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
             else
@@ -364,8 +390,8 @@ namespace QuanLiCuaHangDienThoai.Forms
                 pictureBox1.Image = null;
                 linkHinhAnh = null;
             }
-            comboBox_MaDM.Text = db.Lay_Ten_DM(dataGridView_SP.CurrentRow.Cells[5].Value.ToString());
-            comboBox_MaNCC.Text = db.Lay_Ten_NCC(dataGridView_SP.CurrentRow.Cells[6].Value.ToString());
+            comboBox_MaDM.Text =db.Lay_Ten_DM(dataGridView_SP.CurrentRow.Cells[6].Value.ToString());
+            comboBox_MaNCC.Text = db.Lay_Ten_NCC(dataGridView_SP.CurrentRow.Cells[7].Value.ToString());
             
         }
 
@@ -780,6 +806,85 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_ThemKM_Click(object sender, EventArgs e)
+        {
+            themKM = true;
+            txtMaKM.Enabled = false;
+            txtMaSP.ResetText();
+          
+            string km = blKM.CHECKID_KM();
+            txtMaKM.Text = km;
+            txtMucGiam.ResetText();
+            
+            btn_ThemKM.Visible = false;
+            btnXoaKM.Visible = false;
+            btnSuaKM.Visible = false;
+            btnLuuKM.Visible = true;
+            btnHuyKM.Visible = true;
+            panel9.Enabled = true;
+            label39.Text = "Đang tiến hành THÊM khuyến mãi...";
+            label39.Visible = true;
+        }
+
+        private void btnSuaKM_Click(object sender, EventArgs e)
+        {
+            themKM = false;
+            btn_ThemKM.Visible = false;
+            btnXoaKM.Visible = false;
+            btnSuaKM.Visible = false;
+            btnLuuKM.Visible = true;
+            btnHuyKM.Visible = true;
+            panel9.Enabled = true;
+            label39.Text = "Đang tiến hành SỬA khuyến mãi...";
+            label39.Visible = true;
+        }
+
+        private void btnXoaKM_Click(object sender, EventArgs e)
+        {
+            blKM.XoaKM(txtMaKM.Text);
+            LoadKhuyenMai();
+        }
+
+        private void btnHuyKM_Click(object sender, EventArgs e)
+        {
+            LoadKhuyenMai();
+        }
+
+        private void btnLuuKM_Click(object sender, EventArgs e)
+        {
+            if (themKM)
+            {
+                try
+                {
+                    db.INSERT_KHUYENMAI(this.txtMaKM.Text, this.txtMaSP.Text,Convert.ToInt32(this.txtMucGiam.Text));
+                    LoadKhuyenMai();
+                    MessageBox.Show("Thêm Thành Công");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không thể thêm");
+                }
+            }
+            else
+            {
+                try
+                {
+                    db.UPDATE_KHUYENMAI(this.txtMaKM.Text, this.txtMaSP.Text, Convert.ToInt32(this.txtMucGiam.Text));
+                    LoadNhaCC();
+                    MessageBox.Show("Cập Nhật Thành Công");
+                }
+                catch (SqlException)
+                {
+                    MessageBox.Show("Không sửa được, lỗi rồi! ");
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView_KM.DataSource = blKM.TimKM(this.cbb_KhuyenMai.Text.Trim(), this.txt_YeuCauKM.Text.Trim());
         }
 
         private void button_LuuNCC_Click(object sender, EventArgs e)

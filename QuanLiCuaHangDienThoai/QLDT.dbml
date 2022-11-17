@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLiCuaHangDienThoai" Class="QLDTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-GB8LVRE\SQLEXPRESS;Initial Catalog=QuanLiCuaHangDienThoai;Integrated Security=True" SettingsObjectName="QuanLiCuaHangDienThoai.Properties.Settings" SettingsPropertyName="QuanLiCuaHangDienThoaiConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.DANHMUC" Member="DANHMUCs">
     <Type Name="DANHMUC">
       <Column Name="maDM" Type="System.String" DbType="NVarChar(39) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -88,6 +88,7 @@
     <Parameter Name="ngaytao" Type="System.DateTime" DbType="Date" />
     <Parameter Name="TongTien" Parameter="tongTien" Type="System.Int32" DbType="Int" />
     <Parameter Name="status" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.CAPNHATHDCT" Method="CAPNHATHDCT">
     <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
@@ -281,6 +282,7 @@
     <Parameter Name="soluong" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="maDM" Type="System.String" DbType="NVarChar(50)" />
     <Parameter Name="maNCC" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.THEMTK" Method="THEMTK">
     <Parameter Name="usename" Type="System.String" DbType="NVarChar(50)" />
@@ -482,13 +484,13 @@
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.TongTienHD" Method="TongTienHD" IsComposable="true">
-    <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.Gia_SP" Method="Gia_SP" IsComposable="true">
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.TongTienHD" Method="TongTienHD" IsComposable="true">
+    <Parameter Name="maHD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.HinhAnh" Method="HinhAnh" IsComposable="true">
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
@@ -538,5 +540,36 @@
   <Function Name="dbo.TenSP" Method="TenSP" IsComposable="true">
     <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.LAYKM" Method="LAYKM">
+    <ElementType Name="LAYKMResult">
+      <Column Name="maKM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39)" CanBeNull="true" />
+      <Column Name="mucgiam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMKM_MaKM" Method="TIMKM_MaKM">
+    <Parameter Name="maKM" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMKM_MaKMResult">
+      <Column Name="maKM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39)" CanBeNull="true" />
+      <Column Name="mucgiam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMKM_MaSP" Method="TIMKM_MaSP">
+    <Parameter Name="maSP" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMKM_MaSPResult">
+      <Column Name="maKM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39)" CanBeNull="true" />
+      <Column Name="mucgiam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.TIMKM_MucGiam" Method="TIMKM_MucGiam">
+    <Parameter Name="mucgiam" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="TIMKM_MucGiamResult">
+      <Column Name="maKM" Type="System.String" DbType="NVarChar(39) NOT NULL" CanBeNull="false" />
+      <Column Name="maSP" Type="System.String" DbType="NVarChar(39)" CanBeNull="true" />
+      <Column Name="mucgiam" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

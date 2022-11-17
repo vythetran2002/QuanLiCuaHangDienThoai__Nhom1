@@ -54,7 +54,7 @@ namespace QuanLiCuaHangDienThoai
     #endregion
 		
 		public QLDTDataContext() : 
-				base(global::QuanLiCuaHangDienThoai.Properties.Settings.Default.QuanLiCuaHangDienThoaiConnectionString, mappingSource)
+				base(global::QuanLiCuaHangDienThoai.Properties.Settings.Default.QuanLiCuaHangDienThoaiConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -154,9 +154,10 @@ namespace QuanLiCuaHangDienThoai
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CAPNHATHD")]
-		public void CAPNHATHD([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maHD, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string usename, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenKH, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaytao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TongTien", DbType="Int")] System.Nullable<int> tongTien, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
+		public int CAPNHATHD([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maHD, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string usename, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenKH, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string sdt, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngaytao, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="TongTien", DbType="Int")] System.Nullable<int> tongTien, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> status)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHD, usename, tenKH, sdt, ngaytao, tongTien, status);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHD, usename, tenKH, sdt, ngaytao, tongTien, status);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CAPNHATHDCT")]
@@ -321,9 +322,10 @@ namespace QuanLiCuaHangDienThoai
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.THEMSP")]
-		public void THEMSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSP, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenSP, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> gia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string hinhanh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string soluong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maDM, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maNCC)
+		public int THEMSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSP, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenSP, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> gia, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(MAX)")] string hinhanh, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string soluong, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maDM, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maNCC)
 		{
-			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSP, tenSP, gia, hinhanh, soluong, maDM, maNCC);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSP, tenSP, gia, hinhanh, soluong, maDM, maNCC);
+			return ((int)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.THEMTK")]
@@ -480,16 +482,16 @@ namespace QuanLiCuaHangDienThoai
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TongTienHD", IsComposable=true)]
-		public System.Nullable<int> TongTienHD([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maHD)
-		{
-			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHD).ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Gia_SP", IsComposable=true)]
 		public string Gia_SP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSP)
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSP).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TongTienHD", IsComposable=true)]
+		public System.Nullable<int> TongTienHD([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> maHD)
+		{
+			return ((System.Nullable<int>)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maHD).ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.HinhAnh", IsComposable=true)]
@@ -562,6 +564,34 @@ namespace QuanLiCuaHangDienThoai
 		public string TenSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSP)
 		{
 			return ((string)(this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSP).ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LAYKM")]
+		public ISingleResult<LAYKMResult> LAYKM()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<LAYKMResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TIMKM_MaKM")]
+		public ISingleResult<TIMKM_MaKMResult> TIMKM_MaKM([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maKM)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maKM);
+			return ((ISingleResult<TIMKM_MaKMResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TIMKM_MaSP")]
+		public ISingleResult<TIMKM_MaSPResult> TIMKM_MaSP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSP)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maSP);
+			return ((ISingleResult<TIMKM_MaSPResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TIMKM_MucGiam")]
+		public ISingleResult<TIMKM_MucGiamResult> TIMKM_MucGiam([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mucgiam)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mucgiam);
+			return ((ISingleResult<TIMKM_MucGiamResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -4781,6 +4811,254 @@ namespace QuanLiCuaHangDienThoai
 				if ((this._ngayTao != value))
 				{
 					this._ngayTao = value;
+				}
+			}
+		}
+	}
+	
+	public partial class LAYKMResult
+	{
+		
+		private string _maKM;
+		
+		private string _maSP;
+		
+		private System.Nullable<int> _mucgiam;
+		
+		public LAYKMResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKM", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string maKM
+		{
+			get
+			{
+				return this._maKM;
+			}
+			set
+			{
+				if ((this._maKM != value))
+				{
+					this._maKM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSP", DbType="NVarChar(39)")]
+		public string maSP
+		{
+			get
+			{
+				return this._maSP;
+			}
+			set
+			{
+				if ((this._maSP != value))
+				{
+					this._maSP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mucgiam", DbType="Int")]
+		public System.Nullable<int> mucgiam
+		{
+			get
+			{
+				return this._mucgiam;
+			}
+			set
+			{
+				if ((this._mucgiam != value))
+				{
+					this._mucgiam = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TIMKM_MaKMResult
+	{
+		
+		private string _maKM;
+		
+		private string _maSP;
+		
+		private System.Nullable<int> _mucgiam;
+		
+		public TIMKM_MaKMResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKM", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string maKM
+		{
+			get
+			{
+				return this._maKM;
+			}
+			set
+			{
+				if ((this._maKM != value))
+				{
+					this._maKM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSP", DbType="NVarChar(39)")]
+		public string maSP
+		{
+			get
+			{
+				return this._maSP;
+			}
+			set
+			{
+				if ((this._maSP != value))
+				{
+					this._maSP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mucgiam", DbType="Int")]
+		public System.Nullable<int> mucgiam
+		{
+			get
+			{
+				return this._mucgiam;
+			}
+			set
+			{
+				if ((this._mucgiam != value))
+				{
+					this._mucgiam = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TIMKM_MaSPResult
+	{
+		
+		private string _maKM;
+		
+		private string _maSP;
+		
+		private System.Nullable<int> _mucgiam;
+		
+		public TIMKM_MaSPResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKM", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string maKM
+		{
+			get
+			{
+				return this._maKM;
+			}
+			set
+			{
+				if ((this._maKM != value))
+				{
+					this._maKM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSP", DbType="NVarChar(39)")]
+		public string maSP
+		{
+			get
+			{
+				return this._maSP;
+			}
+			set
+			{
+				if ((this._maSP != value))
+				{
+					this._maSP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mucgiam", DbType="Int")]
+		public System.Nullable<int> mucgiam
+		{
+			get
+			{
+				return this._mucgiam;
+			}
+			set
+			{
+				if ((this._mucgiam != value))
+				{
+					this._mucgiam = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TIMKM_MucGiamResult
+	{
+		
+		private string _maKM;
+		
+		private string _maSP;
+		
+		private System.Nullable<int> _mucgiam;
+		
+		public TIMKM_MucGiamResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maKM", DbType="NVarChar(39) NOT NULL", CanBeNull=false)]
+		public string maKM
+		{
+			get
+			{
+				return this._maKM;
+			}
+			set
+			{
+				if ((this._maKM != value))
+				{
+					this._maKM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_maSP", DbType="NVarChar(39)")]
+		public string maSP
+		{
+			get
+			{
+				return this._maSP;
+			}
+			set
+			{
+				if ((this._maSP != value))
+				{
+					this._maSP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mucgiam", DbType="Int")]
+		public System.Nullable<int> mucgiam
+		{
+			get
+			{
+				return this._mucgiam;
+			}
+			set
+			{
+				if ((this._mucgiam != value))
+				{
+					this._mucgiam = value;
 				}
 			}
 		}
