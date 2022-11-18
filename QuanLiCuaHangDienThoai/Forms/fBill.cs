@@ -12,17 +12,20 @@ namespace QuanLiCuaHangDienThoai.Forms
 {
     public partial class fBill : Form
     {
+        QLDTDataContext q;
         public fBill()
         {
             InitializeComponent();
+
         }
         string maHD;
-        public fBill(string maHD)
+
+        public fBill(string maHD, string user, string mk)
         {
             InitializeComponent();
+            q = new QLDTDataContext(new ConnectionSQL(user, mk).ConnString());
             this.maHD = maHD;
             lb_maHD.Text = maHD;
-            QLDTDataContext q = new QLDTDataContext();
             var query = (from item in q.HOADONs
                          where item.maHD.ToString() == maHD
                          select item).SingleOrDefault();
@@ -53,7 +56,6 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void txtbox_TenKH_TextChanged(object sender, EventArgs e)
         {
-            QLDTDataContext q = new QLDTDataContext();
             var query = (from item in q.HOADONs
                          where item.maHD.ToString() == lb_maHD.Text
                          select item).SingleOrDefault();
@@ -66,7 +68,6 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void txtbox_SDT_TextChanged(object sender, EventArgs e)
         {
-            QLDTDataContext q = new QLDTDataContext();
             var query = (from item in q.HOADONs
                          where item.maHD.ToString() == lb_maHD.Text
                          select item).SingleOrDefault();
@@ -80,8 +81,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btn_XuatHoaDon_Click(object sender, EventArgs e)
         {
            
-            QLDTDataContext db = new QLDTDataContext();
-            db.update_status(int.Parse(maHD));
+            q.update_status(int.Parse(maHD));
             XuatBill f = new XuatBill(maHD);
             f.ShowDialog();
             this.Close();

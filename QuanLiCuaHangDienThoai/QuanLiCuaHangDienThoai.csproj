@@ -81,6 +81,7 @@
     <Compile Include="BS_Layer\BL_NCC.cs" />
     <Compile Include="BS_Layer\BL_SanPham.cs" />
     <Compile Include="BS_Layer\BL_TaiKhoan.cs" />
+    <Compile Include="ConnectionSQL.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -38,23 +38,23 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel1.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.P;
+            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.lb_Gia);
             this.panel1.Controls.Add(this.lb_TenSP);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(184, 309);
+            this.panel1.Size = new System.Drawing.Size(184, 292);
             this.panel1.TabIndex = 0;
             // 
             // lb_Gia
             // 
             this.lb_Gia.AutoSize = true;
             this.lb_Gia.BackColor = System.Drawing.Color.Transparent;
-            this.lb_Gia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Gia.Location = new System.Drawing.Point(8, 277);
+            this.lb_Gia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Gia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lb_Gia.Location = new System.Drawing.Point(8, 267);
             this.lb_Gia.Name = "lb_Gia";
             this.lb_Gia.Size = new System.Drawing.Size(51, 20);
             this.lb_Gia.TabIndex = 9;
@@ -64,7 +64,7 @@
             // 
             this.lb_TenSP.AutoSize = true;
             this.lb_TenSP.BackColor = System.Drawing.Color.Transparent;
-            this.lb_TenSP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_TenSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lb_TenSP.Location = new System.Drawing.Point(8, 237);
             this.lb_TenSP.Name = "lb_TenSP";
             this.lb_TenSP.Size = new System.Drawing.Size(51, 20);
@@ -88,7 +88,7 @@
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.Controls.Add(this.panel1);
             this.Name = "UC_Phone";
-            this.Size = new System.Drawing.Size(190, 315);
+            this.Size = new System.Drawing.Size(190, 300);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

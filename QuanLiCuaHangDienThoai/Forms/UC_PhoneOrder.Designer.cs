@@ -49,7 +49,7 @@
             // 
             this.lb_TenSP.AutoSize = true;
             this.lb_TenSP.BackColor = System.Drawing.Color.Transparent;
-            this.lb_TenSP.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_TenSP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lb_TenSP.Location = new System.Drawing.Point(94, 29);
             this.lb_TenSP.Name = "lb_TenSP";
             this.lb_TenSP.Size = new System.Drawing.Size(51, 20);
@@ -68,7 +68,7 @@
             // 
             this.lb_ThanhTien.AutoSize = true;
             this.lb_ThanhTien.BackColor = System.Drawing.Color.Transparent;
-            this.lb_ThanhTien.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_ThanhTien.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lb_ThanhTien.Location = new System.Drawing.Point(376, 29);
             this.lb_ThanhTien.Name = "lb_ThanhTien";
             this.lb_ThanhTien.Size = new System.Drawing.Size(51, 20);
@@ -79,8 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::QuanLiCuaHangDienThoai.Properties.Resources.phoneorder;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.lb_ThanhTien);
             this.Controls.Add(this.numericUpDown1);

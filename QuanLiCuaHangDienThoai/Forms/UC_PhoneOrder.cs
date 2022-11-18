@@ -13,7 +13,7 @@ namespace QuanLiCuaHangDienThoai.Forms
 {
     public partial class UC_PhoneOrder : UserControl
     {
-        QLDTDataContext db = new QLDTDataContext();
+        QLDTDataContext db ;
         BL_SanPham blSP = new BL_SanPham();
         public UC_PhoneOrder()
         {
@@ -24,9 +24,10 @@ namespace QuanLiCuaHangDienThoai.Forms
         string mahd;
         string gia;
 
-        public UC_PhoneOrder(string maHD, string maSP)
+        public UC_PhoneOrder(string maHD, string maSP,string user,string mk)
         {
             InitializeComponent();
+            db = new QLDTDataContext(new ConnectionSQL(user, mk).ConnString());
             /*  QLDTDataContext q = new QLDTDataContext();
               var query = (from item in q.HOADONCHITIETs
                            join item2 in q.SANPHAMs on item.maSP equals item2.maSP
