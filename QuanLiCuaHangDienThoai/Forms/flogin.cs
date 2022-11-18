@@ -31,14 +31,14 @@ namespace QuanLiCuaHangDienThoai.Forms
                 {
                     if (bllogin.Check_Admin(tendangnhap,matkhau))
                     {
-                        QuanLy admin = new QuanLy();
+                        QuanLy admin = new QuanLy(tendangnhap,matkhau);
                         this.Hide();
                         admin.ShowDialog();
                         this.Close();
                     }
                     else
                     {
-                        fStaffMain staff = new fStaffMain();
+                        fStaffMain staff = new fStaffMain(tendangnhap,matkhau);
 
                         staff.username= tendangnhap;
                         this.Hide();

@@ -24,7 +24,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         BL_TaiKhoan blTK = new BL_TaiKhoan();
         BL_KhuyenMai blKM = new BL_KhuyenMai();
         BL_NCC blNCC = new BL_NCC();
-        QLDTDataContext db = new QLDTDataContext();
+        QLDTDataContext db;
 
         BindingSource listSanPham = new BindingSource();
         BindingSource listDanhMuc = new BindingSource();
@@ -32,13 +32,19 @@ namespace QuanLiCuaHangDienThoai.Forms
         BindingSource listTaiKhoan = new BindingSource();
         BindingSource listKhuyenMai = new BindingSource();
 
-        public QuanLy()
+        public string username;
+        public string mk;
+        public QuanLy(string username, string mk)
         {
             InitializeComponent();
+            this.username = username;
+            this.mk = mk;
+            db = new QLDTDataContext(new ConnectionSQL(username, mk).ConnString());
             Load_DateTimePicker_DoanhThu(); //Load 2 thanh thời gian ngày bắt đầu và ngày kết thúc để thống kê doanh thu 
                                             //trong khoảng tgian đó
 
             LoadData();
+
         }
         private void QuanLy_Load(object sender, EventArgs e)
         {
@@ -46,7 +52,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         }
         void LoadData()
         {
-            QLDTDataContext db = new QLDTDataContext();
+           
             dataGridView_KM.DataSource = listKhuyenMai;
             dataGridView_SP.DataSource = listSanPham;
             dataGridView_DM.DataSource = listDanhMuc;
@@ -380,9 +386,9 @@ namespace QuanLiCuaHangDienThoai.Forms
 
         private void dataGridView_SP_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView_SP.CurrentRow.Cells[5].Value.ToString() != "")
+            if (dataGridView_SP.CurrentRow.Cells[4].Value.ToString() != "")
             {
-                pictureBox1.Image = ByteToImg(dataGridView_SP.CurrentRow.Cells[5].Value.ToString());
+                pictureBox1.Image = ByteToImg(dataGridView_SP.CurrentRow.Cells[4].Value.ToString());
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
             else

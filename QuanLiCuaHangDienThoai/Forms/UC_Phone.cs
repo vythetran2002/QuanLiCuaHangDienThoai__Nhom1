@@ -20,20 +20,29 @@ namespace QuanLiCuaHangDienThoai.Forms
             InitializeComponent();
         }
         string msp;
-        public UC_Phone(string maSP)
+        QLDTDataContext q;
+        public UC_Phone(string maSP, string username, string mk)
         {
             InitializeComponent();
-            QLDTDataContext q = new QLDTDataContext();
+            q = new QLDTDataContext(new ConnectionSQL(username, mk).ConnString());
             BL_SanPham blSP = new BL_SanPham();
-           /* var query = (from item in q.SANPHAMs
-                         where item.maSP == maSP.Trim()
-                         select item).SingleOrDefault();
+            /* var query = (from item in q.SANPHAMs
+                          where item.maSP == maSP.Trim()
+                          select item).SingleOrDefault();
 
-            lb_TenSP.Text = query.tenSP.ToString();
-            lb_Gia.Text = query.gia.ToString();*/
+             lb_TenSP.Text = query.tenSP.ToString();
+             lb_Gia.Text = query.gia.ToString();*/
             this.msp = maSP;
             lb_TenSP.Text = q.TenSP(maSP);
-            lb_Gia.Text = q.Gia_SP(maSP);
+            string giakm = q.TIMSP_MASP(maSP).SingleOrDefault().GiaKM.ToString();
+            if (giakm.ToString() != "")
+            {
+                lb_Gia.Text = giakm;
+            }
+            else
+            {
+                lb_Gia.Text = q.Gia_SP(maSP);
+            }
             string hinhanh = blSP.HinhAnh(maSP);
             try
             {

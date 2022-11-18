@@ -13,17 +13,21 @@ namespace QuanLiCuaHangDienThoai.Forms
 {
     public partial class fStaffMain : Form
     {
-        QLDTDataContext db = new QLDTDataContext();
+       
         BL_SanPham blSP = new BL_SanPham();
         BL_HDCT blHDCT = new BL_HDCT();
         public string username;
-        public fStaffMain()
+        public string mk;
+        QLDTDataContext db;
+        public fStaffMain(string username, string mk)
         {
             InitializeComponent();
+            this.username = username;
+            this.mk = mk;
+            db = new QLDTDataContext(new ConnectionSQL(username, mk).ConnString());
             LoadData_SP();
             LoadData_HD_ChuaThanhToan();
             btn_AddHDCT.Visible = false;
-           
         }
         
         void LoadData_SP()
@@ -37,7 +41,7 @@ namespace QuanLiCuaHangDienThoai.Forms
             {
                 DataGridViewRow row = dgv_sp.Rows[i];
                 string masp = row.Cells[0].Value.ToString();
-                UC_Phone ph = new UC_Phone(masp);
+                UC_Phone ph = new UC_Phone(masp,username,mk);
                 ph.AutoSize = false;
                 flp_Phone.Controls.Add(ph);
 
@@ -45,11 +49,10 @@ namespace QuanLiCuaHangDienThoai.Forms
 
             }   
         }
-
         void LoadData_HD_ChuaThanhToan()
         {
-            QLDTDataContext q = new QLDTDataContext();
-            var query = from item in q.HOADONs
+           
+            var query = from item in db.HOADONs
                         where item.status == 0
                         select item.maHD;
             if (query.Count() != 0)
@@ -73,17 +76,6 @@ namespace QuanLiCuaHangDienThoai.Forms
         void Click_Phone(object sender, EventArgs e)
         {
             UC_Phone sp = (UC_Phone)sender;
-            /*QLDTDataContext q = new QLDTDataContext();
-            lb_MaSP.Text= sp.MaSanPham;
-            var query = (from item in q.SANPHAMs
-                         where item.maSP == lb_MaSP.Text
-                         select item).SingleOrDefault();
-
-            lb_TenSP.Text = query.tenSP.ToString() ;
-            lb_NCC.Text = query.maNCC.ToString();
-            lb_DM.Text = query.maDM.ToString();
-            lb_Gia.Text = query.gia.ToString();
-            lb_SL.Text = "Tồn kho: " + query.soLuong.ToString();
 
             btn_AddHDCT.Enabled = true;
 
@@ -113,14 +105,14 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
 
             flp_HDCT.Controls.Clear();
-            QLDTDataContext q = new QLDTDataContext();
-            var query = from item in q.HOADONCHITIETs
+            
+            var query = from item in db.HOADONCHITIETs
                         where item.maHD.ToString() == cbb_ChonHD.Text
                         select item;       
                 foreach (var item in query)
                 {
 
-                    UC_PhoneOrder po = new UC_PhoneOrder(item.maHD.ToString(), item.maSP);
+                    UC_PhoneOrder po = new UC_PhoneOrder(item.maHD.ToString(), item.maSP,username,mk);
                     po.AutoSize = true;
                     flp_HDCT.Controls.Add(po);
                 }
@@ -150,7 +142,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         private void btn_NewHD_Click(object sender, EventArgs e)
         {
             string tenNV = db.LAY_TENNV(username);
-            db.THEMHD(tenNV, " ", " ",dateTimePicker1.Value);
+            db.THEMHD(username, " ", " ",dateTimePicker1.Value);
             MessageBox.Show("success");
             
             LoadData_HD_ChuaThanhToan();
@@ -174,7 +166,7 @@ namespace QuanLiCuaHangDienThoai.Forms
         {
             if(cbb_ChonHD.Text!="")
             {
-                fBill f = new fBill(cbb_ChonHD.Text);
+                fBill f = new fBill(cbb_ChonHD.Text,username,mk);
                 f.ShowDialog();
             }
         }
